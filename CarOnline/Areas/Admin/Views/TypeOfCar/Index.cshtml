@@ -1,0 +1,106 @@
+﻿@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.TypeOfCar_Object>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@section script_footer
+{
+
+    <script src="~/Areas/Admin/Content/assets/global/scripts/customer_design.js"></script>
+    <script>
+        $('.btn-delete').click(function() {
+            var id = $(this).data('id');
+            action.deleteObject(id, '@Url.Action("Delete", "TypeOfCar")');
+        });
+        TableAdvanced.init();
+    </script>
+
+}
+
+
+<!-- BEGIN EXAMPLE TABLE PORTLET-->
+<div class="portlet box green-haze">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-globe"></i>Quản lý Danh mục xe
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="reload">
+            </a>
+            <a href="javascript:;" class="remove">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div style="padding-bottom:10px;">
+            <a class="btn btn-primary btn-sm green-haze" style="margin-top:10px;" href="@Url.Action("Create", "TypeOfCar")">
+                Thêm mới
+                <span class="fa fa-plus" style="padding-left:6px;"></span>
+            </a>
+        </div>
+        <table class="table table-striped table-bordered table-hover" id="sample_2">
+            <thead>
+                
+                <tr>
+                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.TypeName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CompanyCarObject.CompanyName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsDeleted)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DesignCarObject.DesignName)
+                    </th>
+                    
+                
+                    <th style="width: 210px">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                       
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TypeName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyCarObject.CompanyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsDeleted)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DesignCarObject.DesignName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", "TypeOfCar", new { id = @item.TypeOfCarID }, new { @class = "btn btn-info" })
+                           
+                            <a href="javascript:void(0)" class="btn btn-danger btn-delete" data-id="@item.TypeOfCarID" data-name="@item.TypeName">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

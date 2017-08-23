@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewBag.Title = "NumberOfDoor_Update";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NumberOfDoor_Update</h2>
+

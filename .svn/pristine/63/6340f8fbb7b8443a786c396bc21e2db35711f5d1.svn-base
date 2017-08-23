@@ -1,0 +1,95 @@
+﻿@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.SaleStatusCarObject>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@section script_footer
+{
+    <script src="~/Areas/Admin/Content/assets/global/scripts/customer_design.js"></script>
+    <script>
+        var eletementDelete;
+        $('.btn-delete').click(function () {
+            var id = $(this).data('id');
+            if (confirm('Bạn có muốn xóa?') == true) {
+                eletementDelete = $(this);
+                try {
+                    $.ajax({
+                        type: 'post',
+                        url: '@Url.Action("Delete", "SaleStatusCar")',
+                        data: { id: id },
+                        success: function (data) {
+                            if (data == true) {
+                                alert('Xóa thành công');
+                                $(eletementDelete).parents('tr').remove();
+                            } else {
+                                alert('Xóa thất bại');
+                            }
+                        }, error: function (d) {
+                            alert("Xuất hiện lỗi: " + d);
+                            window.location.reload();
+                        }
+                    });
+                } catch (e) {
+                    alert("Xuất hiện lỗi: " + e);
+                    window.location.reload();
+                }
+            }
+        });
+        TableAdvanced.init();
+    </script>
+
+
+
+}
+
+
+<!-- BEGIN EXAMPLE TABLE PORTLET-->
+<div class="portlet box green-haze">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-globe"></i>Quản lý dẫn động trước Sau
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="reload">
+            </a>
+            <a href="javascript:;" class="remove">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div style="padding-bottom:10px;">
+            <a class="btn btn-primary btn-sm green-haze" style="margin-top:10px;" href="@Url.Action("Create", "SaleStatusCar")">
+                Thêm mới
+                <span class="fa fa-plus" style="padding-left:6px;"></span>
+            </a>
+        </div>
+        <table class="table table-striped table-bordered table-hover" id="sample_2">
+            <thead>
+                <tr>
+
+                    <th>
+                        Trạng thái bán xe
+                    </th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SaleStatusCarName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = @item.SaleStatusCarID }, new { @class = "btn btn-info" })
+                            <a href="javascript:void(0)" class="btn btn-danger btn-delete" data-name="@item.SaleStatusCarName" data-id="@item.SaleStatusCarID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

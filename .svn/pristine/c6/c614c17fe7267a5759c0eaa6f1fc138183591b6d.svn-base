@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2BB2F771-4E8A-44C5-BD6D-602402A0AABB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IMIC.BUSINESSOBJECTS</RootNamespace>
+    <AssemblyName>IMIC.BUSINESSOBJECTS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityObject\AccountObject.cs" />
+    <Compile Include="EntityObject\City_Object.cs" />
+    <Compile Include="EntityObject\DigitalCategory_Object.cs" />
+    <Compile Include="EntityObject\DigitalDetail_Object.cs" />
+    <Compile Include="EntityObject\MadeInCar_Object.cs" />
+    <Compile Include="EntityObject\NumberOfDoor_Object.cs" />
+    <Compile Include="EntityObject\NumberOfSeat_Object.cs" />
+    <Compile Include="EntityObject\Region_Object.cs" />
+    <Compile Include="EntityObject\RoleObject.cs" />
+    <Compile Include="EntityObject\CarStatus_Object.cs" />
+    <Compile Include="EntityObject\CompanyCar_Object.cs" />
+    <Compile Include="EntityObject\DesignCar_Object.cs" />
+    <Compile Include="EntityObject\ExteriorFurnitureColor_Object.cs" />
+    <Compile Include="EntityObject\FuelCar_Object.cs" />
+    <Compile Include="EntityObject\GearCar_Object.cs" />
+    <Compile Include="EntityObject\SafeCategory_Object.cs" />
+    <Compile Include="EntityObject\SafeDetail_Object.cs" />
+    <Compile Include="EntityObject\TypeOfCar_Object.cs" />
+    <Compile Include="EntityObject\UtilitiesCategory_Object.cs" />
+    <Compile Include="EntityObject\UtilitiesDetail_Object.cs" />
+    <Compile Include="EntityObject\WheelDrive_Object.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commons\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

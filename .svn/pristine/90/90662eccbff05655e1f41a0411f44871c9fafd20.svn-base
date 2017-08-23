@@ -1,0 +1,2258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CarOnlineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_Account_CheckLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="nvarchar" Mode="In" />
+          <Parameter Name="PassWords" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Account_CheckUserName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Account_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Account_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_Account_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Account_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="RoleID" Type="tinyint" Mode="In" />
+          <Parameter Name="ID_Facebook" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID_Gmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="Avatar" Type="varchar" Mode="In" />
+          <Parameter Name="FullName" Type="nvarchar" Mode="In" />
+          <Parameter Name="NumberOfLikeProfile" Type="int" Mode="In" />
+          <Parameter Name="NumberOfPost" Type="int" Mode="In" />
+          <Parameter Name="NumberOfFlow" Type="int" Mode="In" />
+          <Parameter Name="NumberOfComment" Type="int" Mode="In" />
+          <Parameter Name="Mobile" Type="varchar" Mode="In" />
+          <Parameter Name="Active" Type="bit" Mode="In" />
+          <Parameter Name="BirthDay" Type="datetime" Mode="In" />
+          <Parameter Name="JoinDay" Type="datetime" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Isdeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Account_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="RoleID" Type="tinyint" Mode="In" />
+          <Parameter Name="ID_Facebook" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID_Gmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="Avatar" Type="varchar" Mode="In" />
+          <Parameter Name="FullName" Type="nvarchar" Mode="In" />
+          <Parameter Name="NumberOfLikeProfile" Type="int" Mode="In" />
+          <Parameter Name="NumberOfPost" Type="int" Mode="In" />
+          <Parameter Name="NumberOfFlow" Type="int" Mode="In" />
+          <Parameter Name="NumberOfComment" Type="int" Mode="In" />
+          <Parameter Name="Mobile" Type="varchar" Mode="In" />
+          <Parameter Name="Active" Type="bit" Mode="In" />
+          <Parameter Name="BirthDay" Type="datetime" Mode="In" />
+          <Parameter Name="JoinDay" Type="datetime" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Isdeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_CarStatus_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CarStatusID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_CarStatus_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_CarStatus_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CarStatusID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_CarStatus_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CarStatusID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CarStatusName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_CarStatus_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CarStatusID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CarStatusName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_City_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CityId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_City_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_City_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CityId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_City_InSert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CityId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CityName" Type="nvarchar" Mode="In" />
+          <Parameter Name="RegionId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_City_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CityId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CityName" Type="nvarchar" Mode="In" />
+          <Parameter Name="RegionId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_CompanyCar_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_CompanyCar_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_CompanyCar_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_CompanyCar_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Status" Type="bit" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_CompanyCar_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Status" Type="bit" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_DesignCar_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DesignId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_DesignCar_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_DesignCar_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DesignId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_DesignCar_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DesignId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DesignName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_DesignCar_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DesignId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DesignName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_DigitalCategory_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DigitalCategoryId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_DigitalCategory_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_DigitalCategory_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DigitalCategoryId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_DigitalCategory_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="bit" Mode="In" />
+          <Parameter Name="DigitalCategoryId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DigitalCategoryName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_DigitalDetail_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DegitalDetailId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_DigitalDetail_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_DigitalDetail_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DigitalDetailId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_DigitalDetail_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="bit" Mode="In" />
+          <Parameter Name="DigitalDetailId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="DigitalCategoryId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Applyed" Type="bit" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExteriorFurnitureColorID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExteriorFurnitureColorID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExteriorFurnitureColorID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ExteriorFurnitureColorName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExteriorFurnitureColorID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ExteriorFurnitureColorName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_FuelCar_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FuelID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_FuelCar_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_FuelCar_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FuelID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_FuelCar_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FuelID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="FuelName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_FuelCar_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FuelID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="FuelName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_GearCar_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CarGearId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_GearCar_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_GearCar_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CarGearId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_GearCar_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CarGearId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CarGearName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_GearCar_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CarGearId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CarGearName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_MadeInCar_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MadeInID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_MadeInCar_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_MadeInCar_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MadeInID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_MadeInCar_InSert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MadeInID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="MadeInName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_MadeInCar_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MadeInID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="MadeInName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_NumberOfDoor_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumberOfDoorId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_NumberOfDoor_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_NumberOfDoor_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumberOfDoorId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_NumberOfDoor_InSert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumberOfDoorId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="NumberOfDoorName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_NumberOfDoor_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumberOfDoorId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="NumberOfDoorName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_NumberOfSeat_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumberOfSeatId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_NumberOfSeat_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_NumberOfSeat_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumberOfSeatId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_NumberOfSeat_InSert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumberOfSeatId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="NumberOfSeatName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_NumberOfSeat_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NumberOfSeatId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="NumberOfSeatName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Post_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Post_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_Post_GetByPostId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Post_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="AdministratorID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Approved" Type="bit" Mode="In" />
+          <Parameter Name="ApprovedDay" Type="datetime" Mode="In" />
+          <Parameter Name="CarGearId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CarPrice" Type="int" Mode="In" />
+          <Parameter Name="CarStatusID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ExteriorColorID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="FuelID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="FurnitureColorID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+          <Parameter Name="KmWent" Type="nvarchar" Mode="In" />
+          <Parameter Name="LastContactDay" Type="datetime" Mode="In" />
+          <Parameter Name="MadeInId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Note" Type="nvarchar" Mode="In" />
+          <Parameter Name="NumberOfDoorId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="NumberOfSeatId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PostContent" Type="nvarchar" Mode="In" />
+          <Parameter Name="PostDay" Type="datetime" Mode="In" />
+          <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PostTitle" Type="nvarchar" Mode="In" />
+          <Parameter Name="ProducedYear" Type="int" Mode="In" />
+          <Parameter Name="SaleStatusCarID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TypeOfCarID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UpdatePostDay" Type="datetime" Mode="In" />
+          <Parameter Name="WheelDriveId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Post_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="AdministratorID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Approved" Type="bit" Mode="In" />
+          <Parameter Name="ApprovedDay" Type="datetime" Mode="In" />
+          <Parameter Name="CarGearId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CarPrice" Type="int" Mode="In" />
+          <Parameter Name="CarStatusID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ExteriorColorID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="FuelID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="FurnitureColorID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+          <Parameter Name="KmWent" Type="nvarchar" Mode="In" />
+          <Parameter Name="LastContactDay" Type="datetime" Mode="In" />
+          <Parameter Name="MadeInId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Note" Type="nvarchar" Mode="In" />
+          <Parameter Name="NumberOfDoorId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="NumberOfSeatId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PostContent" Type="nvarchar" Mode="In" />
+          <Parameter Name="PostDay" Type="datetime" Mode="In" />
+          <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PostTitle" Type="nvarchar" Mode="In" />
+          <Parameter Name="ProducedYear" Type="int" Mode="In" />
+          <Parameter Name="SaleStatusCarID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TypeOfCarID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UpdatePostDay" Type="datetime" Mode="In" />
+          <Parameter Name="WheelDriveId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Region_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RegionId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Region_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_Region_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RegionId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Region_InSert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RegionId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="RegionName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Region_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RegionId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="RegionName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Role_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoleID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Role_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_Role_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoleID" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Role_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoleID" Type="tinyint" Mode="In" />
+          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Status" Type="bit" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_Role_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoleID" Type="tinyint" Mode="In" />
+          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Status" Type="bit" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_SafeCategory_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SafeCategoryId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_SafeCategory_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_SafeCategory_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SafeCategoryId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_SafeCategory_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="bit" Mode="In" />
+          <Parameter Name="SafeCategoryId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SafeCategoryName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_SafeDetail_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SafeDetailId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_SafeDetail_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_SafeDetail_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SafeDetailId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_SafeDetail_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="bit" Mode="In" />
+          <Parameter Name="SafeDetailId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SafeCategoryId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Applyed" Type="bit" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_SaleStatusCar_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SaleStatusCarID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_SaleStatusCar_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_SaleStatusCar_GetBySaleStatusCarID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SaleStatusCarID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_SaleStatusCar_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+          <Parameter Name="SaleStatusCarID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SaleStatusCarName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_SaleStatusCar_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+          <Parameter Name="SaleStatusCarID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SaleStatusCarName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_TypeOfCar_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TypeOfCarID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_TypeOfCar_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_TypeOfCar_GetAll2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_TypeOfCar_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TypeOfCarID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_TypeOfCar_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TypeOfCarID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TypeName" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompanyID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Status" Type="bit" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar" Mode="In" />
+          <Parameter Name="DesignID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_TypeOfCar_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TypeOfCarID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="TypeName" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompanyID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Status" Type="bit" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar" Mode="In" />
+          <Parameter Name="DesignID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_UtilitiesCategory_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UtilitiesCategoryId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_UtilitiesCategory_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_UtilitiesCategory_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UtilitiesCategoryId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_UtilitiesCategory_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="bit" Mode="In" />
+          <Parameter Name="UtilitiesCategoryId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UtilitiesCategoryName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_UtilitiesDetail_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UtilitiesDetailId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_UtilitiesDetail_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_UtilitiesDetail_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UtilitiesDetailId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_UtilitiesDetail_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Flag" Type="bit" Mode="In" />
+          <Parameter Name="UtilitiesDetailId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UtilitiesCategoryId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Applyed" Type="bit" Mode="In" />
+          <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_WheelDrive_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WheelDriveId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_WheelDrive_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WEB_CARONLINE_SP_WheelDrive_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WheelDriveId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_WheelDrive_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WheelDriveId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="WheelDriveName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WEB_CARONLINE_SP_WheelDrive_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WheelDriveId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="WheelDriveName" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="CarOnlineModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CarOnlineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CarOnlineEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="WEB_CARONLINE_SP_Account_CheckLogin" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Account_CheckLogin_Result)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="PassWords" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Account_CheckUserName" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Account_CheckUserName_Result)">
+          <Parameter Name="Username" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Account_Delete">
+          <Parameter Name="AccountID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Account_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Account_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_Account_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Account_GetById_Result)">
+          <Parameter Name="AccountID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Account_Insert">
+            <Parameter Name="AccountID" Mode="In" Type="Guid" />
+            <Parameter Name="RoleID" Mode="In" Type="Byte" />
+            <Parameter Name="ID_Facebook" Mode="In" Type="String" />
+            <Parameter Name="ID_Gmail" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Avatar" Mode="In" Type="String" />
+            <Parameter Name="FullName" Mode="In" Type="String" />
+            <Parameter Name="NumberOfLikeProfile" Mode="In" Type="Int32" />
+            <Parameter Name="NumberOfPost" Mode="In" Type="Int32" />
+            <Parameter Name="NumberOfFlow" Mode="In" Type="Int32" />
+            <Parameter Name="NumberOfComment" Mode="In" Type="Int32" />
+            <Parameter Name="Mobile" Mode="In" Type="String" />
+            <Parameter Name="Active" Mode="In" Type="Boolean" />
+            <Parameter Name="BirthDay" Mode="In" Type="DateTime" />
+            <Parameter Name="JoinDay" Mode="In" Type="DateTime" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="Isdeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Account_Update">
+            <Parameter Name="AccountID" Mode="In" Type="Guid" />
+            <Parameter Name="RoleID" Mode="In" Type="Byte" />
+            <Parameter Name="ID_Facebook" Mode="In" Type="String" />
+            <Parameter Name="ID_Gmail" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Avatar" Mode="In" Type="String" />
+            <Parameter Name="FullName" Mode="In" Type="String" />
+            <Parameter Name="NumberOfLikeProfile" Mode="In" Type="Int32" />
+            <Parameter Name="NumberOfPost" Mode="In" Type="Int32" />
+            <Parameter Name="NumberOfFlow" Mode="In" Type="Int32" />
+            <Parameter Name="NumberOfComment" Mode="In" Type="Int32" />
+            <Parameter Name="Mobile" Mode="In" Type="String" />
+            <Parameter Name="Active" Mode="In" Type="Boolean" />
+            <Parameter Name="BirthDay" Mode="In" Type="DateTime" />
+            <Parameter Name="JoinDay" Mode="In" Type="DateTime" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="Isdeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_CarStatus_DELETE">
+          <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_CarStatus_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_CarStatus_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_CarStatus_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_CarStatus_GetByID_Result)">
+          <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_CarStatus_INSERT">
+            <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+            <Parameter Name="CarStatusName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_CarStatus_UPDATE">
+            <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+            <Parameter Name="CarStatusName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_City_Delete">
+          <Parameter Name="CityId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_City_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_City_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_City_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_City_GetByID_Result)">
+          <Parameter Name="CityId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_City_InSert">
+            <Parameter Name="CityId" Mode="In" Type="Guid" />
+            <Parameter Name="CityName" Mode="In" Type="String" />
+            <Parameter Name="RegionId" Mode="In" Type="Guid" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_City_Update">
+            <Parameter Name="CityId" Mode="In" Type="Guid" />
+            <Parameter Name="CityName" Mode="In" Type="String" />
+            <Parameter Name="RegionId" Mode="In" Type="Guid" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_CompanyCar_DELETE">
+          <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_CompanyCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_CompanyCar_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_CompanyCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_CompanyCar_GetByID_Result)">
+          <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_CompanyCar_INSERT">
+            <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+            <Parameter Name="CompanyName" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_CompanyCar_UPDATE">
+            <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+            <Parameter Name="CompanyName" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_DesignCar_DELETE">
+          <Parameter Name="DesignId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_DesignCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DesignCar_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_DesignCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DesignCar_GetByID_Result)">
+          <Parameter Name="DesignId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_DesignCar_INSERT">
+            <Parameter Name="DesignId" Mode="In" Type="Guid" />
+            <Parameter Name="DesignName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_DesignCar_UPDATE">
+            <Parameter Name="DesignId" Mode="In" Type="Guid" />
+            <Parameter Name="DesignName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_DigitalCategory_Delete">
+          <Parameter Name="DigitalCategoryId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_DigitalCategory_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DigitalCategory_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_DigitalCategory_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DigitalCategory_GetById_Result)">
+          <Parameter Name="DigitalCategoryId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_DigitalCategory_InsertOrUpdate">
+            <Parameter Name="Flag" Mode="In" Type="Boolean" />
+            <Parameter Name="DigitalCategoryId" Mode="In" Type="Guid" />
+            <Parameter Name="DigitalCategoryName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_DigitalDetail_Delete">
+          <Parameter Name="DegitalDetailId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_DigitalDetail_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DigitalDetail_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_DigitalDetail_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DigitalDetail_GetById_Result)">
+          <Parameter Name="DigitalDetailId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_DigitalDetail_InsertOrUpdate">
+            <Parameter Name="Flag" Mode="In" Type="Boolean" />
+            <Parameter Name="DigitalDetailId" Mode="In" Type="Guid" />
+            <Parameter Name="PostId" Mode="In" Type="Guid" />
+            <Parameter Name="DigitalCategoryId" Mode="In" Type="Guid" />
+            <Parameter Name="Applyed" Mode="In" Type="Boolean" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_DELETE">
+          <Parameter Name="ExteriorFurnitureColorID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_ExteriorFurnitureColor_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_ExteriorFurnitureColor_GetByID_Result)">
+          <Parameter Name="ExteriorFurnitureColorID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_INSERT">
+            <Parameter Name="ExteriorFurnitureColorID" Mode="In" Type="Guid" />
+            <Parameter Name="ExteriorFurnitureColorName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_UPDATE">
+            <Parameter Name="ExteriorFurnitureColorID" Mode="In" Type="Guid" />
+            <Parameter Name="ExteriorFurnitureColorName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_FuelCar_DELETE">
+          <Parameter Name="FuelID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_FuelCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_FuelCar_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_FuelCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_FuelCar_GetByID_Result)">
+          <Parameter Name="FuelID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_FuelCar_INSERT">
+            <Parameter Name="FuelID" Mode="In" Type="Guid" />
+            <Parameter Name="FuelName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_FuelCar_UPDATE">
+            <Parameter Name="FuelID" Mode="In" Type="Guid" />
+            <Parameter Name="FuelName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_GearCar_DELETE">
+          <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_GearCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_GearCar_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_GearCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_GearCar_GetByID_Result)">
+          <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_GearCar_INSERT">
+            <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+            <Parameter Name="CarGearName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_GearCar_UPDATE">
+            <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+            <Parameter Name="CarGearName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_MadeInCar_Delete">
+          <Parameter Name="MadeInID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_MadeInCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_MadeInCar_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_MadeInCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_MadeInCar_GetByID_Result)">
+          <Parameter Name="MadeInID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_MadeInCar_InSert">
+            <Parameter Name="MadeInID" Mode="In" Type="Guid" />
+            <Parameter Name="MadeInName" Mode="In" Type="String" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_MadeInCar_Update">
+            <Parameter Name="MadeInID" Mode="In" Type="Guid" />
+            <Parameter Name="MadeInName" Mode="In" Type="String" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_NumberOfDoor_Delete">
+          <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_NumberOfDoor_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_NumberOfDoor_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_NumberOfDoor_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_NumberOfDoor_GetByID_Result)">
+          <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_NumberOfDoor_InSert">
+            <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+            <Parameter Name="NumberOfDoorName" Mode="In" Type="String" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_NumberOfDoor_Update">
+            <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+            <Parameter Name="NumberOfDoorName" Mode="In" Type="String" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_NumberOfSeat_Delete">
+          <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_NumberOfSeat_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_NumberOfSeat_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_NumberOfSeat_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_NumberOfSeat_GetByID_Result)">
+          <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_NumberOfSeat_InSert">
+            <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+            <Parameter Name="NumberOfSeatName" Mode="In" Type="String" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_NumberOfSeat_Update">
+            <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+            <Parameter Name="NumberOfSeatName" Mode="In" Type="String" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Region_Delete">
+          <Parameter Name="RegionId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Region_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Region_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_Region_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Region_GetByID_Result)">
+          <Parameter Name="RegionId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Region_InSert">
+            <Parameter Name="RegionId" Mode="In" Type="Guid" />
+            <Parameter Name="RegionName" Mode="In" Type="String" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Region_Update">
+            <Parameter Name="RegionId" Mode="In" Type="Guid" />
+            <Parameter Name="RegionName" Mode="In" Type="String" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Role_Delete">
+          <Parameter Name="RoleID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Role_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Role_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_Role_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Role_GetById_Result)">
+          <Parameter Name="RoleID" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Role_Insert">
+            <Parameter Name="RoleID" Mode="In" Type="Byte" />
+            <Parameter Name="RoleName" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Role_Update">
+            <Parameter Name="RoleID" Mode="In" Type="Byte" />
+            <Parameter Name="RoleName" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_SafeCategory_Delete">
+          <Parameter Name="SafeCategoryId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_SafeCategory_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SafeCategory_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_SafeCategory_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SafeCategory_GetById_Result)">
+          <Parameter Name="SafeCategoryId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_SafeCategory_InsertOrUpdate">
+            <Parameter Name="Flag" Mode="In" Type="Boolean" />
+            <Parameter Name="SafeCategoryId" Mode="In" Type="Guid" />
+            <Parameter Name="SafeCategoryName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_SafeDetail_Delete">
+          <Parameter Name="SafeDetailId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_SafeDetail_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SafeDetail_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_SafeDetail_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SafeDetail_GetById_Result)">
+          <Parameter Name="SafeDetailId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_SafeDetail_InsertOrUpdate">
+            <Parameter Name="Flag" Mode="In" Type="Boolean" />
+            <Parameter Name="SafeDetailId" Mode="In" Type="Guid" />
+            <Parameter Name="PostId" Mode="In" Type="Guid" />
+            <Parameter Name="SafeCategoryId" Mode="In" Type="Guid" />
+            <Parameter Name="Applyed" Mode="In" Type="Boolean" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_DELETE">
+          <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_TypeOfCar_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_GetAll2" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_TypeOfCar_GetAll2_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_TypeOfCar_GetByID_Result)">
+          <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_INSERT">
+            <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+            <Parameter Name="TypeName" Mode="In" Type="String" />
+            <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="DesignID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_UPDATE">
+            <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+            <Parameter Name="TypeName" Mode="In" Type="String" />
+            <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="DesignID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesCategory_Delete">
+          <Parameter Name="UtilitiesCategoryId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesCategory_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_UtilitiesCategory_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesCategory_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_UtilitiesCategory_GetById_Result)">
+          <Parameter Name="UtilitiesCategoryId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesCategory_InsertOrUpdate">
+            <Parameter Name="Flag" Mode="In" Type="Boolean" />
+            <Parameter Name="UtilitiesCategoryId" Mode="In" Type="Guid" />
+            <Parameter Name="UtilitiesCategoryName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesDetail_Delete">
+          <Parameter Name="UtilitiesDetailId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesDetail_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_UtilitiesDetail_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesDetail_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_UtilitiesDetail_GetById_Result)">
+          <Parameter Name="UtilitiesDetailId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesDetail_InsertOrUpdate">
+            <Parameter Name="Flag" Mode="In" Type="Boolean" />
+            <Parameter Name="UtilitiesDetailId" Mode="In" Type="Guid" />
+            <Parameter Name="PostId" Mode="In" Type="Guid" />
+            <Parameter Name="UtilitiesCategoryId" Mode="In" Type="Guid" />
+            <Parameter Name="Applyed" Mode="In" Type="Boolean" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_WheelDrive_DELETE">
+          <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_WheelDrive_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_WheelDrive_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_WheelDrive_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_WheelDrive_GetByID_Result)">
+          <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_WheelDrive_INSERT">
+            <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+            <Parameter Name="WheelDriveName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_WheelDrive_UPDATE">
+            <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+            <Parameter Name="WheelDriveName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Post_Delete">
+            <Parameter Name="PostId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Post_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Post_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_Post_GetByPostId" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Post_GetByPostId_Result)">
+            <Parameter Name="PostId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Post_Insert">
+            <Parameter Name="AccountID" Mode="In" Type="Guid" />
+            <Parameter Name="AdministratorID" Mode="In" Type="Guid" />
+            <Parameter Name="Approved" Mode="In" Type="Boolean" />
+            <Parameter Name="ApprovedDay" Mode="In" Type="DateTime" />
+            <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+            <Parameter Name="CarPrice" Mode="In" Type="Int32" />
+            <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+            <Parameter Name="ExteriorColorID" Mode="In" Type="Guid" />
+            <Parameter Name="FuelID" Mode="In" Type="Guid" />
+            <Parameter Name="FurnitureColorID" Mode="In" Type="Guid" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+            <Parameter Name="KmWent" Mode="In" Type="String" />
+            <Parameter Name="LastContactDay" Mode="In" Type="DateTime" />
+            <Parameter Name="MadeInId" Mode="In" Type="Guid" />
+            <Parameter Name="Note" Mode="In" Type="String" />
+            <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+            <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+            <Parameter Name="PostContent" Mode="In" Type="String" />
+            <Parameter Name="PostDay" Mode="In" Type="DateTime" />
+            <Parameter Name="PostId" Mode="In" Type="Guid" />
+            <Parameter Name="PostTitle" Mode="In" Type="String" />
+            <Parameter Name="ProducedYear" Mode="In" Type="Int32" />
+            <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+            <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+            <Parameter Name="UpdatePostDay" Mode="In" Type="DateTime" />
+            <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_Post_Update">
+            <Parameter Name="AccountID" Mode="In" Type="Guid" />
+            <Parameter Name="AdministratorID" Mode="In" Type="Guid" />
+            <Parameter Name="Approved" Mode="In" Type="Boolean" />
+            <Parameter Name="ApprovedDay" Mode="In" Type="DateTime" />
+            <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+            <Parameter Name="CarPrice" Mode="In" Type="Int32" />
+            <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+            <Parameter Name="ExteriorColorID" Mode="In" Type="Guid" />
+            <Parameter Name="FuelID" Mode="In" Type="Guid" />
+            <Parameter Name="FurnitureColorID" Mode="In" Type="Guid" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+            <Parameter Name="KmWent" Mode="In" Type="String" />
+            <Parameter Name="LastContactDay" Mode="In" Type="DateTime" />
+            <Parameter Name="MadeInId" Mode="In" Type="Guid" />
+            <Parameter Name="Note" Mode="In" Type="String" />
+            <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+            <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+            <Parameter Name="PostContent" Mode="In" Type="String" />
+            <Parameter Name="PostDay" Mode="In" Type="DateTime" />
+            <Parameter Name="PostId" Mode="In" Type="Guid" />
+            <Parameter Name="PostTitle" Mode="In" Type="String" />
+            <Parameter Name="ProducedYear" Mode="In" Type="Int32" />
+            <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+            <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+            <Parameter Name="UpdatePostDay" Mode="In" Type="DateTime" />
+            <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_SaleStatusCar_Delete">
+            <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_SaleStatusCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SaleStatusCar_GetAll_Result)" />
+          <FunctionImport Name="WEB_CARONLINE_SP_SaleStatusCar_GetBySaleStatusCarID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SaleStatusCar_GetBySaleStatusCarID_Result)">
+            <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_SaleStatusCar_Insert">
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+            <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+            <Parameter Name="SaleStatusCarName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="WEB_CARONLINE_SP_SaleStatusCar_Update">
+            <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+            <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+            <Parameter Name="SaleStatusCarName" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="WEB_CARONLINE_SP_Account_CheckLogin_Result">
+          <Property Type="Guid" Name="AccountID" Nullable="false" />
+          <Property Type="Byte" Name="RoleID" Nullable="true" />
+          <Property Type="String" Name="ID_Facebook" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Gmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NumberOfLikeProfile" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfPost" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfFlow" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfComment" Nullable="true" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+          <Property Type="DateTime" Name="BirthDay" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="JoinDay" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_Account_CheckUserName_Result">
+          <Property Type="Guid" Name="AccountID" Nullable="false" />
+          <Property Type="Byte" Name="RoleID" Nullable="true" />
+          <Property Type="String" Name="ID_Facebook" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Gmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NumberOfLikeProfile" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfPost" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfFlow" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfComment" Nullable="true" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+          <Property Type="DateTime" Name="BirthDay" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="JoinDay" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_Account_GetAll_Result">
+          <Property Type="Guid" Name="AccountID" Nullable="false" />
+          <Property Type="Byte" Name="RoleID" Nullable="true" />
+          <Property Type="String" Name="ID_Facebook" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Gmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NumberOfLikeProfile" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfPost" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfFlow" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfComment" Nullable="true" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+          <Property Type="DateTime" Name="BirthDay" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="JoinDay" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_Account_GetById_Result">
+          <Property Type="Guid" Name="AccountID" Nullable="false" />
+          <Property Type="Byte" Name="RoleID" Nullable="true" />
+          <Property Type="String" Name="ID_Facebook" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Gmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NumberOfLikeProfile" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfPost" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfFlow" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfComment" Nullable="true" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Active" Nullable="true" />
+          <Property Type="DateTime" Name="BirthDay" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="JoinDay" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_CarStatus_GetAll_Result">
+          <Property Type="Guid" Name="CarStatusID" Nullable="false" />
+          <Property Type="String" Name="CarStatusName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_CarStatus_GetByID_Result">
+          <Property Type="Guid" Name="CarStatusID" Nullable="false" />
+          <Property Type="String" Name="CarStatusName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_City_GetAll_Result">
+          <Property Type="Guid" Name="CityId" Nullable="false" />
+          <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RegionName" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="RegionId" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_City_GetByID_Result">
+          <Property Type="Guid" Name="CityId" Nullable="false" />
+          <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RegionName" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="RegionId" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_CompanyCar_GetAll_Result">
+          <Property Type="Guid" Name="CompanyID" Nullable="false" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_CompanyCar_GetByID_Result">
+          <Property Type="Guid" Name="CompanyID" Nullable="false" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_DesignCar_GetAll_Result">
+          <Property Type="Guid" Name="DesignId" Nullable="false" />
+          <Property Type="String" Name="DesignName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_DesignCar_GetByID_Result">
+          <Property Type="Guid" Name="DesignId" Nullable="false" />
+          <Property Type="String" Name="DesignName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_DigitalCategory_GetAll_Result">
+          <Property Type="Guid" Name="DigitalCategoryID" Nullable="false" />
+          <Property Type="String" Name="DigitalCategoryName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_DigitalCategory_GetById_Result">
+          <Property Type="Guid" Name="DigitalCategoryID" Nullable="false" />
+          <Property Type="String" Name="DigitalCategoryName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_DigitalDetail_GetAll_Result">
+          <Property Type="Guid" Name="DigitalDetailId" Nullable="false" />
+          <Property Type="Guid" Name="PostId" Nullable="true" />
+          <Property Type="Guid" Name="DigitalCategoryId" Nullable="true" />
+          <Property Type="Boolean" Name="Applyed" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+          <Property Type="String" Name="DigitalCategoryName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_DigitalDetail_GetById_Result">
+          <Property Type="Guid" Name="DigitalDetailId" Nullable="false" />
+          <Property Type="Guid" Name="PostId" Nullable="true" />
+          <Property Type="Guid" Name="DigitalCategoryId" Nullable="true" />
+          <Property Type="Boolean" Name="Applyed" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetAll_Result">
+          <Property Type="Guid" Name="ExteriorFurnitureColorID" Nullable="false" />
+          <Property Type="String" Name="ExteriorFurnitureColorName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetByID_Result">
+          <Property Type="Guid" Name="ExteriorFurnitureColorID" Nullable="false" />
+          <Property Type="String" Name="ExteriorFurnitureColorName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_FuelCar_GetAll_Result">
+          <Property Type="Guid" Name="FuelID" Nullable="false" />
+          <Property Type="String" Name="FuelName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_FuelCar_GetByID_Result">
+          <Property Type="Guid" Name="FuelID" Nullable="false" />
+          <Property Type="String" Name="FuelName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_GearCar_GetAll_Result">
+          <Property Type="Guid" Name="CarGearId" Nullable="false" />
+          <Property Type="String" Name="CarGearName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_GearCar_GetByID_Result">
+          <Property Type="Guid" Name="CarGearId" Nullable="false" />
+          <Property Type="String" Name="CarGearName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_MadeInCar_GetAll_Result">
+          <Property Type="Guid" Name="MadeInID" Nullable="false" />
+          <Property Type="String" Name="MadeInName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_MadeInCar_GetByID_Result">
+          <Property Type="Guid" Name="MadeInID" Nullable="false" />
+          <Property Type="String" Name="MadeInName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_NumberOfDoor_GetAll_Result">
+          <Property Type="Guid" Name="NumberOfDoorId" Nullable="false" />
+          <Property Type="String" Name="NumberOfDoorName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_NumberOfDoor_GetByID_Result">
+          <Property Type="Guid" Name="NumberOfDoorId" Nullable="false" />
+          <Property Type="String" Name="NumberOfDoorName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_NumberOfSeat_GetAll_Result">
+          <Property Type="Guid" Name="NumberOfSeatId" Nullable="false" />
+          <Property Type="String" Name="NumberOfSeatName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_NumberOfSeat_GetByID_Result">
+          <Property Type="Guid" Name="NumberOfSeatId" Nullable="false" />
+          <Property Type="String" Name="NumberOfSeatName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_Region_GetAll_Result">
+          <Property Type="Guid" Name="RegionId" Nullable="false" />
+          <Property Type="String" Name="RegionName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_Region_GetByID_Result">
+          <Property Type="Guid" Name="RegionId" Nullable="false" />
+          <Property Type="String" Name="RegionName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_Role_GetAll_Result">
+          <Property Type="Byte" Name="RoleID" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_Role_GetById_Result">
+          <Property Type="Byte" Name="RoleID" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_SafeCategory_GetAll_Result">
+          <Property Type="Guid" Name="SafeCategoryId" Nullable="false" />
+          <Property Type="String" Name="SafeCategoryName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_SafeCategory_GetById_Result">
+          <Property Type="Guid" Name="SafeCategoryId" Nullable="false" />
+          <Property Type="String" Name="SafeCategoryName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_SafeDetail_GetAll_Result">
+          <Property Type="Guid" Name="SafeDetailId" Nullable="false" />
+          <Property Type="Guid" Name="PostId" Nullable="true" />
+          <Property Type="Guid" Name="SafeCategoryId" Nullable="true" />
+          <Property Type="Boolean" Name="Applyed" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+          <Property Type="String" Name="SafeCategoryName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_SafeDetail_GetById_Result">
+          <Property Type="Guid" Name="SafeDetailId" Nullable="false" />
+          <Property Type="Guid" Name="PostId" Nullable="true" />
+          <Property Type="Guid" Name="SafeCategoryId" Nullable="true" />
+          <Property Type="Boolean" Name="Applyed" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_TypeOfCar_GetAll_Result">
+          <Property Type="Guid" Name="TypeOfCarID" Nullable="false" />
+          <Property Type="String" Name="TypeName" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="CompanyID" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+          <Property Type="Guid" Name="DesignID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_TypeOfCar_GetAll2_Result">
+          <Property Type="Guid" Name="TypeOfCarID" Nullable="false" />
+          <Property Type="String" Name="TypeName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DesignName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_TypeOfCar_GetByID_Result">
+          <Property Type="Guid" Name="TypeOfCarID" Nullable="false" />
+          <Property Type="String" Name="TypeName" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="CompanyID" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+          <Property Type="Guid" Name="DesignID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_UtilitiesCategory_GetAll_Result">
+          <Property Type="Guid" Name="UtilitiesCategoryId" Nullable="false" />
+          <Property Type="String" Name="UtilitiesCategoryName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_UtilitiesCategory_GetById_Result">
+          <Property Type="Guid" Name="UtilitiesCategoryId" Nullable="false" />
+          <Property Type="String" Name="UtilitiesCategoryName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_UtilitiesDetail_GetAll_Result">
+          <Property Type="Guid" Name="UtilitiesDetaiId" Nullable="false" />
+          <Property Type="Guid" Name="PostId" Nullable="true" />
+          <Property Type="Guid" Name="UtilitiesCategoryId" Nullable="true" />
+          <Property Type="Boolean" Name="Applyed" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+          <Property Type="String" Name="UtilitiesCategoryName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_UtilitiesDetail_GetById_Result">
+          <Property Type="Guid" Name="UtilitiesDetaiId" Nullable="false" />
+          <Property Type="Guid" Name="PostId" Nullable="true" />
+          <Property Type="Guid" Name="UtilitiesCategoryId" Nullable="true" />
+          <Property Type="Boolean" Name="Applyed" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_WheelDrive_GetAll_Result">
+          <Property Type="Guid" Name="WheelDriveId" Nullable="false" />
+          <Property Type="String" Name="WheelDriveName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_WheelDrive_GetByID_Result">
+          <Property Type="Guid" Name="WheelDriveId" Nullable="false" />
+          <Property Type="String" Name="WheelDriveName" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_Post_GetAll_Result">
+          <Property Type="Guid" Name="AccountID" Nullable="true" />
+          <Property Type="Guid" Name="AdministratorID" Nullable="true" />
+          <Property Type="Boolean" Name="Approved" Nullable="true" />
+          <Property Type="DateTime" Name="ApprovedDay" Nullable="true" Precision="23" />
+          <Property Type="Guid" Name="CarGearId" Nullable="true" />
+          <Property Type="Int32" Name="CarPrice" Nullable="true" />
+          <Property Type="Guid" Name="CarStatusID" Nullable="true" />
+          <Property Type="Guid" Name="ExteriorColorID" Nullable="true" />
+          <Property Type="Guid" Name="FuelID" Nullable="true" />
+          <Property Type="Guid" Name="FurnitureColorID" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+          <Property Type="String" Name="KmWent" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="LastContactDay" Nullable="true" Precision="23" />
+          <Property Type="Guid" Name="MadeInId" Nullable="true" />
+          <Property Type="String" Name="Note" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="NumberOfDoorId" Nullable="true" />
+          <Property Type="Guid" Name="NumberOfSeatId" Nullable="true" />
+          <Property Type="String" Name="PostContent" Nullable="true" MaxLength="1500" />
+          <Property Type="DateTime" Name="PostDay" Nullable="true" Precision="23" />
+          <Property Type="Guid" Name="PostId" Nullable="false" />
+          <Property Type="String" Name="PostTitle" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ProducedYear" Nullable="false" />
+          <Property Type="Guid" Name="SaleStatusCarID" Nullable="true" />
+          <Property Type="Guid" Name="TypeOfCarID" Nullable="true" />
+          <Property Type="DateTime" Name="UpdatePostDay" Nullable="true" Precision="23" />
+          <Property Type="Guid" Name="WheelDriveId" Nullable="true" />
+          <Property Type="Boolean" Name="Active_AccountPostJoin" Nullable="true" />
+          <Property Type="String" Name="Address_AccountPostJoin" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Avatar_AccountPostJoin" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="BirthDay_AccountPostJoin" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Email_AccountPostJoin" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="FullName_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Facebook_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Gmail_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_AccountPostJoin" Nullable="true" />
+          <Property Type="DateTime" Name="JoinDay_AccountPostJoin" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Mobile_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NumberOfComment_AccountPostJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfFlow_AccountPostJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfLikeProfile_AccountPostJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfPost_AccountPostJoin" Nullable="true" />
+          <Property Type="String" Name="Password_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="RoleID_AccountPostJoin" Nullable="true" />
+          <Property Type="String" Name="UserName_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Active_AccountAdminJoin" Nullable="true" />
+          <Property Type="String" Name="Address_AccountAdminJoin" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Avatar_AccountAdminJoin" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="BirthDay_AccountAdminJoin" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Email_AccountAdminJoin" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="FullName_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Facebook_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Gmail_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_AccountAdminJoin" Nullable="true" />
+          <Property Type="DateTime" Name="JoinDay_AccountAdminJoin" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Mobile_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NumberOfComment_AccountAdminJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfFlow_AccountAdminJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfLikeProfile_AccountAdminJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfPost_AccountAdminJoin" Nullable="true" />
+          <Property Type="String" Name="Password_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="RoleID_AccountAdminJoin" Nullable="true" />
+          <Property Type="String" Name="UserName_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CarStatusName_CarStatusJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_CarStatusJoin" Nullable="true" />
+          <Property Type="String" Name="ExteriorFurnitureColorName_FurnitureColorJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_FurnitureColorJoin" Nullable="true" />
+          <Property Type="String" Name="ExteriorFurnitureColorName_ExteriorColorJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_ExteriorColorJoin" Nullable="true" />
+          <Property Type="String" Name="FuelName_FuelCarJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_FuelCarJoin" Nullable="true" />
+          <Property Type="String" Name="CarGearName_GearCarJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_GearCarJoin" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted_MadeInCarJoin" Nullable="true" />
+          <Property Type="String" Name="MadeInName_MadeInCarJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_NumberOfDoorJoin" Nullable="true" />
+          <Property Type="String" Name="NumberOfDoorName_NumberOfDoorJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_NumberOfSeatJoin" Nullable="true" />
+          <Property Type="String" Name="NumberOfSeatName_NumberOfSeatJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_SaleStatusCarJoin" Nullable="true" />
+          <Property Type="String" Name="SaleStatusCarName_SaleStatusCarJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="CompanyID_TypeOfCarJoin" Nullable="true" />
+          <Property Type="String" Name="Description_TypeOfCarJoin" Nullable="true" MaxLength="250" />
+          <Property Type="Guid" Name="DesignID_TypeOfCarJoin" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted_TypeOfCarJoin" Nullable="true" />
+          <Property Type="Boolean" Name="Status_TypeOfCarJoin" Nullable="true" />
+          <Property Type="String" Name="TypeName_TypeOfCarJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_WheelDriveJoin" Nullable="true" />
+          <Property Type="String" Name="WheelDriveName_WheelDriveJoin" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_Post_GetByPostId_Result">
+          <Property Type="Guid" Name="AccountID" Nullable="true" />
+          <Property Type="Guid" Name="AdministratorID" Nullable="true" />
+          <Property Type="Boolean" Name="Approved" Nullable="true" />
+          <Property Type="DateTime" Name="ApprovedDay" Nullable="true" Precision="23" />
+          <Property Type="Guid" Name="CarGearId" Nullable="true" />
+          <Property Type="Int32" Name="CarPrice" Nullable="true" />
+          <Property Type="Guid" Name="CarStatusID" Nullable="true" />
+          <Property Type="Guid" Name="ExteriorColorID" Nullable="true" />
+          <Property Type="Guid" Name="FuelID" Nullable="true" />
+          <Property Type="Guid" Name="FurnitureColorID" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+          <Property Type="String" Name="KmWent" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="LastContactDay" Nullable="true" Precision="23" />
+          <Property Type="Guid" Name="MadeInId" Nullable="true" />
+          <Property Type="String" Name="Note" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="NumberOfDoorId" Nullable="true" />
+          <Property Type="Guid" Name="NumberOfSeatId" Nullable="true" />
+          <Property Type="String" Name="PostContent" Nullable="true" MaxLength="1500" />
+          <Property Type="DateTime" Name="PostDay" Nullable="true" Precision="23" />
+          <Property Type="Guid" Name="PostId" Nullable="false" />
+          <Property Type="String" Name="PostTitle" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ProducedYear" Nullable="false" />
+          <Property Type="Guid" Name="SaleStatusCarID" Nullable="true" />
+          <Property Type="Guid" Name="TypeOfCarID" Nullable="true" />
+          <Property Type="DateTime" Name="UpdatePostDay" Nullable="true" Precision="23" />
+          <Property Type="Guid" Name="WheelDriveId" Nullable="true" />
+          <Property Type="Boolean" Name="Active_AccountPostJoin" Nullable="true" />
+          <Property Type="String" Name="Address_AccountPostJoin" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Avatar_AccountPostJoin" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="BirthDay_AccountPostJoin" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Email_AccountPostJoin" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="FullName_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Facebook_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Gmail_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_AccountPostJoin" Nullable="true" />
+          <Property Type="DateTime" Name="JoinDay_AccountPostJoin" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Mobile_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NumberOfComment_AccountPostJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfFlow_AccountPostJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfLikeProfile_AccountPostJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfPost_AccountPostJoin" Nullable="true" />
+          <Property Type="String" Name="Password_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="RoleID_AccountPostJoin" Nullable="true" />
+          <Property Type="String" Name="UserName_AccountPostJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Active_AccountAdminJoin" Nullable="true" />
+          <Property Type="String" Name="Address_AccountAdminJoin" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Avatar_AccountAdminJoin" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="BirthDay_AccountAdminJoin" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Email_AccountAdminJoin" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="FullName_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Facebook_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ID_Gmail_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_AccountAdminJoin" Nullable="true" />
+          <Property Type="DateTime" Name="JoinDay_AccountAdminJoin" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Mobile_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NumberOfComment_AccountAdminJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfFlow_AccountAdminJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfLikeProfile_AccountAdminJoin" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfPost_AccountAdminJoin" Nullable="true" />
+          <Property Type="String" Name="Password_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="RoleID_AccountAdminJoin" Nullable="true" />
+          <Property Type="String" Name="UserName_AccountAdminJoin" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CarStatusName_CarStatusJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_CarStatusJoin" Nullable="true" />
+          <Property Type="String" Name="ExteriorFurnitureColorName_FurnitureColorJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_FurnitureColorJoin" Nullable="true" />
+          <Property Type="String" Name="ExteriorFurnitureColorName_ExteriorColorJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_ExteriorColorJoin" Nullable="true" />
+          <Property Type="String" Name="FuelName_FuelCarJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_FuelCarJoin" Nullable="true" />
+          <Property Type="String" Name="CarGearName_GearCarJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_GearCarJoin" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted_MadeInCarJoin" Nullable="true" />
+          <Property Type="String" Name="MadeInName_MadeInCarJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_NumberOfDoorJoin" Nullable="true" />
+          <Property Type="String" Name="NumberOfDoorName_NumberOfDoorJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_NumberOfSeatJoin" Nullable="true" />
+          <Property Type="String" Name="NumberOfSeatName_NumberOfSeatJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_SaleStatusCarJoin" Nullable="true" />
+          <Property Type="String" Name="SaleStatusCarName_SaleStatusCarJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Guid" Name="CompanyID_TypeOfCarJoin" Nullable="true" />
+          <Property Type="String" Name="Description_TypeOfCarJoin" Nullable="true" MaxLength="250" />
+          <Property Type="Guid" Name="DesignID_TypeOfCarJoin" Nullable="true" />
+          <Property Type="Boolean" Name="IsDeleted_TypeOfCarJoin" Nullable="true" />
+          <Property Type="Boolean" Name="Status_TypeOfCarJoin" Nullable="true" />
+          <Property Type="String" Name="TypeName_TypeOfCarJoin" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsDeleted_WheelDriveJoin" Nullable="true" />
+          <Property Type="String" Name="WheelDriveName_WheelDriveJoin" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_SaleStatusCar_GetAll_Result">
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+          <Property Type="Guid" Name="SaleStatusCarID" Nullable="false" />
+          <Property Type="String" Name="SaleStatusCarName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="WEB_CARONLINE_SP_SaleStatusCar_GetBySaleStatusCarID_Result">
+          <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+          <Property Type="Guid" Name="SaleStatusCarID" Nullable="false" />
+          <Property Type="String" Name="SaleStatusCarName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CarOnlineModelStoreContainer" CdmEntityContainer="CarOnlineEntities" >
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CarOnlineModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Account_CheckLogin" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Account_CheckLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Account_CheckLogin_Result">
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="ID_Facebook" ColumnName="ID_Facebook" />
+                <ScalarProperty Name="ID_Gmail" ColumnName="ID_Gmail" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="NumberOfLikeProfile" ColumnName="NumberOfLikeProfile" />
+                <ScalarProperty Name="NumberOfPost" ColumnName="NumberOfPost" />
+                <ScalarProperty Name="NumberOfFlow" ColumnName="NumberOfFlow" />
+                <ScalarProperty Name="NumberOfComment" ColumnName="NumberOfComment" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="JoinDay" ColumnName="JoinDay" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Account_CheckUserName" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Account_CheckUserName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Account_CheckUserName_Result">
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="ID_Facebook" ColumnName="ID_Facebook" />
+                <ScalarProperty Name="ID_Gmail" ColumnName="ID_Gmail" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="NumberOfLikeProfile" ColumnName="NumberOfLikeProfile" />
+                <ScalarProperty Name="NumberOfPost" ColumnName="NumberOfPost" />
+                <ScalarProperty Name="NumberOfFlow" ColumnName="NumberOfFlow" />
+                <ScalarProperty Name="NumberOfComment" ColumnName="NumberOfComment" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="JoinDay" ColumnName="JoinDay" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Account_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Account_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Account_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Account_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Account_GetAll_Result">
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="ID_Facebook" ColumnName="ID_Facebook" />
+                <ScalarProperty Name="ID_Gmail" ColumnName="ID_Gmail" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="NumberOfLikeProfile" ColumnName="NumberOfLikeProfile" />
+                <ScalarProperty Name="NumberOfPost" ColumnName="NumberOfPost" />
+                <ScalarProperty Name="NumberOfFlow" ColumnName="NumberOfFlow" />
+                <ScalarProperty Name="NumberOfComment" ColumnName="NumberOfComment" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="JoinDay" ColumnName="JoinDay" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Account_GetById" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Account_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Account_GetById_Result">
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="ID_Facebook" ColumnName="ID_Facebook" />
+                <ScalarProperty Name="ID_Gmail" ColumnName="ID_Gmail" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="NumberOfLikeProfile" ColumnName="NumberOfLikeProfile" />
+                <ScalarProperty Name="NumberOfPost" ColumnName="NumberOfPost" />
+                <ScalarProperty Name="NumberOfFlow" ColumnName="NumberOfFlow" />
+                <ScalarProperty Name="NumberOfComment" ColumnName="NumberOfComment" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="JoinDay" ColumnName="JoinDay" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Account_Insert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Account_Insert" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Account_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Account_Update" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CarStatus_DELETE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CarStatus_DELETE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CarStatus_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CarStatus_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_CarStatus_GetAll_Result">
+                <ScalarProperty Name="CarStatusID" ColumnName="CarStatusID" />
+                <ScalarProperty Name="CarStatusName" ColumnName="CarStatusName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CarStatus_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CarStatus_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_CarStatus_GetByID_Result">
+                <ScalarProperty Name="CarStatusID" ColumnName="CarStatusID" />
+                <ScalarProperty Name="CarStatusName" ColumnName="CarStatusName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CarStatus_INSERT" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CarStatus_INSERT" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CarStatus_UPDATE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CarStatus_UPDATE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_City_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_City_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_City_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_City_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_City_GetAll_Result">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_City_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_City_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_City_GetByID_Result">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_City_InSert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_City_InSert" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_City_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_City_Update" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CompanyCar_DELETE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CompanyCar_DELETE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CompanyCar_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CompanyCar_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_CompanyCar_GetAll_Result">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CompanyCar_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CompanyCar_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_CompanyCar_GetByID_Result">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CompanyCar_INSERT" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CompanyCar_INSERT" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CompanyCar_UPDATE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CompanyCar_UPDATE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DesignCar_DELETE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DesignCar_DELETE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DesignCar_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DesignCar_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_DesignCar_GetAll_Result">
+                <ScalarProperty Name="DesignId" ColumnName="DesignId" />
+                <ScalarProperty Name="DesignName" ColumnName="DesignName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DesignCar_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DesignCar_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_DesignCar_GetByID_Result">
+                <ScalarProperty Name="DesignId" ColumnName="DesignId" />
+                <ScalarProperty Name="DesignName" ColumnName="DesignName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DesignCar_INSERT" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DesignCar_INSERT" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DesignCar_UPDATE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DesignCar_UPDATE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DigitalCategory_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DigitalCategory_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DigitalCategory_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DigitalCategory_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_DigitalCategory_GetAll_Result">
+                <ScalarProperty Name="DigitalCategoryID" ColumnName="DigitalCategoryID" />
+                <ScalarProperty Name="DigitalCategoryName" ColumnName="DigitalCategoryName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DigitalCategory_GetById" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DigitalCategory_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_DigitalCategory_GetById_Result">
+                <ScalarProperty Name="DigitalCategoryID" ColumnName="DigitalCategoryID" />
+                <ScalarProperty Name="DigitalCategoryName" ColumnName="DigitalCategoryName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DigitalCategory_InsertOrUpdate" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DigitalCategory_InsertOrUpdate" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DigitalDetail_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DigitalDetail_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DigitalDetail_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DigitalDetail_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_DigitalDetail_GetAll_Result">
+                <ScalarProperty Name="DigitalDetailId" ColumnName="DigitalDetailId" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="DigitalCategoryId" ColumnName="DigitalCategoryId" />
+                <ScalarProperty Name="Applyed" ColumnName="Applyed" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DigitalCategoryName" ColumnName="DigitalCategoryName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DigitalDetail_GetById" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DigitalDetail_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_DigitalDetail_GetById_Result">
+                <ScalarProperty Name="DigitalDetailId" ColumnName="DigitalDetailId" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="DigitalCategoryId" ColumnName="DigitalCategoryId" />
+                <ScalarProperty Name="Applyed" ColumnName="Applyed" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_DigitalDetail_InsertOrUpdate" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_DigitalDetail_InsertOrUpdate" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_ExteriorFurnitureColor_DELETE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_ExteriorFurnitureColor_DELETE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_ExteriorFurnitureColor_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_ExteriorFurnitureColor_GetAll_Result">
+                <ScalarProperty Name="ExteriorFurnitureColorID" ColumnName="ExteriorFurnitureColorID" />
+                <ScalarProperty Name="ExteriorFurnitureColorName" ColumnName="ExteriorFurnitureColorName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_ExteriorFurnitureColor_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_ExteriorFurnitureColor_GetByID_Result">
+                <ScalarProperty Name="ExteriorFurnitureColorID" ColumnName="ExteriorFurnitureColorID" />
+                <ScalarProperty Name="ExteriorFurnitureColorName" ColumnName="ExteriorFurnitureColorName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_ExteriorFurnitureColor_INSERT" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_ExteriorFurnitureColor_INSERT" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_ExteriorFurnitureColor_UPDATE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_ExteriorFurnitureColor_UPDATE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_FuelCar_DELETE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_FuelCar_DELETE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_FuelCar_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_FuelCar_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_FuelCar_GetAll_Result">
+                <ScalarProperty Name="FuelID" ColumnName="FuelID" />
+                <ScalarProperty Name="FuelName" ColumnName="FuelName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_FuelCar_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_FuelCar_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_FuelCar_GetByID_Result">
+                <ScalarProperty Name="FuelID" ColumnName="FuelID" />
+                <ScalarProperty Name="FuelName" ColumnName="FuelName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_FuelCar_INSERT" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_FuelCar_INSERT" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_FuelCar_UPDATE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_FuelCar_UPDATE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_GearCar_DELETE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_GearCar_DELETE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_GearCar_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_GearCar_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_GearCar_GetAll_Result">
+                <ScalarProperty Name="CarGearId" ColumnName="CarGearId" />
+                <ScalarProperty Name="CarGearName" ColumnName="CarGearName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_GearCar_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_GearCar_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_GearCar_GetByID_Result">
+                <ScalarProperty Name="CarGearId" ColumnName="CarGearId" />
+                <ScalarProperty Name="CarGearName" ColumnName="CarGearName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_GearCar_INSERT" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_GearCar_INSERT" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_GearCar_UPDATE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_GearCar_UPDATE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_MadeInCar_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_MadeInCar_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_MadeInCar_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_MadeInCar_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_MadeInCar_GetAll_Result">
+                <ScalarProperty Name="MadeInID" ColumnName="MadeInID" />
+                <ScalarProperty Name="MadeInName" ColumnName="MadeInName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_MadeInCar_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_MadeInCar_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_MadeInCar_GetByID_Result">
+                <ScalarProperty Name="MadeInID" ColumnName="MadeInID" />
+                <ScalarProperty Name="MadeInName" ColumnName="MadeInName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_MadeInCar_InSert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_MadeInCar_InSert" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_MadeInCar_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_MadeInCar_Update" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_NumberOfDoor_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_NumberOfDoor_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_NumberOfDoor_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_NumberOfDoor_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_NumberOfDoor_GetAll_Result">
+                <ScalarProperty Name="NumberOfDoorId" ColumnName="NumberOfDoorId" />
+                <ScalarProperty Name="NumberOfDoorName" ColumnName="NumberOfDoorName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_NumberOfDoor_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_NumberOfDoor_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_NumberOfDoor_GetByID_Result">
+                <ScalarProperty Name="NumberOfDoorId" ColumnName="NumberOfDoorId" />
+                <ScalarProperty Name="NumberOfDoorName" ColumnName="NumberOfDoorName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_NumberOfDoor_InSert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_NumberOfDoor_InSert" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_NumberOfDoor_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_NumberOfDoor_Update" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_NumberOfSeat_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_NumberOfSeat_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_NumberOfSeat_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_NumberOfSeat_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_NumberOfSeat_GetAll_Result">
+                <ScalarProperty Name="NumberOfSeatId" ColumnName="NumberOfSeatId" />
+                <ScalarProperty Name="NumberOfSeatName" ColumnName="NumberOfSeatName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_NumberOfSeat_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_NumberOfSeat_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_NumberOfSeat_GetByID_Result">
+                <ScalarProperty Name="NumberOfSeatId" ColumnName="NumberOfSeatId" />
+                <ScalarProperty Name="NumberOfSeatName" ColumnName="NumberOfSeatName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_NumberOfSeat_InSert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_NumberOfSeat_InSert" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_NumberOfSeat_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_NumberOfSeat_Update" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Region_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Region_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Region_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Region_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Region_GetAll_Result">
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Region_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Region_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Region_GetByID_Result">
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Region_InSert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Region_InSert" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Region_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Region_Update" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Role_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Role_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Role_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Role_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Role_GetAll_Result">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Role_GetById" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Role_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Role_GetById_Result">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Role_Insert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Role_Insert" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Role_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Role_Update" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SafeCategory_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SafeCategory_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SafeCategory_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SafeCategory_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_SafeCategory_GetAll_Result">
+                <ScalarProperty Name="SafeCategoryId" ColumnName="SafeCategoryId" />
+                <ScalarProperty Name="SafeCategoryName" ColumnName="SafeCategoryName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SafeCategory_GetById" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SafeCategory_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_SafeCategory_GetById_Result">
+                <ScalarProperty Name="SafeCategoryId" ColumnName="SafeCategoryId" />
+                <ScalarProperty Name="SafeCategoryName" ColumnName="SafeCategoryName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SafeCategory_InsertOrUpdate" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SafeCategory_InsertOrUpdate" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SafeDetail_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SafeDetail_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SafeDetail_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SafeDetail_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_SafeDetail_GetAll_Result">
+                <ScalarProperty Name="SafeDetailId" ColumnName="SafeDetailId" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="SafeCategoryId" ColumnName="SafeCategoryId" />
+                <ScalarProperty Name="Applyed" ColumnName="Applyed" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="SafeCategoryName" ColumnName="SafeCategoryName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SafeDetail_GetById" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SafeDetail_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_SafeDetail_GetById_Result">
+                <ScalarProperty Name="SafeDetailId" ColumnName="SafeDetailId" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="SafeCategoryId" ColumnName="SafeCategoryId" />
+                <ScalarProperty Name="Applyed" ColumnName="Applyed" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SafeDetail_InsertOrUpdate" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SafeDetail_InsertOrUpdate" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_TypeOfCar_DELETE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_TypeOfCar_DELETE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_TypeOfCar_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_TypeOfCar_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_TypeOfCar_GetAll_Result">
+                <ScalarProperty Name="TypeOfCarID" ColumnName="TypeOfCarID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DesignID" ColumnName="DesignID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_TypeOfCar_GetAll2" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_TypeOfCar_GetAll2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_TypeOfCar_GetAll2_Result">
+                <ScalarProperty Name="TypeOfCarID" ColumnName="TypeOfCarID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="DesignName" ColumnName="DesignName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_TypeOfCar_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_TypeOfCar_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_TypeOfCar_GetByID_Result">
+                <ScalarProperty Name="TypeOfCarID" ColumnName="TypeOfCarID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DesignID" ColumnName="DesignID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_TypeOfCar_INSERT" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_TypeOfCar_INSERT" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_TypeOfCar_UPDATE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_TypeOfCar_UPDATE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_UtilitiesCategory_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_UtilitiesCategory_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_UtilitiesCategory_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_UtilitiesCategory_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_UtilitiesCategory_GetAll_Result">
+                <ScalarProperty Name="UtilitiesCategoryId" ColumnName="UtilitiesCategoryId" />
+                <ScalarProperty Name="UtilitiesCategoryName" ColumnName="UtilitiesCategoryName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_UtilitiesCategory_GetById" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_UtilitiesCategory_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_UtilitiesCategory_GetById_Result">
+                <ScalarProperty Name="UtilitiesCategoryId" ColumnName="UtilitiesCategoryId" />
+                <ScalarProperty Name="UtilitiesCategoryName" ColumnName="UtilitiesCategoryName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_UtilitiesCategory_InsertOrUpdate" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_UtilitiesCategory_InsertOrUpdate" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_UtilitiesDetail_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_UtilitiesDetail_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_UtilitiesDetail_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_UtilitiesDetail_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_UtilitiesDetail_GetAll_Result">
+                <ScalarProperty Name="UtilitiesDetaiId" ColumnName="UtilitiesDetaiId" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="UtilitiesCategoryId" ColumnName="UtilitiesCategoryId" />
+                <ScalarProperty Name="Applyed" ColumnName="Applyed" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="UtilitiesCategoryName" ColumnName="UtilitiesCategoryName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_UtilitiesDetail_GetById" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_UtilitiesDetail_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_UtilitiesDetail_GetById_Result">
+                <ScalarProperty Name="UtilitiesDetaiId" ColumnName="UtilitiesDetaiId" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="UtilitiesCategoryId" ColumnName="UtilitiesCategoryId" />
+                <ScalarProperty Name="Applyed" ColumnName="Applyed" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_UtilitiesDetail_InsertOrUpdate" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_UtilitiesDetail_InsertOrUpdate" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_WheelDrive_DELETE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_WheelDrive_DELETE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_WheelDrive_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_WheelDrive_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_WheelDrive_GetAll_Result">
+                <ScalarProperty Name="WheelDriveId" ColumnName="WheelDriveId" />
+                <ScalarProperty Name="WheelDriveName" ColumnName="WheelDriveName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_WheelDrive_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_WheelDrive_GetByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_WheelDrive_GetByID_Result">
+                <ScalarProperty Name="WheelDriveId" ColumnName="WheelDriveId" />
+                <ScalarProperty Name="WheelDriveName" ColumnName="WheelDriveName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_WheelDrive_INSERT" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_WheelDrive_INSERT" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_WheelDrive_UPDATE" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_WheelDrive_UPDATE" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Post_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Post_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Post_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Post_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Post_GetAll_Result">
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="AdministratorID" ColumnName="AdministratorID" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="ApprovedDay" ColumnName="ApprovedDay" />
+                <ScalarProperty Name="CarGearId" ColumnName="CarGearId" />
+                <ScalarProperty Name="CarPrice" ColumnName="CarPrice" />
+                <ScalarProperty Name="CarStatusID" ColumnName="CarStatusID" />
+                <ScalarProperty Name="ExteriorColorID" ColumnName="ExteriorColorID" />
+                <ScalarProperty Name="FuelID" ColumnName="FuelID" />
+                <ScalarProperty Name="FurnitureColorID" ColumnName="FurnitureColorID" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="KmWent" ColumnName="KmWent" />
+                <ScalarProperty Name="LastContactDay" ColumnName="LastContactDay" />
+                <ScalarProperty Name="MadeInId" ColumnName="MadeInId" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="NumberOfDoorId" ColumnName="NumberOfDoorId" />
+                <ScalarProperty Name="NumberOfSeatId" ColumnName="NumberOfSeatId" />
+                <ScalarProperty Name="PostContent" ColumnName="PostContent" />
+                <ScalarProperty Name="PostDay" ColumnName="PostDay" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="PostTitle" ColumnName="PostTitle" />
+                <ScalarProperty Name="ProducedYear" ColumnName="ProducedYear" />
+                <ScalarProperty Name="SaleStatusCarID" ColumnName="SaleStatusCarID" />
+                <ScalarProperty Name="TypeOfCarID" ColumnName="TypeOfCarID" />
+                <ScalarProperty Name="UpdatePostDay" ColumnName="UpdatePostDay" />
+                <ScalarProperty Name="WheelDriveId" ColumnName="WheelDriveId" />
+                <ScalarProperty Name="Active_AccountPostJoin" ColumnName="Active_AccountPostJoin" />
+                <ScalarProperty Name="Address_AccountPostJoin" ColumnName="Address_AccountPostJoin" />
+                <ScalarProperty Name="Avatar_AccountPostJoin" ColumnName="Avatar_AccountPostJoin" />
+                <ScalarProperty Name="BirthDay_AccountPostJoin" ColumnName="BirthDay_AccountPostJoin" />
+                <ScalarProperty Name="Email_AccountPostJoin" ColumnName="Email_AccountPostJoin" />
+                <ScalarProperty Name="FullName_AccountPostJoin" ColumnName="FullName_AccountPostJoin" />
+                <ScalarProperty Name="ID_Facebook_AccountPostJoin" ColumnName="ID_Facebook_AccountPostJoin" />
+                <ScalarProperty Name="ID_Gmail_AccountPostJoin" ColumnName="ID_Gmail_AccountPostJoin" />
+                <ScalarProperty Name="IsDeleted_AccountPostJoin" ColumnName="IsDeleted_AccountPostJoin" />
+                <ScalarProperty Name="JoinDay_AccountPostJoin" ColumnName="JoinDay_AccountPostJoin" />
+                <ScalarProperty Name="Mobile_AccountPostJoin" ColumnName="Mobile_AccountPostJoin" />
+                <ScalarProperty Name="NumberOfComment_AccountPostJoin" ColumnName="NumberOfComment_AccountPostJoin" />
+                <ScalarProperty Name="NumberOfFlow_AccountPostJoin" ColumnName="NumberOfFlow_AccountPostJoin" />
+                <ScalarProperty Name="NumberOfLikeProfile_AccountPostJoin" ColumnName="NumberOfLikeProfile_AccountPostJoin" />
+                <ScalarProperty Name="NumberOfPost_AccountPostJoin" ColumnName="NumberOfPost_AccountPostJoin" />
+                <ScalarProperty Name="Password_AccountPostJoin" ColumnName="Password_AccountPostJoin" />
+                <ScalarProperty Name="RoleID_AccountPostJoin" ColumnName="RoleID_AccountPostJoin" />
+                <ScalarProperty Name="UserName_AccountPostJoin" ColumnName="UserName_AccountPostJoin" />
+                <ScalarProperty Name="Active_AccountAdminJoin" ColumnName="Active_AccountAdminJoin" />
+                <ScalarProperty Name="Address_AccountAdminJoin" ColumnName="Address_AccountAdminJoin" />
+                <ScalarProperty Name="Avatar_AccountAdminJoin" ColumnName="Avatar_AccountAdminJoin" />
+                <ScalarProperty Name="BirthDay_AccountAdminJoin" ColumnName="BirthDay_AccountAdminJoin" />
+                <ScalarProperty Name="Email_AccountAdminJoin" ColumnName="Email_AccountAdminJoin" />
+                <ScalarProperty Name="FullName_AccountAdminJoin" ColumnName="FullName_AccountAdminJoin" />
+                <ScalarProperty Name="ID_Facebook_AccountAdminJoin" ColumnName="ID_Facebook_AccountAdminJoin" />
+                <ScalarProperty Name="ID_Gmail_AccountAdminJoin" ColumnName="ID_Gmail_AccountAdminJoin" />
+                <ScalarProperty Name="IsDeleted_AccountAdminJoin" ColumnName="IsDeleted_AccountAdminJoin" />
+                <ScalarProperty Name="JoinDay_AccountAdminJoin" ColumnName="JoinDay_AccountAdminJoin" />
+                <ScalarProperty Name="Mobile_AccountAdminJoin" ColumnName="Mobile_AccountAdminJoin" />
+                <ScalarProperty Name="NumberOfComment_AccountAdminJoin" ColumnName="NumberOfComment_AccountAdminJoin" />
+                <ScalarProperty Name="NumberOfFlow_AccountAdminJoin" ColumnName="NumberOfFlow_AccountAdminJoin" />
+                <ScalarProperty Name="NumberOfLikeProfile_AccountAdminJoin" ColumnName="NumberOfLikeProfile_AccountAdminJoin" />
+                <ScalarProperty Name="NumberOfPost_AccountAdminJoin" ColumnName="NumberOfPost_AccountAdminJoin" />
+                <ScalarProperty Name="Password_AccountAdminJoin" ColumnName="Password_AccountAdminJoin" />
+                <ScalarProperty Name="RoleID_AccountAdminJoin" ColumnName="RoleID_AccountAdminJoin" />
+                <ScalarProperty Name="UserName_AccountAdminJoin" ColumnName="UserName_AccountAdminJoin" />
+                <ScalarProperty Name="CarStatusName_CarStatusJoin" ColumnName="CarStatusName_CarStatusJoin" />
+                <ScalarProperty Name="IsDeleted_CarStatusJoin" ColumnName="IsDeleted_CarStatusJoin" />
+                <ScalarProperty Name="ExteriorFurnitureColorName_FurnitureColorJoin" ColumnName="ExteriorFurnitureColorName_FurnitureColorJoin" />
+                <ScalarProperty Name="IsDeleted_FurnitureColorJoin" ColumnName="IsDeleted_FurnitureColorJoin" />
+                <ScalarProperty Name="ExteriorFurnitureColorName_ExteriorColorJoin" ColumnName="ExteriorFurnitureColorName_ExteriorColorJoin" />
+                <ScalarProperty Name="IsDeleted_ExteriorColorJoin" ColumnName="IsDeleted_ExteriorColorJoin" />
+                <ScalarProperty Name="FuelName_FuelCarJoin" ColumnName="FuelName_FuelCarJoin" />
+                <ScalarProperty Name="IsDeleted_FuelCarJoin" ColumnName="IsDeleted_FuelCarJoin" />
+                <ScalarProperty Name="CarGearName_GearCarJoin" ColumnName="CarGearName_GearCarJoin" />
+                <ScalarProperty Name="IsDeleted_GearCarJoin" ColumnName="IsDeleted_GearCarJoin" />
+                <ScalarProperty Name="IsDeleted_MadeInCarJoin" ColumnName="IsDeleted_MadeInCarJoin" />
+                <ScalarProperty Name="MadeInName_MadeInCarJoin" ColumnName="MadeInName_MadeInCarJoin" />
+                <ScalarProperty Name="IsDeleted_NumberOfDoorJoin" ColumnName="IsDeleted_NumberOfDoorJoin" />
+                <ScalarProperty Name="NumberOfDoorName_NumberOfDoorJoin" ColumnName="NumberOfDoorName_NumberOfDoorJoin" />
+                <ScalarProperty Name="IsDeleted_NumberOfSeatJoin" ColumnName="IsDeleted_NumberOfSeatJoin" />
+                <ScalarProperty Name="NumberOfSeatName_NumberOfSeatJoin" ColumnName="NumberOfSeatName_NumberOfSeatJoin" />
+                <ScalarProperty Name="IsDeleted_SaleStatusCarJoin" ColumnName="IsDeleted_SaleStatusCarJoin" />
+                <ScalarProperty Name="SaleStatusCarName_SaleStatusCarJoin" ColumnName="SaleStatusCarName_SaleStatusCarJoin" />
+                <ScalarProperty Name="CompanyID_TypeOfCarJoin" ColumnName="CompanyID_TypeOfCarJoin" />
+                <ScalarProperty Name="Description_TypeOfCarJoin" ColumnName="Description_TypeOfCarJoin" />
+                <ScalarProperty Name="DesignID_TypeOfCarJoin" ColumnName="DesignID_TypeOfCarJoin" />
+                <ScalarProperty Name="IsDeleted_TypeOfCarJoin" ColumnName="IsDeleted_TypeOfCarJoin" />
+                <ScalarProperty Name="Status_TypeOfCarJoin" ColumnName="Status_TypeOfCarJoin" />
+                <ScalarProperty Name="TypeName_TypeOfCarJoin" ColumnName="TypeName_TypeOfCarJoin" />
+                <ScalarProperty Name="IsDeleted_WheelDriveJoin" ColumnName="IsDeleted_WheelDriveJoin" />
+                <ScalarProperty Name="WheelDriveName_WheelDriveJoin" ColumnName="WheelDriveName_WheelDriveJoin" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Post_GetByPostId" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Post_GetByPostId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Post_GetByPostId_Result">
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="AdministratorID" ColumnName="AdministratorID" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="ApprovedDay" ColumnName="ApprovedDay" />
+                <ScalarProperty Name="CarGearId" ColumnName="CarGearId" />
+                <ScalarProperty Name="CarPrice" ColumnName="CarPrice" />
+                <ScalarProperty Name="CarStatusID" ColumnName="CarStatusID" />
+                <ScalarProperty Name="ExteriorColorID" ColumnName="ExteriorColorID" />
+                <ScalarProperty Name="FuelID" ColumnName="FuelID" />
+                <ScalarProperty Name="FurnitureColorID" ColumnName="FurnitureColorID" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="KmWent" ColumnName="KmWent" />
+                <ScalarProperty Name="LastContactDay" ColumnName="LastContactDay" />
+                <ScalarProperty Name="MadeInId" ColumnName="MadeInId" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="NumberOfDoorId" ColumnName="NumberOfDoorId" />
+                <ScalarProperty Name="NumberOfSeatId" ColumnName="NumberOfSeatId" />
+                <ScalarProperty Name="PostContent" ColumnName="PostContent" />
+                <ScalarProperty Name="PostDay" ColumnName="PostDay" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="PostTitle" ColumnName="PostTitle" />
+                <ScalarProperty Name="ProducedYear" ColumnName="ProducedYear" />
+                <ScalarProperty Name="SaleStatusCarID" ColumnName="SaleStatusCarID" />
+                <ScalarProperty Name="TypeOfCarID" ColumnName="TypeOfCarID" />
+                <ScalarProperty Name="UpdatePostDay" ColumnName="UpdatePostDay" />
+                <ScalarProperty Name="WheelDriveId" ColumnName="WheelDriveId" />
+                <ScalarProperty Name="Active_AccountPostJoin" ColumnName="Active_AccountPostJoin" />
+                <ScalarProperty Name="Address_AccountPostJoin" ColumnName="Address_AccountPostJoin" />
+                <ScalarProperty Name="Avatar_AccountPostJoin" ColumnName="Avatar_AccountPostJoin" />
+                <ScalarProperty Name="BirthDay_AccountPostJoin" ColumnName="BirthDay_AccountPostJoin" />
+                <ScalarProperty Name="Email_AccountPostJoin" ColumnName="Email_AccountPostJoin" />
+                <ScalarProperty Name="FullName_AccountPostJoin" ColumnName="FullName_AccountPostJoin" />
+                <ScalarProperty Name="ID_Facebook_AccountPostJoin" ColumnName="ID_Facebook_AccountPostJoin" />
+                <ScalarProperty Name="ID_Gmail_AccountPostJoin" ColumnName="ID_Gmail_AccountPostJoin" />
+                <ScalarProperty Name="IsDeleted_AccountPostJoin" ColumnName="IsDeleted_AccountPostJoin" />
+                <ScalarProperty Name="JoinDay_AccountPostJoin" ColumnName="JoinDay_AccountPostJoin" />
+                <ScalarProperty Name="Mobile_AccountPostJoin" ColumnName="Mobile_AccountPostJoin" />
+                <ScalarProperty Name="NumberOfComment_AccountPostJoin" ColumnName="NumberOfComment_AccountPostJoin" />
+                <ScalarProperty Name="NumberOfFlow_AccountPostJoin" ColumnName="NumberOfFlow_AccountPostJoin" />
+                <ScalarProperty Name="NumberOfLikeProfile_AccountPostJoin" ColumnName="NumberOfLikeProfile_AccountPostJoin" />
+                <ScalarProperty Name="NumberOfPost_AccountPostJoin" ColumnName="NumberOfPost_AccountPostJoin" />
+                <ScalarProperty Name="Password_AccountPostJoin" ColumnName="Password_AccountPostJoin" />
+                <ScalarProperty Name="RoleID_AccountPostJoin" ColumnName="RoleID_AccountPostJoin" />
+                <ScalarProperty Name="UserName_AccountPostJoin" ColumnName="UserName_AccountPostJoin" />
+                <ScalarProperty Name="Active_AccountAdminJoin" ColumnName="Active_AccountAdminJoin" />
+                <ScalarProperty Name="Address_AccountAdminJoin" ColumnName="Address_AccountAdminJoin" />
+                <ScalarProperty Name="Avatar_AccountAdminJoin" ColumnName="Avatar_AccountAdminJoin" />
+                <ScalarProperty Name="BirthDay_AccountAdminJoin" ColumnName="BirthDay_AccountAdminJoin" />
+                <ScalarProperty Name="Email_AccountAdminJoin" ColumnName="Email_AccountAdminJoin" />
+                <ScalarProperty Name="FullName_AccountAdminJoin" ColumnName="FullName_AccountAdminJoin" />
+                <ScalarProperty Name="ID_Facebook_AccountAdminJoin" ColumnName="ID_Facebook_AccountAdminJoin" />
+                <ScalarProperty Name="ID_Gmail_AccountAdminJoin" ColumnName="ID_Gmail_AccountAdminJoin" />
+                <ScalarProperty Name="IsDeleted_AccountAdminJoin" ColumnName="IsDeleted_AccountAdminJoin" />
+                <ScalarProperty Name="JoinDay_AccountAdminJoin" ColumnName="JoinDay_AccountAdminJoin" />
+                <ScalarProperty Name="Mobile_AccountAdminJoin" ColumnName="Mobile_AccountAdminJoin" />
+                <ScalarProperty Name="NumberOfComment_AccountAdminJoin" ColumnName="NumberOfComment_AccountAdminJoin" />
+                <ScalarProperty Name="NumberOfFlow_AccountAdminJoin" ColumnName="NumberOfFlow_AccountAdminJoin" />
+                <ScalarProperty Name="NumberOfLikeProfile_AccountAdminJoin" ColumnName="NumberOfLikeProfile_AccountAdminJoin" />
+                <ScalarProperty Name="NumberOfPost_AccountAdminJoin" ColumnName="NumberOfPost_AccountAdminJoin" />
+                <ScalarProperty Name="Password_AccountAdminJoin" ColumnName="Password_AccountAdminJoin" />
+                <ScalarProperty Name="RoleID_AccountAdminJoin" ColumnName="RoleID_AccountAdminJoin" />
+                <ScalarProperty Name="UserName_AccountAdminJoin" ColumnName="UserName_AccountAdminJoin" />
+                <ScalarProperty Name="CarStatusName_CarStatusJoin" ColumnName="CarStatusName_CarStatusJoin" />
+                <ScalarProperty Name="IsDeleted_CarStatusJoin" ColumnName="IsDeleted_CarStatusJoin" />
+                <ScalarProperty Name="ExteriorFurnitureColorName_FurnitureColorJoin" ColumnName="ExteriorFurnitureColorName_FurnitureColorJoin" />
+                <ScalarProperty Name="IsDeleted_FurnitureColorJoin" ColumnName="IsDeleted_FurnitureColorJoin" />
+                <ScalarProperty Name="ExteriorFurnitureColorName_ExteriorColorJoin" ColumnName="ExteriorFurnitureColorName_ExteriorColorJoin" />
+                <ScalarProperty Name="IsDeleted_ExteriorColorJoin" ColumnName="IsDeleted_ExteriorColorJoin" />
+                <ScalarProperty Name="FuelName_FuelCarJoin" ColumnName="FuelName_FuelCarJoin" />
+                <ScalarProperty Name="IsDeleted_FuelCarJoin" ColumnName="IsDeleted_FuelCarJoin" />
+                <ScalarProperty Name="CarGearName_GearCarJoin" ColumnName="CarGearName_GearCarJoin" />
+                <ScalarProperty Name="IsDeleted_GearCarJoin" ColumnName="IsDeleted_GearCarJoin" />
+                <ScalarProperty Name="IsDeleted_MadeInCarJoin" ColumnName="IsDeleted_MadeInCarJoin" />
+                <ScalarProperty Name="MadeInName_MadeInCarJoin" ColumnName="MadeInName_MadeInCarJoin" />
+                <ScalarProperty Name="IsDeleted_NumberOfDoorJoin" ColumnName="IsDeleted_NumberOfDoorJoin" />
+                <ScalarProperty Name="NumberOfDoorName_NumberOfDoorJoin" ColumnName="NumberOfDoorName_NumberOfDoorJoin" />
+                <ScalarProperty Name="IsDeleted_NumberOfSeatJoin" ColumnName="IsDeleted_NumberOfSeatJoin" />
+                <ScalarProperty Name="NumberOfSeatName_NumberOfSeatJoin" ColumnName="NumberOfSeatName_NumberOfSeatJoin" />
+                <ScalarProperty Name="IsDeleted_SaleStatusCarJoin" ColumnName="IsDeleted_SaleStatusCarJoin" />
+                <ScalarProperty Name="SaleStatusCarName_SaleStatusCarJoin" ColumnName="SaleStatusCarName_SaleStatusCarJoin" />
+                <ScalarProperty Name="CompanyID_TypeOfCarJoin" ColumnName="CompanyID_TypeOfCarJoin" />
+                <ScalarProperty Name="Description_TypeOfCarJoin" ColumnName="Description_TypeOfCarJoin" />
+                <ScalarProperty Name="DesignID_TypeOfCarJoin" ColumnName="DesignID_TypeOfCarJoin" />
+                <ScalarProperty Name="IsDeleted_TypeOfCarJoin" ColumnName="IsDeleted_TypeOfCarJoin" />
+                <ScalarProperty Name="Status_TypeOfCarJoin" ColumnName="Status_TypeOfCarJoin" />
+                <ScalarProperty Name="TypeName_TypeOfCarJoin" ColumnName="TypeName_TypeOfCarJoin" />
+                <ScalarProperty Name="IsDeleted_WheelDriveJoin" ColumnName="IsDeleted_WheelDriveJoin" />
+                <ScalarProperty Name="WheelDriveName_WheelDriveJoin" ColumnName="WheelDriveName_WheelDriveJoin" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Post_Insert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Post_Insert" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Post_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Post_Update" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SaleStatusCar_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SaleStatusCar_Delete" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SaleStatusCar_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SaleStatusCar_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_SaleStatusCar_GetAll_Result">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="SaleStatusCarID" ColumnName="SaleStatusCarID" />
+                <ScalarProperty Name="SaleStatusCarName" ColumnName="SaleStatusCarName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SaleStatusCar_GetBySaleStatusCarID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SaleStatusCar_GetBySaleStatusCarID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_SaleStatusCar_GetBySaleStatusCarID_Result">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="SaleStatusCarID" ColumnName="SaleStatusCarID" />
+                <ScalarProperty Name="SaleStatusCarName" ColumnName="SaleStatusCarName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SaleStatusCar_Insert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SaleStatusCar_Insert" />
+          <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SaleStatusCar_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SaleStatusCar_Update" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

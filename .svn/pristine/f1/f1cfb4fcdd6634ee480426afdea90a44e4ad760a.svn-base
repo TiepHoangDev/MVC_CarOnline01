@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using IMIC.BUSINESSOBJECTS.EntityObject;
+using IMIC.CONTROLLERS.BCL;
+using System.IO;
+using CarOnline.Commom;
+
+namespace CarOnline.Areas.Admin.Controllers
+{
+    public class AccountController : Controller
+    {
+        // GET: Admin/Account
+        public ActionResult Index()
+        {
+            var listAccount = new AccountBCL().GetAll();
+            return View(listAccount);
+        }
+        // Create: Admin/Account
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(AccountObject obj)
+        {
+            if (ModelState.IsValid)
+            {
+                obj.AccountID = Guid.NewGuid();
+                HttpPostedFileBase file = Request.Files[0];
+                if (file.ContentLength > 0 && file.ContentType.Contains("image"))
+                {
+                    var fileName = DateTime.Now.ToString("ddMMyyyyhhMMss") + "-" + Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Areas/Admin/Content/ImageAccount/images"), fileName);
+                    file.SaveAs(path);
+                    obj.Avatar = fileName;
+                }
+                obj.JoinDay = DateTime.Now;
+                obj.IsDeleted = false;
+                var ob = new AccountBCL().Insert(obj);
+                if (ob == true)
+                {
+                    return RedirectToAction("Index", "Account");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Thêm thất bại");
+                }
+            }
+            return View("index");
+        }
+        // Update: Admin/Account
+        public ActionResult Update()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Update(AccountObject obj)
+        {
+            HttpPostedFileBase file = Request.Files[0];
+            if (file.ContentLength > 0 && file.ContentType.Contains("image"))
+            {
+                var fileName = DateTime.Now.ToString("ddMMyyyyhhMMss") + "-" + Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath("~/Areas/Admin/Content/ImageAccount/images"), fileName);
+                file.SaveAs(path);
+                obj.Avatar = fileName;
+            }
+            var ob = new AccountBCL().Update(obj);
+            if (ob == true)
+            {
+                return RedirectToAction("Index", "Account");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Update thất bại");
+            }
+            return View("index");
+        }
+    }
+}

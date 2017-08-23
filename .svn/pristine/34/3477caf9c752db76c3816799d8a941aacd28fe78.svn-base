@@ -1,0 +1,179 @@
+﻿@model IMIC.BUSINESSOBJECTS.EntityObject.PostObject
+@using IMIC.CONTROLLERS.BCL
+@using IMIC.BUSINESSOBJECTS.EntityObject
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Sửa Bài đăng</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.AccountID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.AccountID, new SelectList(new AccountBCL().GetAll(), "AccountID", "FullName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AccountID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Approved, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.CheckBoxFor(model => model.Approved)
+                    @Html.ValidationMessageFor(model => model.Approved, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CarGearId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.AccountID, new SelectList(new AccountBCL().GetAll(), "AccountID", "FullName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CarGearId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CarPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.CarPrice, new { @class = "form-control", type = "number" })
+                @Html.ValidationMessageFor(model => model.CarPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CarStatusID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CarStatusID, new SelectList(new CarStatus_BCL().GetAll(), "CarStatusID", "CarStatusName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CarStatusID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExteriorColorID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ExteriorColorID, new SelectList(new ExteriorFurnitureColor_BCL().GetAll(), "ExteriorFurnitureColorID", "ExteriorFurnitureColorName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ExteriorColorID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FurnitureColorID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.FurnitureColorID, new SelectList(new ExteriorFurnitureColor_BCL().GetAll(), "ExteriorFurnitureColorID", "ExteriorFurnitureColorName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FurnitureColorID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FuelID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.FuelID, new SelectList(new FuelCar_BCL().GetAll(), "FuelID", "FuelName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FuelID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.KmWent, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.KmWent, new { @class = "form-control", type = "number" })
+                @Html.ValidationMessageFor(model => model.KmWent, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MadeInId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.MadeInId, new SelectList(new MadeInCarBCL().ExecuteOf_GetElements(), "MadeInID", "MadeInName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MadeInId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Note, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Note, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Note, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumberOfDoorId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.NumberOfDoorId, new SelectList(new NumberOfDoor_BCL().ExecuteOf_GetElements(), "NumberOfDoorId", "NumberOfDoorName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.NumberOfDoorId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumberOfSeatId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.NumberOfSeatId, new SelectList(new NumberOfSeatBCL().ExecuteOf_GetElements(), "NumberOfSeatId", "NumberOfSeatName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.NumberOfSeatId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PostContent, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.PostContent, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PostContent, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PostTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.PostTitle, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PostTitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProducedYear, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ProducedYear, new { @class = "form-control", type = "number" })
+                @Html.ValidationMessageFor(model => model.ProducedYear, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SaleStatusCarID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.SaleStatusCarID, new SelectList(new SaleStatusCarBCL().GetAll(), "SaleStatusCarID", "SaleStatusCarName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SaleStatusCarID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TypeOfCarID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.TypeOfCarID, new SelectList(new TypeOfCar_BCL().GetAll(), "TypeOfCarID", "TypeName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TypeOfCarID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WheelDriveId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.WheelDriveId, new SelectList(new WheelDrive_BCL().GetAll(), "WheelDriveId", "WheelDriveName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.WheelDriveId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+                @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-success" })
+            </div>
+        </div>
+    </div>
+}

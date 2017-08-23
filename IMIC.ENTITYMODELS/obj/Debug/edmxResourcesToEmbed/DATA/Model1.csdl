@@ -1,0 +1,982 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarOnlineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CarOnlineEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="WEB_CARONLINE_SP_Account_CheckLogin" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Account_CheckLogin_Result)">
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="PassWords" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Account_CheckUserName" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Account_CheckUserName_Result)">
+      <Parameter Name="Username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Account_Delete">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Account_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Account_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_Account_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Account_GetById_Result)">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Account_Insert">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="RoleID" Mode="In" Type="Byte" />
+      <Parameter Name="ID_Facebook" Mode="In" Type="String" />
+      <Parameter Name="ID_Gmail" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Avatar" Mode="In" Type="String" />
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="NumberOfLikeProfile" Mode="In" Type="Int32" />
+      <Parameter Name="NumberOfPost" Mode="In" Type="Int32" />
+      <Parameter Name="NumberOfFlow" Mode="In" Type="Int32" />
+      <Parameter Name="NumberOfComment" Mode="In" Type="Int32" />
+      <Parameter Name="Mobile" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="BirthDay" Mode="In" Type="DateTime" />
+      <Parameter Name="JoinDay" Mode="In" Type="DateTime" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Isdeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Account_Update">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="RoleID" Mode="In" Type="Byte" />
+      <Parameter Name="ID_Facebook" Mode="In" Type="String" />
+      <Parameter Name="ID_Gmail" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Avatar" Mode="In" Type="String" />
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="NumberOfLikeProfile" Mode="In" Type="Int32" />
+      <Parameter Name="NumberOfPost" Mode="In" Type="Int32" />
+      <Parameter Name="NumberOfFlow" Mode="In" Type="Int32" />
+      <Parameter Name="NumberOfComment" Mode="In" Type="Int32" />
+      <Parameter Name="Mobile" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="BirthDay" Mode="In" Type="DateTime" />
+      <Parameter Name="JoinDay" Mode="In" Type="DateTime" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Isdeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_CarStatus_DELETE">
+      <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_CarStatus_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_CarStatus_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_CarStatus_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_CarStatus_GetByID_Result)">
+      <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_CarStatus_INSERT">
+      <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+      <Parameter Name="CarStatusName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_CarStatus_UPDATE">
+      <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+      <Parameter Name="CarStatusName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_City_Delete">
+      <Parameter Name="CityId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_City_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_City_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_City_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_City_GetByID_Result)">
+      <Parameter Name="CityId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_City_InSert">
+      <Parameter Name="CityId" Mode="In" Type="Guid" />
+      <Parameter Name="CityName" Mode="In" Type="String" />
+      <Parameter Name="RegionId" Mode="In" Type="Guid" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_City_Update">
+      <Parameter Name="CityId" Mode="In" Type="Guid" />
+      <Parameter Name="CityName" Mode="In" Type="String" />
+      <Parameter Name="RegionId" Mode="In" Type="Guid" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_CompanyCar_DELETE">
+      <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_CompanyCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_CompanyCar_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_CompanyCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_CompanyCar_GetByID_Result)">
+      <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_CompanyCar_INSERT">
+      <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_CompanyCar_UPDATE">
+      <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_DesignCar_DELETE">
+      <Parameter Name="DesignId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_DesignCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DesignCar_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_DesignCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DesignCar_GetByID_Result)">
+      <Parameter Name="DesignId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_DesignCar_INSERT">
+      <Parameter Name="DesignId" Mode="In" Type="Guid" />
+      <Parameter Name="DesignName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_DesignCar_UPDATE">
+      <Parameter Name="DesignId" Mode="In" Type="Guid" />
+      <Parameter Name="DesignName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_DigitalCategory_Delete">
+      <Parameter Name="DigitalCategoryId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_DigitalCategory_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DigitalCategory_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_DigitalCategory_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DigitalCategory_GetById_Result)">
+      <Parameter Name="DigitalCategoryId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_DigitalCategory_InsertOrUpdate">
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+      <Parameter Name="DigitalCategoryId" Mode="In" Type="Guid" />
+      <Parameter Name="DigitalCategoryName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_DigitalDetail_Delete">
+      <Parameter Name="DegitalDetailId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_DigitalDetail_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DigitalDetail_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_DigitalDetail_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_DigitalDetail_GetById_Result)">
+      <Parameter Name="DigitalDetailId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_DigitalDetail_InsertOrUpdate">
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+      <Parameter Name="DigitalDetailId" Mode="In" Type="Guid" />
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+      <Parameter Name="DigitalCategoryId" Mode="In" Type="Guid" />
+      <Parameter Name="Applyed" Mode="In" Type="Boolean" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_DELETE">
+      <Parameter Name="ExteriorFurnitureColorID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_ExteriorFurnitureColor_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_ExteriorFurnitureColor_GetByID_Result)">
+      <Parameter Name="ExteriorFurnitureColorID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_INSERT">
+      <Parameter Name="ExteriorFurnitureColorID" Mode="In" Type="Guid" />
+      <Parameter Name="ExteriorFurnitureColorName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_UPDATE">
+      <Parameter Name="ExteriorFurnitureColorID" Mode="In" Type="Guid" />
+      <Parameter Name="ExteriorFurnitureColorName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_FuelCar_DELETE">
+      <Parameter Name="FuelID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_FuelCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_FuelCar_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_FuelCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_FuelCar_GetByID_Result)">
+      <Parameter Name="FuelID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_FuelCar_INSERT">
+      <Parameter Name="FuelID" Mode="In" Type="Guid" />
+      <Parameter Name="FuelName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_FuelCar_UPDATE">
+      <Parameter Name="FuelID" Mode="In" Type="Guid" />
+      <Parameter Name="FuelName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_GearCar_DELETE">
+      <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_GearCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_GearCar_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_GearCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_GearCar_GetByID_Result)">
+      <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_GearCar_INSERT">
+      <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+      <Parameter Name="CarGearName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_GearCar_UPDATE">
+      <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+      <Parameter Name="CarGearName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_MadeInCar_Delete">
+      <Parameter Name="MadeInID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_MadeInCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_MadeInCar_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_MadeInCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_MadeInCar_GetByID_Result)">
+      <Parameter Name="MadeInID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_MadeInCar_InSert">
+      <Parameter Name="MadeInID" Mode="In" Type="Guid" />
+      <Parameter Name="MadeInName" Mode="In" Type="String" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_MadeInCar_Update">
+      <Parameter Name="MadeInID" Mode="In" Type="Guid" />
+      <Parameter Name="MadeInName" Mode="In" Type="String" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_NumberOfDoor_Delete">
+      <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_NumberOfDoor_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_NumberOfDoor_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_NumberOfDoor_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_NumberOfDoor_GetByID_Result)">
+      <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_NumberOfDoor_InSert">
+      <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+      <Parameter Name="NumberOfDoorName" Mode="In" Type="String" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_NumberOfDoor_Update">
+      <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+      <Parameter Name="NumberOfDoorName" Mode="In" Type="String" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_NumberOfSeat_Delete">
+      <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_NumberOfSeat_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_NumberOfSeat_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_NumberOfSeat_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_NumberOfSeat_GetByID_Result)">
+      <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_NumberOfSeat_InSert">
+      <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+      <Parameter Name="NumberOfSeatName" Mode="In" Type="String" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_NumberOfSeat_Update">
+      <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+      <Parameter Name="NumberOfSeatName" Mode="In" Type="String" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Region_Delete">
+      <Parameter Name="RegionId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Region_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Region_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_Region_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Region_GetByID_Result)">
+      <Parameter Name="RegionId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Region_InSert">
+      <Parameter Name="RegionId" Mode="In" Type="Guid" />
+      <Parameter Name="RegionName" Mode="In" Type="String" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Region_Update">
+      <Parameter Name="RegionId" Mode="In" Type="Guid" />
+      <Parameter Name="RegionName" Mode="In" Type="String" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Role_Delete">
+      <Parameter Name="RoleID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Role_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Role_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_Role_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Role_GetById_Result)">
+      <Parameter Name="RoleID" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Role_Insert">
+      <Parameter Name="RoleID" Mode="In" Type="Byte" />
+      <Parameter Name="RoleName" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Role_Update">
+      <Parameter Name="RoleID" Mode="In" Type="Byte" />
+      <Parameter Name="RoleName" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_SafeCategory_Delete">
+      <Parameter Name="SafeCategoryId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_SafeCategory_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SafeCategory_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_SafeCategory_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SafeCategory_GetById_Result)">
+      <Parameter Name="SafeCategoryId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_SafeCategory_InsertOrUpdate">
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+      <Parameter Name="SafeCategoryId" Mode="In" Type="Guid" />
+      <Parameter Name="SafeCategoryName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_SafeDetail_Delete">
+      <Parameter Name="SafeDetailId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_SafeDetail_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SafeDetail_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_SafeDetail_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SafeDetail_GetById_Result)">
+      <Parameter Name="SafeDetailId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_SafeDetail_InsertOrUpdate">
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+      <Parameter Name="SafeDetailId" Mode="In" Type="Guid" />
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+      <Parameter Name="SafeCategoryId" Mode="In" Type="Guid" />
+      <Parameter Name="Applyed" Mode="In" Type="Boolean" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_DELETE">
+      <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_TypeOfCar_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_GetAll2" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_TypeOfCar_GetAll2_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_TypeOfCar_GetByID_Result)">
+      <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_INSERT">
+      <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+      <Parameter Name="TypeName" Mode="In" Type="String" />
+      <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="DesignID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_TypeOfCar_UPDATE">
+      <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+      <Parameter Name="TypeName" Mode="In" Type="String" />
+      <Parameter Name="CompanyID" Mode="In" Type="Guid" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="DesignID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesCategory_Delete">
+      <Parameter Name="UtilitiesCategoryId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesCategory_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_UtilitiesCategory_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesCategory_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_UtilitiesCategory_GetById_Result)">
+      <Parameter Name="UtilitiesCategoryId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesCategory_InsertOrUpdate">
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+      <Parameter Name="UtilitiesCategoryId" Mode="In" Type="Guid" />
+      <Parameter Name="UtilitiesCategoryName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesDetail_Delete">
+      <Parameter Name="UtilitiesDetailId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesDetail_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_UtilitiesDetail_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesDetail_GetById" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_UtilitiesDetail_GetById_Result)">
+      <Parameter Name="UtilitiesDetailId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_UtilitiesDetail_InsertOrUpdate">
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+      <Parameter Name="UtilitiesDetailId" Mode="In" Type="Guid" />
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+      <Parameter Name="UtilitiesCategoryId" Mode="In" Type="Guid" />
+      <Parameter Name="Applyed" Mode="In" Type="Boolean" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_WheelDrive_DELETE">
+      <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_WheelDrive_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_WheelDrive_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_WheelDrive_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_WheelDrive_GetByID_Result)">
+      <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_WheelDrive_INSERT">
+      <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+      <Parameter Name="WheelDriveName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_WheelDrive_UPDATE">
+      <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+      <Parameter Name="WheelDriveName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Post_Delete">
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Post_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Post_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_Post_GetByPostId" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Post_GetByPostId_Result)">
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Post_Insert">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="AdministratorID" Mode="In" Type="Guid" />
+      <Parameter Name="Approved" Mode="In" Type="Boolean" />
+      <Parameter Name="ApprovedDay" Mode="In" Type="DateTime" />
+      <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+      <Parameter Name="CarPrice" Mode="In" Type="Int32" />
+      <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+      <Parameter Name="ExteriorColorID" Mode="In" Type="Guid" />
+      <Parameter Name="FuelID" Mode="In" Type="Guid" />
+      <Parameter Name="FurnitureColorID" Mode="In" Type="Guid" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="KmWent" Mode="In" Type="String" />
+      <Parameter Name="LastContactDay" Mode="In" Type="DateTime" />
+      <Parameter Name="MadeInId" Mode="In" Type="Guid" />
+      <Parameter Name="Note" Mode="In" Type="String" />
+      <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+      <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+      <Parameter Name="PostContent" Mode="In" Type="String" />
+      <Parameter Name="PostDay" Mode="In" Type="DateTime" />
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+      <Parameter Name="PostTitle" Mode="In" Type="String" />
+      <Parameter Name="ProducedYear" Mode="In" Type="Int32" />
+      <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+      <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+      <Parameter Name="UpdatePostDay" Mode="In" Type="DateTime" />
+      <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Post_Update">
+      <Parameter Name="AccountID" Mode="In" Type="Guid" />
+      <Parameter Name="AdministratorID" Mode="In" Type="Guid" />
+      <Parameter Name="Approved" Mode="In" Type="Boolean" />
+      <Parameter Name="ApprovedDay" Mode="In" Type="DateTime" />
+      <Parameter Name="CarGearId" Mode="In" Type="Guid" />
+      <Parameter Name="CarPrice" Mode="In" Type="Int32" />
+      <Parameter Name="CarStatusID" Mode="In" Type="Guid" />
+      <Parameter Name="ExteriorColorID" Mode="In" Type="Guid" />
+      <Parameter Name="FuelID" Mode="In" Type="Guid" />
+      <Parameter Name="FurnitureColorID" Mode="In" Type="Guid" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="KmWent" Mode="In" Type="String" />
+      <Parameter Name="LastContactDay" Mode="In" Type="DateTime" />
+      <Parameter Name="MadeInId" Mode="In" Type="Guid" />
+      <Parameter Name="Note" Mode="In" Type="String" />
+      <Parameter Name="NumberOfDoorId" Mode="In" Type="Guid" />
+      <Parameter Name="NumberOfSeatId" Mode="In" Type="Guid" />
+      <Parameter Name="PostContent" Mode="In" Type="String" />
+      <Parameter Name="PostDay" Mode="In" Type="DateTime" />
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+      <Parameter Name="PostTitle" Mode="In" Type="String" />
+      <Parameter Name="ProducedYear" Mode="In" Type="Int32" />
+      <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+      <Parameter Name="TypeOfCarID" Mode="In" Type="Guid" />
+      <Parameter Name="UpdatePostDay" Mode="In" Type="DateTime" />
+      <Parameter Name="WheelDriveId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_SaleStatusCar_Delete">
+      <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_SaleStatusCar_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SaleStatusCar_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_SaleStatusCar_GetBySaleStatusCarID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_SaleStatusCar_GetBySaleStatusCarID_Result)">
+      <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_SaleStatusCar_Insert">
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+      <Parameter Name="SaleStatusCarName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_SaleStatusCar_Update">
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
+      <Parameter Name="SaleStatusCarName" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="WEB_CARONLINE_SP_Account_CheckLogin_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Byte" Name="RoleID" Nullable="true" />
+    <Property Type="String" Name="ID_Facebook" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Gmail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfLikeProfile" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfPost" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfFlow" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfComment" Nullable="true" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="BirthDay" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="JoinDay" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Account_CheckUserName_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Byte" Name="RoleID" Nullable="true" />
+    <Property Type="String" Name="ID_Facebook" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Gmail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfLikeProfile" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfPost" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfFlow" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfComment" Nullable="true" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="BirthDay" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="JoinDay" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Account_GetAll_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Byte" Name="RoleID" Nullable="true" />
+    <Property Type="String" Name="ID_Facebook" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Gmail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfLikeProfile" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfPost" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfFlow" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfComment" Nullable="true" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="BirthDay" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="JoinDay" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Account_GetById_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Byte" Name="RoleID" Nullable="true" />
+    <Property Type="String" Name="ID_Facebook" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Gmail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfLikeProfile" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfPost" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfFlow" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfComment" Nullable="true" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="BirthDay" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="JoinDay" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_CarStatus_GetAll_Result">
+    <Property Type="Guid" Name="CarStatusID" Nullable="false" />
+    <Property Type="String" Name="CarStatusName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_CarStatus_GetByID_Result">
+    <Property Type="Guid" Name="CarStatusID" Nullable="false" />
+    <Property Type="String" Name="CarStatusName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_City_GetAll_Result">
+    <Property Type="Guid" Name="CityId" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RegionName" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="RegionId" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_City_GetByID_Result">
+    <Property Type="Guid" Name="CityId" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RegionName" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="RegionId" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_CompanyCar_GetAll_Result">
+    <Property Type="Guid" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_CompanyCar_GetByID_Result">
+    <Property Type="Guid" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_DesignCar_GetAll_Result">
+    <Property Type="Guid" Name="DesignId" Nullable="false" />
+    <Property Type="String" Name="DesignName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_DesignCar_GetByID_Result">
+    <Property Type="Guid" Name="DesignId" Nullable="false" />
+    <Property Type="String" Name="DesignName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_DigitalCategory_GetAll_Result">
+    <Property Type="Guid" Name="DigitalCategoryID" Nullable="false" />
+    <Property Type="String" Name="DigitalCategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_DigitalCategory_GetById_Result">
+    <Property Type="Guid" Name="DigitalCategoryID" Nullable="false" />
+    <Property Type="String" Name="DigitalCategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_DigitalDetail_GetAll_Result">
+    <Property Type="Guid" Name="DigitalDetailId" Nullable="false" />
+    <Property Type="Guid" Name="PostId" Nullable="true" />
+    <Property Type="Guid" Name="DigitalCategoryId" Nullable="true" />
+    <Property Type="Boolean" Name="Applyed" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="DigitalCategoryName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_DigitalDetail_GetById_Result">
+    <Property Type="Guid" Name="DigitalDetailId" Nullable="false" />
+    <Property Type="Guid" Name="PostId" Nullable="true" />
+    <Property Type="Guid" Name="DigitalCategoryId" Nullable="true" />
+    <Property Type="Boolean" Name="Applyed" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetAll_Result">
+    <Property Type="Guid" Name="ExteriorFurnitureColorID" Nullable="false" />
+    <Property Type="String" Name="ExteriorFurnitureColorName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_ExteriorFurnitureColor_GetByID_Result">
+    <Property Type="Guid" Name="ExteriorFurnitureColorID" Nullable="false" />
+    <Property Type="String" Name="ExteriorFurnitureColorName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_FuelCar_GetAll_Result">
+    <Property Type="Guid" Name="FuelID" Nullable="false" />
+    <Property Type="String" Name="FuelName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_FuelCar_GetByID_Result">
+    <Property Type="Guid" Name="FuelID" Nullable="false" />
+    <Property Type="String" Name="FuelName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_GearCar_GetAll_Result">
+    <Property Type="Guid" Name="CarGearId" Nullable="false" />
+    <Property Type="String" Name="CarGearName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_GearCar_GetByID_Result">
+    <Property Type="Guid" Name="CarGearId" Nullable="false" />
+    <Property Type="String" Name="CarGearName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_MadeInCar_GetAll_Result">
+    <Property Type="Guid" Name="MadeInID" Nullable="false" />
+    <Property Type="String" Name="MadeInName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_MadeInCar_GetByID_Result">
+    <Property Type="Guid" Name="MadeInID" Nullable="false" />
+    <Property Type="String" Name="MadeInName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_NumberOfDoor_GetAll_Result">
+    <Property Type="Guid" Name="NumberOfDoorId" Nullable="false" />
+    <Property Type="String" Name="NumberOfDoorName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_NumberOfDoor_GetByID_Result">
+    <Property Type="Guid" Name="NumberOfDoorId" Nullable="false" />
+    <Property Type="String" Name="NumberOfDoorName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_NumberOfSeat_GetAll_Result">
+    <Property Type="Guid" Name="NumberOfSeatId" Nullable="false" />
+    <Property Type="String" Name="NumberOfSeatName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_NumberOfSeat_GetByID_Result">
+    <Property Type="Guid" Name="NumberOfSeatId" Nullable="false" />
+    <Property Type="String" Name="NumberOfSeatName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Region_GetAll_Result">
+    <Property Type="Guid" Name="RegionId" Nullable="false" />
+    <Property Type="String" Name="RegionName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Region_GetByID_Result">
+    <Property Type="Guid" Name="RegionId" Nullable="false" />
+    <Property Type="String" Name="RegionName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Role_GetAll_Result">
+    <Property Type="Byte" Name="RoleID" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Role_GetById_Result">
+    <Property Type="Byte" Name="RoleID" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_SafeCategory_GetAll_Result">
+    <Property Type="Guid" Name="SafeCategoryId" Nullable="false" />
+    <Property Type="String" Name="SafeCategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_SafeCategory_GetById_Result">
+    <Property Type="Guid" Name="SafeCategoryId" Nullable="false" />
+    <Property Type="String" Name="SafeCategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_SafeDetail_GetAll_Result">
+    <Property Type="Guid" Name="SafeDetailId" Nullable="false" />
+    <Property Type="Guid" Name="PostId" Nullable="true" />
+    <Property Type="Guid" Name="SafeCategoryId" Nullable="true" />
+    <Property Type="Boolean" Name="Applyed" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="SafeCategoryName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_SafeDetail_GetById_Result">
+    <Property Type="Guid" Name="SafeDetailId" Nullable="false" />
+    <Property Type="Guid" Name="PostId" Nullable="true" />
+    <Property Type="Guid" Name="SafeCategoryId" Nullable="true" />
+    <Property Type="Boolean" Name="Applyed" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_TypeOfCar_GetAll_Result">
+    <Property Type="Guid" Name="TypeOfCarID" Nullable="false" />
+    <Property Type="String" Name="TypeName" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="CompanyID" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="DesignID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_TypeOfCar_GetAll2_Result">
+    <Property Type="Guid" Name="TypeOfCarID" Nullable="false" />
+    <Property Type="String" Name="TypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DesignName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_TypeOfCar_GetByID_Result">
+    <Property Type="Guid" Name="TypeOfCarID" Nullable="false" />
+    <Property Type="String" Name="TypeName" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="CompanyID" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="DesignID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_UtilitiesCategory_GetAll_Result">
+    <Property Type="Guid" Name="UtilitiesCategoryId" Nullable="false" />
+    <Property Type="String" Name="UtilitiesCategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_UtilitiesCategory_GetById_Result">
+    <Property Type="Guid" Name="UtilitiesCategoryId" Nullable="false" />
+    <Property Type="String" Name="UtilitiesCategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_UtilitiesDetail_GetAll_Result">
+    <Property Type="Guid" Name="UtilitiesDetaiId" Nullable="false" />
+    <Property Type="Guid" Name="PostId" Nullable="true" />
+    <Property Type="Guid" Name="UtilitiesCategoryId" Nullable="true" />
+    <Property Type="Boolean" Name="Applyed" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="UtilitiesCategoryName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_UtilitiesDetail_GetById_Result">
+    <Property Type="Guid" Name="UtilitiesDetaiId" Nullable="false" />
+    <Property Type="Guid" Name="PostId" Nullable="true" />
+    <Property Type="Guid" Name="UtilitiesCategoryId" Nullable="true" />
+    <Property Type="Boolean" Name="Applyed" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_WheelDrive_GetAll_Result">
+    <Property Type="Guid" Name="WheelDriveId" Nullable="false" />
+    <Property Type="String" Name="WheelDriveName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_WheelDrive_GetByID_Result">
+    <Property Type="Guid" Name="WheelDriveId" Nullable="false" />
+    <Property Type="String" Name="WheelDriveName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Post_GetAll_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="true" />
+    <Property Type="Guid" Name="AdministratorID" Nullable="true" />
+    <Property Type="Boolean" Name="Approved" Nullable="true" />
+    <Property Type="DateTime" Name="ApprovedDay" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="CarGearId" Nullable="true" />
+    <Property Type="Int32" Name="CarPrice" Nullable="true" />
+    <Property Type="Guid" Name="CarStatusID" Nullable="true" />
+    <Property Type="Guid" Name="ExteriorColorID" Nullable="true" />
+    <Property Type="Guid" Name="FuelID" Nullable="true" />
+    <Property Type="Guid" Name="FurnitureColorID" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="KmWent" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastContactDay" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="MadeInId" Nullable="true" />
+    <Property Type="String" Name="Note" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="NumberOfDoorId" Nullable="true" />
+    <Property Type="Guid" Name="NumberOfSeatId" Nullable="true" />
+    <Property Type="String" Name="PostContent" Nullable="true" MaxLength="1500" />
+    <Property Type="DateTime" Name="PostDay" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="PostId" Nullable="false" />
+    <Property Type="String" Name="PostTitle" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ProducedYear" Nullable="false" />
+    <Property Type="Guid" Name="SaleStatusCarID" Nullable="true" />
+    <Property Type="Guid" Name="TypeOfCarID" Nullable="true" />
+    <Property Type="DateTime" Name="UpdatePostDay" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="WheelDriveId" Nullable="true" />
+    <Property Type="Boolean" Name="Active_AccountPostJoin" Nullable="true" />
+    <Property Type="String" Name="Address_AccountPostJoin" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Avatar_AccountPostJoin" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="BirthDay_AccountPostJoin" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email_AccountPostJoin" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Facebook_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Gmail_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_AccountPostJoin" Nullable="true" />
+    <Property Type="DateTime" Name="JoinDay_AccountPostJoin" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Mobile_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfComment_AccountPostJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfFlow_AccountPostJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfLikeProfile_AccountPostJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfPost_AccountPostJoin" Nullable="true" />
+    <Property Type="String" Name="Password_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="RoleID_AccountPostJoin" Nullable="true" />
+    <Property Type="String" Name="UserName_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active_AccountAdminJoin" Nullable="true" />
+    <Property Type="String" Name="Address_AccountAdminJoin" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Avatar_AccountAdminJoin" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="BirthDay_AccountAdminJoin" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email_AccountAdminJoin" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Facebook_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Gmail_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_AccountAdminJoin" Nullable="true" />
+    <Property Type="DateTime" Name="JoinDay_AccountAdminJoin" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Mobile_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfComment_AccountAdminJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfFlow_AccountAdminJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfLikeProfile_AccountAdminJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfPost_AccountAdminJoin" Nullable="true" />
+    <Property Type="String" Name="Password_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="RoleID_AccountAdminJoin" Nullable="true" />
+    <Property Type="String" Name="UserName_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CarStatusName_CarStatusJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_CarStatusJoin" Nullable="true" />
+    <Property Type="String" Name="ExteriorFurnitureColorName_FurnitureColorJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_FurnitureColorJoin" Nullable="true" />
+    <Property Type="String" Name="ExteriorFurnitureColorName_ExteriorColorJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_ExteriorColorJoin" Nullable="true" />
+    <Property Type="String" Name="FuelName_FuelCarJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_FuelCarJoin" Nullable="true" />
+    <Property Type="String" Name="CarGearName_GearCarJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_GearCarJoin" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted_MadeInCarJoin" Nullable="true" />
+    <Property Type="String" Name="MadeInName_MadeInCarJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_NumberOfDoorJoin" Nullable="true" />
+    <Property Type="String" Name="NumberOfDoorName_NumberOfDoorJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_NumberOfSeatJoin" Nullable="true" />
+    <Property Type="String" Name="NumberOfSeatName_NumberOfSeatJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_SaleStatusCarJoin" Nullable="true" />
+    <Property Type="String" Name="SaleStatusCarName_SaleStatusCarJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="CompanyID_TypeOfCarJoin" Nullable="true" />
+    <Property Type="String" Name="Description_TypeOfCarJoin" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="DesignID_TypeOfCarJoin" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted_TypeOfCarJoin" Nullable="true" />
+    <Property Type="Boolean" Name="Status_TypeOfCarJoin" Nullable="true" />
+    <Property Type="String" Name="TypeName_TypeOfCarJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_WheelDriveJoin" Nullable="true" />
+    <Property Type="String" Name="WheelDriveName_WheelDriveJoin" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Post_GetByPostId_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="true" />
+    <Property Type="Guid" Name="AdministratorID" Nullable="true" />
+    <Property Type="Boolean" Name="Approved" Nullable="true" />
+    <Property Type="DateTime" Name="ApprovedDay" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="CarGearId" Nullable="true" />
+    <Property Type="Int32" Name="CarPrice" Nullable="true" />
+    <Property Type="Guid" Name="CarStatusID" Nullable="true" />
+    <Property Type="Guid" Name="ExteriorColorID" Nullable="true" />
+    <Property Type="Guid" Name="FuelID" Nullable="true" />
+    <Property Type="Guid" Name="FurnitureColorID" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="KmWent" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastContactDay" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="MadeInId" Nullable="true" />
+    <Property Type="String" Name="Note" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="NumberOfDoorId" Nullable="true" />
+    <Property Type="Guid" Name="NumberOfSeatId" Nullable="true" />
+    <Property Type="String" Name="PostContent" Nullable="true" MaxLength="1500" />
+    <Property Type="DateTime" Name="PostDay" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="PostId" Nullable="false" />
+    <Property Type="String" Name="PostTitle" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ProducedYear" Nullable="false" />
+    <Property Type="Guid" Name="SaleStatusCarID" Nullable="true" />
+    <Property Type="Guid" Name="TypeOfCarID" Nullable="true" />
+    <Property Type="DateTime" Name="UpdatePostDay" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="WheelDriveId" Nullable="true" />
+    <Property Type="Boolean" Name="Active_AccountPostJoin" Nullable="true" />
+    <Property Type="String" Name="Address_AccountPostJoin" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Avatar_AccountPostJoin" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="BirthDay_AccountPostJoin" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email_AccountPostJoin" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Facebook_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Gmail_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_AccountPostJoin" Nullable="true" />
+    <Property Type="DateTime" Name="JoinDay_AccountPostJoin" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Mobile_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfComment_AccountPostJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfFlow_AccountPostJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfLikeProfile_AccountPostJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfPost_AccountPostJoin" Nullable="true" />
+    <Property Type="String" Name="Password_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="RoleID_AccountPostJoin" Nullable="true" />
+    <Property Type="String" Name="UserName_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active_AccountAdminJoin" Nullable="true" />
+    <Property Type="String" Name="Address_AccountAdminJoin" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Avatar_AccountAdminJoin" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="BirthDay_AccountAdminJoin" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email_AccountAdminJoin" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Facebook_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Gmail_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_AccountAdminJoin" Nullable="true" />
+    <Property Type="DateTime" Name="JoinDay_AccountAdminJoin" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Mobile_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfComment_AccountAdminJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfFlow_AccountAdminJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfLikeProfile_AccountAdminJoin" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfPost_AccountAdminJoin" Nullable="true" />
+    <Property Type="String" Name="Password_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="RoleID_AccountAdminJoin" Nullable="true" />
+    <Property Type="String" Name="UserName_AccountAdminJoin" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CarStatusName_CarStatusJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_CarStatusJoin" Nullable="true" />
+    <Property Type="String" Name="ExteriorFurnitureColorName_FurnitureColorJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_FurnitureColorJoin" Nullable="true" />
+    <Property Type="String" Name="ExteriorFurnitureColorName_ExteriorColorJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_ExteriorColorJoin" Nullable="true" />
+    <Property Type="String" Name="FuelName_FuelCarJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_FuelCarJoin" Nullable="true" />
+    <Property Type="String" Name="CarGearName_GearCarJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_GearCarJoin" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted_MadeInCarJoin" Nullable="true" />
+    <Property Type="String" Name="MadeInName_MadeInCarJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_NumberOfDoorJoin" Nullable="true" />
+    <Property Type="String" Name="NumberOfDoorName_NumberOfDoorJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_NumberOfSeatJoin" Nullable="true" />
+    <Property Type="String" Name="NumberOfSeatName_NumberOfSeatJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_SaleStatusCarJoin" Nullable="true" />
+    <Property Type="String" Name="SaleStatusCarName_SaleStatusCarJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="CompanyID_TypeOfCarJoin" Nullable="true" />
+    <Property Type="String" Name="Description_TypeOfCarJoin" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="DesignID_TypeOfCarJoin" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted_TypeOfCarJoin" Nullable="true" />
+    <Property Type="Boolean" Name="Status_TypeOfCarJoin" Nullable="true" />
+    <Property Type="String" Name="TypeName_TypeOfCarJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsDeleted_WheelDriveJoin" Nullable="true" />
+    <Property Type="String" Name="WheelDriveName_WheelDriveJoin" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_SaleStatusCar_GetAll_Result">
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Guid" Name="SaleStatusCarID" Nullable="false" />
+    <Property Type="String" Name="SaleStatusCarName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_SaleStatusCar_GetBySaleStatusCarID_Result">
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Guid" Name="SaleStatusCarID" Nullable="false" />
+    <Property Type="String" Name="SaleStatusCarName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

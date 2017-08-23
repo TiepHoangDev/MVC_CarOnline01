@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarOnline", "CarOnline\CarOnline.csproj", "{1EA2054A-B242-49F0-98A7-AB787778A1B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMIC.BUSINESSOBJECTS", "IMIC.BUSINESSOBJECTS\IMIC.BUSINESSOBJECTS.csproj", "{2BB2F771-4E8A-44C5-BD6D-602402A0AABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMIC.CONTROLLERS", "IMIC.CONTROLLERS\IMIC.CONTROLLERS.csproj", "{99D3F4E9-1967-432F-8358-2C9D793DA0B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMIC.ENTITYMODELS", "IMIC.ENTITYMODELS\IMIC.ENTITYMODELS.csproj", "{9F0132EC-D60F-470A-B8E2-ECBC04BFB8B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EA2054A-B242-49F0-98A7-AB787778A1B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA2054A-B242-49F0-98A7-AB787778A1B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA2054A-B242-49F0-98A7-AB787778A1B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA2054A-B242-49F0-98A7-AB787778A1B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB2F771-4E8A-44C5-BD6D-602402A0AABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB2F771-4E8A-44C5-BD6D-602402A0AABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB2F771-4E8A-44C5-BD6D-602402A0AABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB2F771-4E8A-44C5-BD6D-602402A0AABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99D3F4E9-1967-432F-8358-2C9D793DA0B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D3F4E9-1967-432F-8358-2C9D793DA0B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D3F4E9-1967-432F-8358-2C9D793DA0B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D3F4E9-1967-432F-8358-2C9D793DA0B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F0132EC-D60F-470A-B8E2-ECBC04BFB8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F0132EC-D60F-470A-B8E2-ECBC04BFB8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F0132EC-D60F-470A-B8E2-ECBC04BFB8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F0132EC-D60F-470A-B8E2-ECBC04BFB8B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

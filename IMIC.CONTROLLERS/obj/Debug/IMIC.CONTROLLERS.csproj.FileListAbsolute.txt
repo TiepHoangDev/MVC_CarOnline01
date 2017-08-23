@@ -1,0 +1,11 @@
+E:\HPT\imic\web\Car online\IMIC.CONTROLLERS\obj\Debug\IMIC.CONTROLLERS.csprojResolveAssemblyReference.cache
+E:\HPT\imic\web\Car online\IMIC.CONTROLLERS\bin\Debug\IMIC.CONTROLLERS.dll
+E:\HPT\imic\web\Car online\IMIC.CONTROLLERS\bin\Debug\IMIC.CONTROLLERS.pdb
+E:\HPT\imic\web\Car online\IMIC.CONTROLLERS\bin\Debug\IMIC.BUSINESSOBJECTS.dll
+E:\HPT\imic\web\Car online\IMIC.CONTROLLERS\bin\Debug\IMIC.ENTITYMODELS.dll
+E:\HPT\imic\web\Car online\IMIC.CONTROLLERS\bin\Debug\EntityFramework.dll
+E:\HPT\imic\web\Car online\IMIC.CONTROLLERS\bin\Debug\IMIC.BUSINESSOBJECTS.pdb
+E:\HPT\imic\web\Car online\IMIC.CONTROLLERS\bin\Debug\IMIC.ENTITYMODELS.pdb
+E:\HPT\imic\web\Car online\IMIC.CONTROLLERS\bin\Debug\EntityFramework.xml
+E:\HPT\imic\web\Car online\IMIC.CONTROLLERS\obj\Debug\IMIC.CONTROLLERS.dll
+E:\HPT\imic\web\Car online\IMIC.CONTROLLERS\obj\Debug\IMIC.CONTROLLERS.pdb

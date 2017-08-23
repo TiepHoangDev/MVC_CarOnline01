@@ -1,0 +1,62 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using IMIC.BUSINESSOBJECTS.EntityObject;
+using IMIC.ENTITYMODELS.DATA;
+
+namespace IMIC.ENTITYMODELS.MODEL
+{
+    public class RoleDao
+    {
+        public List<RoleObject> GetAll()
+        {
+            var list = new CarOnlineEntities().WEB_CARONLINE_SP_Role_GetAll();
+            List<RoleObject> lst = new List<RoleObject>();
+            foreach (var item in list)
+            {
+                var obj = new RoleObject();
+
+                obj.RoleID = item.RoleID;
+                obj.RoleName = item.RoleName;
+                obj.Status = item.Status;
+                obj.IsDeleted = item.IsDeleted;
+                obj.Description = item.Description;
+                lst.Add(obj);
+            }
+            return lst;
+        }
+        public RoleObject GetById(byte RoleID)
+        {
+            var list = new CarOnlineEntities().WEB_CARONLINE_SP_Role_GetById(RoleID);
+            foreach (var item in list)
+            {
+                var obj = new RoleObject();
+
+                obj.RoleID = item.RoleID;
+                obj.RoleName = item.RoleName;
+                obj.Status = item.Status;
+                obj.IsDeleted = item.IsDeleted;
+                obj.Description = item.Description;
+                return obj;
+            }
+            return null;
+        }
+
+        public bool Insert(RoleObject ob)
+        {
+            return new CarOnlineEntities().WEB_CARONLINE_SP_Role_Insert(ob.RoleID, ob.RoleName, ob.Status, ob.IsDeleted, ob.Description) > 0;
+        }
+
+        public bool Delete(Guid RoleID)
+        {
+            return new CarOnlineEntities().WEB_CARONLINE_SP_Role_Delete(RoleID) > 0;
+        }
+
+        public bool Update(RoleObject ob)
+        {
+            return new CarOnlineEntities().WEB_CARONLINE_SP_Role_Update(ob.RoleID, ob.RoleName, ob.Status, ob.IsDeleted, ob.Description) > 0;
+        }
+    }
+}

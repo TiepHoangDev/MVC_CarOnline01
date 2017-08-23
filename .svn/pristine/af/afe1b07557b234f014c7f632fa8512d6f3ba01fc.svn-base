@@ -1,0 +1,38 @@
+﻿@model IMIC.BUSINESSOBJECTS.EntityObject.NumberOfDoor_Object
+
+@{
+    ViewBag.Title = "Thêm mới Số Cửa Của Xe";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="portlet-body">
+    @using (Html.BeginForm("NumberOfDoor_Insert", "NumberOfDoor", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Thêm Mới Số Cửa Của Xe</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.Label("Tên Số Cửa Của Xe", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NumberOfDoorName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NumberOfDoorName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Thêm mới" class="btn btn-default green-haze" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Về trang Manage_NumberOfDoor", "Manage_NumberOfDoor")
+    </div>
+</div>
+

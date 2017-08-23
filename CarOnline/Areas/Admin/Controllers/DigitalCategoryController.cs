@@ -1,0 +1,79 @@
+﻿using System;
+using System.Web.Mvc;
+using IMIC.BUSINESSOBJECTS.EntityObject;
+using IMIC.CONTROLLERS.BCL;
+
+namespace CarOnline.Areas.Admin.Controllers
+{
+    public class DigitalCategoryController : Controller
+    {
+        // GET: Admin/DigitalCategory
+        public ActionResult Index()
+        {
+            var listDigitalCategory = new DigitalCategory_BCL().GetAll();
+            return View(listDigitalCategory);
+        }
+
+        // GET: Admin/DigitalCategory/Details/5
+        public ActionResult Details(Guid id)
+        {
+            var digitalCategoryObject = new DigitalCategory_BCL().GetById(id);
+            return View(digitalCategoryObject);
+        }
+
+        // GET: Admin/DigitalCategory/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Admin/DigitalCategory/Create
+        [HttpPost]
+        public ActionResult Create(DigitalCategory_Object digitalCategoryObject)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = new DigitalCategory_BCL().InsertOrUpdate(false, digitalCategoryObject);
+                if (result)
+                {
+                    return RedirectToAction("Index", "DigitalCategory");
+                }
+                ModelState.AddModelError("", "Thêm mới không thành công");
+            }
+
+            return View(digitalCategoryObject);
+        }
+
+        // GET: Admin/DigitalCategory/Edit/5
+        public ActionResult Edit(Guid id)
+        {
+            var digitalCategoryObject = new DigitalCategory_BCL().GetById(id);
+            return View(digitalCategoryObject);
+        }
+
+        // POST: Admin/DigitalCategory/Edit/5
+        [HttpPost]
+        public ActionResult Edit(DigitalCategory_Object digitalCategoryObject)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = new DigitalCategory_BCL().InsertOrUpdate(true, digitalCategoryObject);
+                if (result)
+                {
+                    return RedirectToAction("Index", "DigitalCategory");
+                }
+                ModelState.AddModelError("", "Cập nhật không thành công");
+            }
+
+            return View(digitalCategoryObject);
+        }
+
+
+        public JsonResult Delete(Guid id)
+        {
+            var result = new DigitalCategory_BCL().Delete(id);
+            return Json(result ? new { rs = true } : new { rs = false });
+        }
+
+    }
+}

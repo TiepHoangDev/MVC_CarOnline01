@@ -1,0 +1,48 @@
+﻿@model IMIC.BUSINESSOBJECTS.EntityObject.MadeInCar_Object
+
+@{
+    ViewBag.Title = "Cập Nhật Xuất Xứ Các Dòng Xe";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="portlet-body">
+    @using (Html.BeginForm("MadeInCar_Update", "MadeInCar", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Cập Nhật Xuất Xứ Các Dòng Xe</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+           
+            <div class="form-group hidden">
+                @Html.Label("Mã Xuất Xứ", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MadeInID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MadeInID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Tên Xuất Xứ", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MadeInName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MadeInName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+           
+           
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Cập nhật" class="btn btn-default green-haze" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Về trang Manage_MadeInCar", "Manage_MadeInCar")
+    </div>
+</div>
+

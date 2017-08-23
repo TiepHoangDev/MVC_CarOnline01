@@ -1,0 +1,10 @@
+E:\HPT\imic\web\Car online\IMIC.ENTITYMODELS\obj\Debug\IMIC.ENTITYMODELS.csprojResolveAssemblyReference.cache
+E:\HPT\imic\web\Car online\IMIC.ENTITYMODELS\bin\Debug\IMIC.ENTITYMODELS.dll.config
+E:\HPT\imic\web\Car online\IMIC.ENTITYMODELS\bin\Debug\IMIC.ENTITYMODELS.dll
+E:\HPT\imic\web\Car online\IMIC.ENTITYMODELS\bin\Debug\IMIC.ENTITYMODELS.pdb
+E:\HPT\imic\web\Car online\IMIC.ENTITYMODELS\bin\Debug\IMIC.BUSINESSOBJECTS.dll
+E:\HPT\imic\web\Car online\IMIC.ENTITYMODELS\bin\Debug\IMIC.BUSINESSOBJECTS.pdb
+E:\HPT\imic\web\Car online\IMIC.ENTITYMODELS\bin\Debug\EntityFramework.xml
+E:\HPT\imic\web\Car online\IMIC.ENTITYMODELS\bin\Debug\EntityFramework.SqlServer.xml
+E:\HPT\imic\web\Car online\IMIC.ENTITYMODELS\obj\Debug\IMIC.ENTITYMODELS.dll
+E:\HPT\imic\web\Car online\IMIC.ENTITYMODELS\obj\Debug\IMIC.ENTITYMODELS.pdb

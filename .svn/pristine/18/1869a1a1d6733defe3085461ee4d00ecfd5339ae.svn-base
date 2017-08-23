@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IMIC.BUSINESSOBJECTS.EntityObject
+{
+    public class AccountObject
+    {
+        public Guid AccountID { get; set; }
+        public byte RoleID { get; set; }
+        public string ID_Facebook { get; set; }
+        public string ID_Gmail { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string Avatar { get; set; }
+        public string FullName { get; set; }
+        public System.Int32? NumberOfLikeProfile { get; set; }
+        public System.Int32? NumberOfPost { get; set; }
+        public System.Int32? NumberOfFlow { get; set; }
+        public System.Int32? NumberOfComment { get; set; }
+        public string Mobile { get; set; }
+        public System.Boolean Active { get; set; }
+        public System.DateTime? BirthDay { get; set; }
+        public System.DateTime? JoinDay { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        public System.Boolean IsDeleted { get; set; }
+        public RoleObject RoleObj { get; set; }
+    }
+}

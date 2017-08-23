@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IMIC.BUSINESSOBJECTS.EntityObject
+{
+   public class CompanyCar_Object
+    {
+        public System.Guid CompanyID { get; set; }
+        public string CompanyName { get; set; }
+        public Nullable<bool> Status { get; set; }
+        public string Description { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
+    }
+}
