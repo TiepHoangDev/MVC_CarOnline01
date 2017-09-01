@@ -1,0 +1,226 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using IMIC.BUSINESSOBJECTS.EntityObject;
+using IMIC.CONTROLLERS.BCL;
+using System.IO;
+
+namespace CarOnline.Areas.Admin.Controllers
+{
+    public class PostController : Controller
+    {
+        // GET: Admin/Post
+        public ActionResult Index()
+        {
+            return View(new PostBCL().GetAll());
+        }
+
+        // GET: Admin/Post/Create
+        public ActionResult Create()
+        {
+            var lstDigitalDetail = new List<DigitalDetail_Object>();
+            var lstSafeDetail = new List<SafeDetail_Object>();
+            var lstUtilitiesDetail = new List<UtilitiesDetail_Object>();
+            var id_post = Guid.NewGuid();
+
+            foreach (var item in new DigitalCategory_BCL().GetAll())
+            {
+                lstDigitalDetail.Add(new DigitalDetail_Object()
+                {
+                    DigitalCategoryObject = item,
+                    DigitalCategoryId = item.DigitalCategoryId,
+                    PostId = id_post
+                });
+            }
+            foreach (var item in new SafeCategory_BCL().GetAll())
+            {
+                lstSafeDetail.Add(new SafeDetail_Object()
+                {
+                    SafeCategoryObject = item,
+                    PostId = id_post,
+                    SafeCategoryId = item.SafeCategoryId
+                });
+            }
+            foreach (var item in new UtilitiesCategory_BCL().GetAll())
+            {
+                lstUtilitiesDetail.Add(new UtilitiesDetail_Object()
+                {
+                    UtilitiesCategoryId = item.UtilitiesCategoryId,
+                    PostId = id_post,
+                    UtilitiesCategoryObject = item
+                });
+            }
+
+            ViewBag.DigitalDetail = lstDigitalDetail;
+            ViewBag.SafeDetail = lstSafeDetail;
+            ViewBag.UtilitiesDetail = lstUtilitiesDetail;
+            return View(new PostObject()
+            {
+                IsDeleted = false,
+                AccountPostJoin = new Models.User().GetAcount(),
+                PostId = id_post
+            });
+        }
+
+
+        // POST: Admin/Post/Create
+        [HttpPost]
+        public ActionResult Create(PostObject ob)
+        {
+            string result = "";
+            try
+            {
+                // TODO: Add insert logic here
+                ob.AccountID = new Models.User().GetAcount().AccountID;
+                ob.PostId = Guid.NewGuid();
+                ob.CarCode = (long)new Random().NextDouble();
+                ob.PostDay = DateTime.Now;
+                if (new PostBCL().Insert(ob))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    result = "Thêm Bài đăng thất bại";
+                }
+            }
+            catch (Exception ex)
+            {
+                result = ex.Message;
+            }
+            ModelState.AddModelError("", result);
+            return View();
+        }
+
+        public void pv_tienNghi(IEnumerable<UtilitiesDetail_Object> lst, Guid postID)
+        {
+            var bcl = new UtilitiesDetail_BCL();
+            foreach (var item in lst)
+            {
+                if (item.Applyed)
+                {
+                    item.IsDeleted = false;
+                    item.PostId = postID;
+                    item.UtilitiesDetaiId = Guid.NewGuid();
+                    bcl.InsertOrUpdate(true, item);
+                }
+            }
+        }
+
+        public void pv_thongSoKiThuat(IEnumerable<DigitalDetail_Object> lst, Guid postID)
+        {
+            var bcl = new DigitalDetail_BCL();
+            foreach (var item in lst)
+            {
+                if (item.Applyed)
+                {
+                    item.PostId = postID;
+                    item.DigitalDetailId = Guid.NewGuid();
+                    item.IsDeleted = false;
+                    bcl.InsertOrUpdate(true, item);
+                }
+            }
+        }
+
+        public void pv_anToan(IEnumerable<SafeDetail_Object> lst, Guid postID)
+        {
+            var bcl = new SafeDetail_BCL();
+            foreach (var item in lst)
+            {
+                if (item.Applyed)
+                {
+                    item.SafeDetailId = Guid.NewGuid();
+                    item.PostId = postID;
+                    item.IsDeleted = false;
+                    bcl.InsertOrUpdate(true, item);
+                }
+            }
+        }
+
+
+        // GET: Admin/Post/Edit/5
+        public ActionResult Edit(Guid id)
+        {
+            return View(new PostBCL().GetByPostId(id));
+        }
+
+        // POST: Admin/Post/Edit/5
+        [HttpPost]
+        public ActionResult Edit(PostObject ob, FormCollection collection)
+        {
+            string result = "";
+            try
+            {
+                // TODO: Add update logic here
+                if (new PostBCL().Update(ob))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    result = "Sửa Bài đăng thất bại";
+                }
+            }
+            catch (Exception ex)
+            {
+                result = ex.Message;
+            }
+            ModelState.AddModelError("", result);
+            return View();
+        }
+
+
+        // POST: Admin/Post/Delete/5
+        [HttpPost]
+        public JsonResult Delete(Guid id, FormCollection collection)
+        {
+            return Json(new PostBCL().Delete(id));
+        }
+
+        [HttpPost]
+        public JsonResult Apply(Guid id, FormCollection collection)
+        {
+            var ob = new PostBCL().GetByPostId(id);
+            if (ob == null) return Json(false);
+            ob.Approved = true;
+            ob.ApprovedDay = DateTime.Now;
+            //ob.AdministratorID = 
+            return Json(new PostBCL().Update(ob));
+        }
+
+        public JsonResult Upload()
+        {
+            List<string> lst = new List<string>();
+            var allFile = HttpContext.Request.Files;
+            var PostId = Request.Form["PostId"];
+            try
+            {
+                var id = Guid.Parse(PostId);
+                var bcl = new Image_BCL();
+                for (int i = 0; i < allFile.Count; i++)
+                {
+                    var fileName = DateTime.Now.ToString("yyyy.MM.dd.hh.mm.ss.") + allFile[i].FileName;
+                    var path = Path.Combine(Server.MapPath("/Areas/Admin/Content/img/post/"), fileName);
+                    allFile[i].SaveAs(path);
+                    bcl.Insert(new Image_Object()
+                    {
+                        PostId = id,
+                        ImageAlt = "",
+                        ImageName = "",
+                        PostImageId = Guid.NewGuid(),
+                        Rank = 1
+                    });
+                    lst.Add("Areas/Admin/Content/img/post/" + fileName);
+                }
+                return Json(lst);
+            }
+            catch (Exception)
+            {
+
+            }
+            return Json("");
+        }
+    }
+}

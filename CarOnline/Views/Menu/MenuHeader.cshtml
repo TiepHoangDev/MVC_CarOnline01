@@ -1,0 +1,25 @@
+﻿@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.Menu_Object>
+
+@foreach (var item in Model)
+{
+
+    @*<div class="container-topbar">
+        <div class="topbar">*@
+    if (item.Position == 0)
+    {
+        <a href="@item.Link" target="_blank" class="current">@item.Tittle</a>
+    }
+    else
+    {
+        <a href="@item.Link" target="_blank">@item.Tittle</a>
+    }
+
+
+
+        @*</div>
+    </div>*@
+
+} 
+
+
+

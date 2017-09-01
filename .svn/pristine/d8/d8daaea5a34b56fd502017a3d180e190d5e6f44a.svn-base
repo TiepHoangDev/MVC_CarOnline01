@@ -1,0 +1,62 @@
+﻿@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.PostObject>
+
+<div class="content-container fd-clearbox ng-scope">
+    @foreach (var item in Model)
+    {
+        <div class="content-item ng-scope postitem">
+            <div class="avatar">
+                @{
+                    Html.RenderAction("PartialMainImageOfPost", "CarDetail", new { postId = item.PostId });
+                }
+                <div class="tabledeli-btn-group ng-scope">
+                    <a href="#" class="deli-btn ng-scope deli">
+                        <div class="logo"></div>
+                        <div class="content ng-scope">
+                            Đặt giao hàng
+                        </div>
+                    </a>
+                </div>
+                <div class="tabledeli-overlay ng-scope">
+
+                </div>
+            </div>
+
+            <div class="items-content">
+                <div class="review-points green">
+                    <span class="ng-binding">
+                        7.0
+                    </span>
+                </div>
+                <div class="title fd-text-ellip">
+                    <a href="@Url.Action("Index", "CarDetail", new {carCode = item.CarCode})" class="ng-binding">
+                        @item.PostTitle
+                    </a>
+                </div>
+                <div class="desc fd-text-ellip ng-binding">
+                    @item.AccountPostJoin.Address
+                </div>
+            </div>
+            <div class="items-review ng-scope">
+               @{Html.RenderAction("CommentByPost", "Main", new { PostId=item.PostId });}
+            </div>
+            <div class="items-count">
+                <a href="#">
+                    <i class="fa fa-comment"></i>
+                    <span class="ng-binding">58</span>
+                </a>
+                <a href="#">
+                    <i class="fa fa-camera"></i>
+                    <span class="ng-binding">214</span>
+                </a>
+                <a href="#">
+                    <i class="fa fa-bookmark"></i>
+                    <span class="ng-binding">137</span>
+                </a>
+                <a href="#" class="item-save tool-custom-list-add">
+                    <i class="fa fa-bookmark"></i>
+                    <span>Lưu</span>
+                </a>
+            </div>
+        </div>
+    }
+</div>

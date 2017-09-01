@@ -1,0 +1,19 @@
+﻿@model List<IMIC.BUSINESSOBJECTS.EntityObject.DigitalDetail_Object>
+
+@using (Html.BeginForm("pv_ThongSoKiThuat", "Post", FormMethod.Post, new { @class = "frm-pv" }))
+{
+    @Html.Hidden("postID", Model[0].PostId)
+    <div class="titlerightbox ts" id="tskt">Thông số kỹ thuật</div>
+    <div class="tskts box">
+        <div>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <div class="rowright">
+                    @Html.HiddenFor(q => Model[i].DigitalCategoryId)
+                    @Html.CheckBoxFor(q => Model[i].Applyed)
+                    @Html.LabelFor(q => Model[i].Applyed, Model[i].DigitalCategoryObject.DigitalCategoryName)
+                </div>
+            }
+        </div>
+    </div>
+}

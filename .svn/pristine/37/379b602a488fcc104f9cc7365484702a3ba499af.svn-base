@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.Banner_Object>
+
+@*<li>
+        <a target="_blank" href="https://www.foody.vn/ho-chi-minh/events/foody-party-online-2017" onclick="ga('ads.send', 'event', 'Banner trang HEADER_TOP', 'Click', 'Foody Party Online 2017');">
+            <img src="https://media.foody.vn/biz_banner/foody-1170x60-636371320030386154.jpg" title="Foody Party Online 2017" width="1170" height="60" />
+        </a>
+    </li>
+    <li>
+        <a target="_blank" href="https://www.facebook.com/NowApp.vn/posts/454903411562034" onclick="ga('ads.send', 'event', 'Banner trang HEADER_TOP', 'Click', 'now');">
+            <img src="https://media.foody.vn/biz_banner/foody-1170x60_now-636376961202470349.jpg" title="now" width="1170" height="60" />
+        </a>
+    </li>
+    <li>
+        <a target="_blank" href="https://www.deliverynow.vn/" onclick="ga('ads.send', 'event', 'Banner trang HEADER_TOP', 'Click', 'DeliveryNow');">
+            <img src="https://media.foody.vn/biz_banner/foody-1170x60-happy-day-comeback-636378089795273724.jpg" title="DeliveryNow" width="1170" height="60" />
+        </a>
+    </li>*@
+
+
+   
+
+

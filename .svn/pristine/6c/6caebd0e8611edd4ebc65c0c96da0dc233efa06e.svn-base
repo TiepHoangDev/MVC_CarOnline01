@@ -1,0 +1,56 @@
+﻿@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.Banner_Object>
+
+<div class="home-banner-1-2-container">
+    <div id="home-banner-1-2-main">
+
+        <div class="main_image">
+            @{
+                var firstImage = Model.First();
+            }
+            <img src="@firstImage.Image" alt="@firstImage.BannerName" title="@firstImage.BannerName" class="big-img" />
+            <div class="desc">
+                <div class="block">
+                    <div class="lst-left-thumb-img">
+                        <a target="_blank" href="@firstImage.Image" title="@firstImage.BannerName" class="detail-link-overlay" onclick=" ga('ads.send', 'event', 'Banner trang chu', 'Click', 'TableNow'); ">&nbsp;</a><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload=" ga('ads.send', 'event', 'Banner trang chu', 'Impression', 'TableNow'); " width="0" height="0" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="image_thumb">
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <a href="@item.Image" title="@item.BannerName">
+                            <img src="@item.Image" alt="@item.BannerName" title="@item.BannerName" width="40" height="40" />
+                        </a>
+                        <div class="block">
+                            <div class="thumb-descr">
+                                <p>Giảm đến 35%</p>
+                            </div>
+                            <h2>
+                                <a title="TableNow">@item.BannerName</a>
+                            </h2>
+                            <div class="lst-left-thumb-img-container">
+                                <div class="lst-left-thumb-img">
+                                    <a target="_blank" href="https://www.tablenow.vn/bo-suu-tap/uu-dai-hap-dantu-20-tai-cac-nha-hang-chat-luong-269" title="TableNow" class="detail-link-overlay" onclick=" ga('ads.send', 'event', 'Banner trang chu', 'Click', 'TableNow'); ">&nbsp;</a>
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload=" ga('ads.send', 'event' , 'Banner trang chu' , 'Impression' , 'TableNow' ); " width="0" height="0" />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var homeBannerModel;
+    $(function () {
+        homeBannerModel = new HomeBannerModel();
+        homeBannerModel.Init({
+            isInterval: true
+        });
+    });
+</script>

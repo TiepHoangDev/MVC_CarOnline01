@@ -1,0 +1,101 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using IMIC.BUSINESSOBJECTS.EntityObject;
+using IMIC.ENTITYMODELS.DATA;
+
+namespace IMIC.ENTITYMODELS.MODEL
+{
+    public class Image_DAO
+    {
+        public List<Image_Object> GetByPostId(Guid postId)
+        {
+            using (var db = new CarOnlineEntities())
+            {
+                var data = db.WEB_CARONLINE_SP_Image_GetByPostId(postId);
+                var list = new List<Image_Object>();
+                list.AddRange(data.Select(x => new Image_Object
+                {
+                    PostId = x.PostID,
+                    ImageAlt = x.ImageAlt,
+                    ImageName = x.ImageName,
+                    PostImageId = x.PostImageID,
+                    Rank = x.Rank
+                }));
+
+                return list;
+            }
+        }
+
+        public Image_Object GetFirstOfPost(Guid? postId)
+        {
+            using (var db = new CarOnlineEntities())
+            {
+                var obj = db.WEB_CARONLINE_SP_Image_GetFirstOfPost(postId).FirstOrDefault();
+                return obj != null ? new Image_Object
+                {
+                    PostId = obj.PostID,
+                    ImageAlt = obj.ImageAlt,
+                    ImageName = obj.ImageName,
+                    PostImageId = obj.PostImageID,
+                    Rank = obj.Rank
+                } : null;
+            }
+        }
+
+
+        public List<Image_Object> GetAll()
+        {
+            var list = new CarOnlineEntities().WEB_CARONLINE_SP_Image_GetAll();
+            List<Image_Object> lst = new List<Image_Object>();
+            foreach (var item in list)
+            {
+                var obj = new Image_Object();
+
+                obj.ImageAlt = item.ImageAlt;
+                obj.ImageName = item.ImageName;
+                obj.PostId = item.PostID;
+                obj.PostImageId = item.PostImageID;
+                obj.Rank = item.Rank;
+                lst.Add(obj);
+            }
+            return lst;
+        }
+
+
+        public Image_Object GetByPostImageID(System.Guid PostImageID)
+        {
+            var list = new CarOnlineEntities().WEB_CARONLINE_SP_Image_GetByPostImageID(PostImageID);
+            foreach (var item in list)
+            {
+                var obj = new Image_Object();
+
+                obj.ImageAlt = item.ImageAlt;
+                obj.ImageName = item.ImageName;
+                obj.PostId = item.PostID;
+                obj.PostImageId = item.PostImageID;
+                obj.Rank = item.Rank;
+                return obj;
+            }
+            return null;
+        }
+
+        public bool Insert(Image_Object ob)
+        {
+            return new CarOnlineEntities().WEB_CARONLINE_SP_Image_Insert(ob.ImageAlt, ob.ImageName, ob.PostId, ob.PostImageId, ob.Rank) > 0;
+        }
+
+
+        public bool Delete(System.Guid PostImageID)
+        {
+            return new CarOnlineEntities().WEB_CARONLINE_SP_Image_Delete(PostImageID) > 0;
+        }
+
+
+        public bool Update(Image_Object ob)
+        {
+            return new CarOnlineEntities().WEB_CARONLINE_SP_Image_Update(ob.ImageAlt, ob.ImageName, ob.PostId, ob.PostImageId, ob.Rank) > 0;
+        }
+
+    }
+}

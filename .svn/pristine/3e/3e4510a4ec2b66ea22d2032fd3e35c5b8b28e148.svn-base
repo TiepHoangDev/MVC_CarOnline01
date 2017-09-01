@@ -1,0 +1,1498 @@
+﻿@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IMIC.BUSINESSOBJECTS.EntityObject.PostObject
+
+
+
+@section LevelCss{
+    <link href="~/Content/css/tuyen_dung.css" rel="stylesheet" />
+    <style>
+        .infotechv2 {
+            float: left;
+            width: 635px;
+            margin-left: 15px;
+            margin-top: 20px;
+        }
+        .infotechv2 .baseinfo {
+            float: left;
+            width: 100%;
+            height: auto;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+ .mgb15 {
+            margin-bottom: 15px !important;
+        }
+        .autodetail .infotechv2 .titlebox {
+            font: bold 16px/30px 'Open Sans';
+            color: #1260ab;
+            float: left;
+            width: 100%;
+        }
+        .infotechv2 .colleft {
+            width: 305px;
+            float: left;
+        }
+         .infotechv2 .colright {
+            width: 305px;
+            float: left;
+            margin-left: 25px;
+        }
+        .infotechv2 .highlight {
+            background-color: #f7f7f7;
+        }
+
+        .infotechv2 .row {
+            float: left;
+            width: 100%;
+            height: 30px;
+            overflow: hidden;
+            font: 12px/30px 'Tahoma';
+            color: #333;
+        }
+        .infotechv2 .titlebox {
+            font: bold 16px/30px 'Tahoma';
+            color: #1260ab;
+            float: left;
+            width: 100%;
+        }
+        .infotechv2 .row label {
+            float: left;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+
+       
+    </style>
+
+}
+<div data-mic-nav="0" class="pn-microsite" itemscope itemtype="http://schema.org/FoodEstablishment" id="/ho-chi-minh/the-coffee-house-ut-tich">
+    <section class="microsite" style="position: static; ">
+        <div class="micro-container">
+            <div class="micro-content">
+                <div class="user-history-delivery" style="margin-top: -20px;">
+                    <script src="~/Content/js/public.delivery.current.min.js" type="text/javascript"></script>
+                    <div style="margin-top: 20px;"></div>
+                    <div ng-controller="DeliveryMemberHistoryCommonCtrl" ng-cloak>
+                        <script src="~/Content/js/materialize.js"></script>
+                        <div bind-unsafe-html="HtmlForm"></div>
+                    </div>
+                </div>
+                <div class="microsite-basic-info">
+                    <!--Start microsite header-->
+                    <script>
+                        if ('False' == 'True') {
+                            fbq('track', 'ViewContent1');
+                        }
+                        if ('False' == 'True') {
+                            fbq('track', 'ViewContent2');
+                        }
+                    </script>
+                    <script type="text/javascript">
+                        var backUrl;
+                    </script>
+                    <script type="text/javascript">
+                        var backUrl = undefined, loginSuccessCallback, refreshAlbumIntervalId;
+                        $(function () {
+                            $('[data-toggle="tooltip"]').tooltip();
+                            $('.upload').click(function () {
+                                //$(".search-div").hide();
+                                var dishId = $(this).attr('dishid');
+                                loginSuccessCallback = function () {
+                                    LoadMultipleUploadPictureForm(dishId);
+                                };
+                                LoadMultipleUploadPictureForm(dishId);
+                                return false;
+                            });
+                            $('.rating').click(function (e) {
+                                //$(".search-div").hide();
+                                $('html').scrollTop(1600);
+                                return false;
+                            });
+                            $(".photoslider").click(function () {
+                                var id = '185545';
+                                _resSafetyCertificationModel.fnShow({ ResId: id });
+                            });
+                            if ('1' == '0') {
+                                $('#foody-hot-line').html('Điện thoại: 1900 6044 Email: info@foody.vn');
+                                $('#foody-hot-line').show();
+                            }
+                            //if(!window.IsHomeMicrosite){
+                            //    var top= $('#float-menu-container').position().top-$('#container-s').height()-10;
+                            //    $('body,html').animate({scrollTop : top},0);
+                            //}
+                        });
+                        function LoadMultipleUploadPictureForm(dishId) {
+                            var d = new Date();
+                            $.ajax({
+                                type: "GET",
+                                url: '/Review/IsLogin?' + d.getTime(),
+                                success: function (response) {
+                                    if (response.success == true) {
+                                        SetCustomerToken();
+                                        OpenUploadPictureForm(dishId);
+                                    }
+                                    else {
+                                        loginSuccessCallback = function () {
+                                            $.modal.close();
+                                            SetCustomerToken();
+                                            OpenUploadPictureForm(dishId);
+                                        };
+                                        //$('#loginPopup').modal({ persist: true });
+                                        LoginPopup.Show();
+                                    }
+                                }
+                            });
+                        }
+                        function SetCustomerToken() {
+                            if (window.CONST_MEDIA_XUSER_TOKEN == null || window.CONST_MEDIA_XUSER_TOKEN == "") {
+                                var d = new Date();
+                                $.ajax({
+                                    type: "GET",
+                                    url: '/Review/GetCustomerToken?' + d.getTime(),
+                                    success: function (response) {
+                                        window.CONST_MEDIA_XUSER_TOKEN = response;
+                                    }
+                                });
+                            }
+                        }
+                        function OpenUploadPictureForm(dishId) {
+                            var d = new Date();
+                            var link = "/__get/Gallery/NewAlbumPopup?RestaurantID=185545&Name=The%20Coffee%20House%20-%20%C3%9At%20T%E1%BB%8Bch";
+                            if (dishId)
+                                link += '&DishId=' + dishId;
+                            $('#reviewDialog').html('<div style="padding-top:100px; padding-bottom:100px; padding-left:400px;"><img alt="Đang tải ..." src="../FoodyCss/img/loading-review.gif" /></div>').modal();
+                            $('#reviewDialog').load(link + '&t=' + d.getTime(), function () {
+                                setupAlbumUpload();
+                            }).modal();
+                        }
+                    </script>
+                    <script type="text/javascript">
+                        window.ReviewLanguages = {
+                            Common_You_Have: 'Bạn có',
+                            Common_Points: 'điểm',
+                            Review_You_Lose: 'Bạn bị trừ',
+                            Redeem_OrderStatus_Pending: 'Chờ duyệt'
+                        };
+                        var loginSuccessCallback; //= LoadAddNewReviewForm;
+                        var isReviewPage = true;
+                        var refreshIntervalId;
+                        $('.reviewLink').live('click', function () {
+                            // $(".search-div").hide();
+                            isModifiedMode = false;
+                            //loginSuccessCallback = OpenWriteReviewForm;
+                            //LoadAddNewReviewForm();
+                            var resid = $(this).attr('resid');
+                            UploadReview.LoadAddNewReviewForm(resid);
+                            return false;
+                        });
+                        $(function () {
+                            // Dialog Link
+                            var url = window.location.href;
+                            if (url.search("#binh-luan-nhap") >= 0) {
+                                // $(".search-div").hide();
+                                isModifiedMode = false;
+                                //loginSuccessCallback = OpenWriteReviewForm;
+                                //LoadAddNewReviewForm();
+                                //var resid = $('#draf-review-load').attr('resid');
+                                //console.warn(resid);
+                                UploadReview.LoadAddNewReviewForm('185545');
+                            }
+                            bindTooltip();
+                            addCommentWatermark();
+                            bindWriteCommentAutoresize();
+                            currentTimeStamp = 1502812698;
+                            CalculatingReviewPostedTime();
+                        });
+                        function GetNewReview(reviewId) {
+                            $.post('/__post/Review/GetReviewEx', { id: reviewId }, function (res) {
+                                if (!res) {
+                                    hideLoadingProcess();
+                                    closeNewReviewPopup();
+                                    return;
+                                }
+                                angular.element('div[ng-controller="ResReviewCtrl"]').scope().Insert(res);
+                                hideLoadingProcess();
+                                closeNewReviewPopup();
+                            });
+                            return;
+                            if (isReviewPage) {
+                                if (IsFiltering()) {
+                                    resetFiltering(function () {
+                                        //ScrollToReview(reviewId);
+                                        //bindPostedTime(reviewId);
+                                        closeNewReviewPopup();
+                                    });
+                                    if (typeof (drawChart) == 'function')
+                                        drawChart();
+                                } else {
+                                    //Indo redirect
+                                    if ('False' === 'True') {
+                                        var reviewDirectlink = '/ho-chi-minh/the-coffee-house-ut-tich' + '/' + window.routeConfig.microsite.reviewPath + '-' + reviewId;
+                                        window.location.href = reviewDirectlink;
+                                    }
+                                    var d = new Date();
+                                    $.get('/Review/GetReviewById?t=' + d.getTime(), { reviewId: reviewId, template: 1 }, function (response) {
+                                        if (response.success) {
+                                            RemoveReviewByIndex(5);
+                                            if (typeof homeReviewsModel != 'undefined' && homeReviewsModel != null) {
+                                                homeReviewsModel.addNewReview(response.data);
+                                            }
+                                            if (typeof resReviewsModel != 'undefined' && resReviewsModel != null) {
+                                                resReviewsModel.addNewReview(response.data);
+                                            }
+                                            //$('#review-list').prepend('<div id="review-'+reviewId+'">'+html+'</div>');
+                                            if (typeof (updateReviewTabs) != 'undefined') {
+                                                $('#review-tab div.micro-home-recent-review.review-item.empty').remove();
+                                                updateReviewTabs($("ul.review-tabs li:first"));
+                                            }
+                                            removeUserTooltip(response.userid);
+                                            bindTooltip();
+                                            //loadUserTotalReviews(reviewId);
+                                            bindPostedTime(reviewId);
+                                            updateTotalUserReviewsAndPictures(reviewId);
+                                            addCommentWatermark();
+                                            ScrollToReview(reviewId);
+                                            bindReviewReportByReviewId(reviewId);
+                                            IncreaseGlobalTotalReview(1);
+                                            hideLoadingProcess();
+                                            closeNewReviewPopup();
+                                            if (typeof (drawChart) == 'function')
+                                                drawChart();
+                                        }
+                                    });
+                                }
+                            } else {
+                                var reviewdetaillink = '/ho-chi-minh/the-coffee-house-ut-tich' + '/' + routeConfig.microsite.reviewPath + '-' + reviewId;
+                                var d = new Date();
+                                $.ajax({
+                                    type: "GET",
+                                    url: '/__get/Review/CalculationRestaurantReviewSummary?restaurantId=185545&' + d.getTime(),
+                                    success: function (response) {
+                                        if (response) {
+                                            window.location = reviewdetaillink;
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                        $(document).ready(function () {
+                            var a = $('#avatarVideo');
+                            var activeMenuId = $(".list-tool li.active").attr('data-item-id');
+                            if (a && activeMenuId && activeMenuId == 0) {
+                                var videoTypeId = a.attr('data-video-type');
+                                if (videoTypeId == 1)//youtube
+                                    a.click();
+                            }
+                        });
+                    </script>
+                    <div>
+                        <div class="micro-inforbox">
+                            <div class="social-share-icons">
+                                <div class="total-views" title="5.4K lượt xem">
+                                    <span>5.4K</span>
+                                    <div>lượt xem</div>
+                                </div>
+                                <div class="fb-like" data-href="/ho-chi-minh/the-coffee-house-ut-tich" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                                <div class="google-like">
+                                    <div class="g-plusone" data-size="tall" data-href="/ho-chi-minh/the-coffee-house-ut-tich"></div>
+                                </div>
+                            </div>
+                            <div class="micro-header">
+                                <div class="micro-status-label"></div>
+                                <div class="main-image">
+                                    <div class="img" style="height: 275px;">
+                                        <a href="/ho-chi-minh/the-coffee-house-ut-tich">
+                                            <img itemprop="image" class="pic-place" src="@Model.ImageObjectFirstShow.ImageName" style="width:488px;height: auto;" alt="@Model.ImageObjectFirstShow.ImageAlt" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="main-information disableSection">
+                                    <div class="res-common" style="position: relative;">
+                                        <div class="res-common-info" style="">
+                                            <div class="main-info-bg"></div>
+                                            <div class="breadcrum" style="margin-top:7px;margin-bottom:0; clear:both;width:100%;">
+                                                <div class="breadcrum-microsite">
+                                                    <span itemscope itemtype="http://schema.org/BreadcrumbList">
+                                                        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                                            <meta itemprop="position" content="1" />
+                                                            <a itemprop="item" href="">
+                                                                <span itemprop="name">@Model.TypeOfCarObjectJoin.CompanyCarObject.CompanyName</span> »
+                                                            </a>
+                                                        </span>
+                                                        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                                            <meta itemprop="position" content="2" />
+                                                            <a itemprop="item" href="">
+                                                                <span itemprop="name">@Model.TypeOfCarObjectJoin.TypeName</span> »
+                                                            </a>
+                                                        </span>
+                                                        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                                            <meta itemprop="position" content="3" />
+                                                            <a itemprop="item" href="" style="background:none!important;">
+                                                                <span itemprop="name">@Model.TypeOfCarObjectJoin.DesignCarObject.DesignName </span>
+                                                            </a>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                @*<div class="report-microsite btn-report-microsite" data-item-id="185545">
+                                                    <a href="javascript:void(0)">
+                                                        <span><i class="fa fa-exclamation-triangle"></i></span>
+                                                        <span>Báo lỗi</span>
+                                                    </a>
+                                                </div>*@
+                                            </div>
+                                            <div class="main-info-title">
+                                                <h1 itemprop="name" style="width: 600px;">@Model.PostContent</h1>
+                                                @*<div class="category">
+                                                    <div class="category-items" style="max-width:200px">
+                                                        <a href="" title="@Model.TypeOfCarObjectJoin.TypeName">@Model.TypeOfCarObjectJoin.TypeName</a>
+                                                    </div>
+                                                    <div class="category-cuisines">
+                                                        <div class="cuisines-separator"> - </div>
+                                                        <div itemprop="servesCuisine" class="cuisines-list" style="margin-right: 5px;max-width: 150px;padding-top:2px;">
+                                                            <a class="microsite-cuisine" style="color: #888;font-size: 12px;" href="/ho-chi-minh/cafe-phong-cach-viet-nam">
+                                                                Việt Nam
+                                                            </a>
+                                                        </div>
+                                                        <div class="audiences" style="max-width: 150px;margin-top:3px;">
+                                                            -&nbsp;Cặp đôi,&nbsp;Gia đình,&nbsp;Nhóm hội
+                                                        </div>
+                                                        <h2 class="brands">
+                                                            - <a href="/thuong-hieu/the-coffee-house?c=ho-chi-minh" class="microsite-brand">Chi nhánh</a>
+                                                        </h2>
+                                                    </div>
+                                                </div>
+                                                <div id="basicinfo-sticker"></div>*@
+                                            </div>
+                                            <div id="res-summary-point">
+                                                @*<div class="microsite-points-summary">
+                                                    <div class="microsite-point-group">
+                                                        <div class="microsite-top-points">
+                                                            <div>
+                                                                <span class="avg-txt-highlight">Tình trạng</span>
+                                                            </div>
+                                                            <div class="label">@Model.CarStatusObjectJoin.CarStatusName</div>
+                                                        </div>
+                                                        <div class="microsite-top-points">
+                                                            <div>
+                                                                <span class="avg-txt-highlight">Số Km</span>
+                                                            </div>
+                                                            <div class="label">@Model.KmWent</div>
+                                                        </div>
+                                                        <div class="microsite-top-points">
+                                                            <div>
+                                                                <span class="avg-txt-highlight">Xuất xứ</span>
+                                                            </div>
+                                                            <div class="label">@Model.MadeInCarObjectJoin.MadeInName</div>
+                                                        </div>
+                                                        <div class="microsite-top-points">
+                                                            <div>
+                                                                <span class="avg-txt-highlight">Năm SX</span>
+                                                            </div>
+                                                            <div class="label">@Model.ProducedYear</div>
+                                                        </div>
+                                                        <div class="microsite-top-points">
+                                                            <div>
+                                                                <span class="avg-txt-highlight">Giá</span>
+                                                            </div>
+                                                            <div class="label">@Model.CarPrice</div>
+                                                        </div>
+                                                    </div>
+                                                    <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="microsite-top-points-block" style="font-size:20px;position:absolute;width: 600px;">
+                                                        <meta itemprop="worstRating" content="1">
+                                                        <meta itemprop="bestRating" content="10">
+                                                        <div itemprop="ratingValue" class="microsite-point-avg ">
+                                                       7.3
+                                                        </div>
+                                                        <div itemprop="reviewCount" class="microsite-review-count">59</div>
+                                                        <div class="microsite-review-text">Bình luận</div>
+                                                    </div>
+                                                </div>*@
+                                                <div class="infotechv2">
+
+                                                    <div class="baseinfo mgb15">
+                                                        <div class="titlebox">Thông số cơ bản</div>
+                                                        <div class="colleft">
+                                                            <div class="row highlight">
+                                                                <label style="width: 79px;">Số Km đã đi</label>
+                                                                <span>@Model.KmWent</span>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label style="width: 79px;">Số cửa</label>
+                                                                <span>@Model.NumberOfDoorObjectJoin.NumberOfDoorName</span>
+                                                            </div>
+                                                            <div class="row highlight">
+                                                                <label style="width: 79px;">Số chỗ</label>
+                                                                <span>@Model.NumberOfSeatObjectJoin.NumberOfSeatName</span>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label style="width: 79px;">Hộp số</label>
+                                                                <span>@Model.GearCarObjectJoin.CarGearName</span>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label style="width: 79px;">Xuất xứ</label>
+                                                                <span>@Model.MadeInCarObjectJoin.MadeInName</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="colright">
+                                                            <div class="row highlight">
+                                                                <label style="width: 81px;">Dẫn động</label>
+                                                                <span>@Model.WheelDriveObjectJoin.WheelDriveName   </span>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label style="width: 81px;">Nhiên liệu</label>
+                                                                <span>@Model.FuelCarObjectJoin.FuelName</span>
+                                                            </div>
+                                                            <div class="row highlight">
+                                                                <label style="width: 81px;">Màu xe</label>
+                                                                <span>@Model.ExteriorColorObjectJoin.ExteriorFurnitureColorName</span>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label style="width: 81px;">Màu nội thất</label>
+                                                                <span>@Model.ExteriorColorObjectJoin.ExteriorFurnitureColorName</span>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label style="width: 81px;">Kiểu dáng</label>
+                                                                <span>@Model.TypeOfCarObjectJoin.DesignCarObject.DesignName</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <script type="text/javascript">
+                                                    $(function () {
+                                                        $(".rich-snippet-total-review span").hover(function () {
+                                                            $(this).css("text-decoration", "underline");
+                                                            $(this).css("cursor", "pointer");
+                                                        }, function () {
+                                                            $(this).css("text-decoration", "none");
+                                                            $(this).css("cursor", "pointer");
+                                                        });
+                                                        $(".rich-snippet-total-review span").click(function () {
+                                                            window.location.href = "/ho-chi-minh/the-coffee-house-ut-tich/binh-luan";
+                                                        });
+                                                    });
+                                                </script>
+                                            </div>
+                                            <div class="disableSection">
+                                                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="res-common-add">
+                                                    <span class="fa fa-location-arrow locationicon"></span>
+                                                    <span><a href="/ho-chi-minh/the-coffee-house-ut-tich/nearBy" target="_blank"><span itemprop="streetAddress">17B &#218;t Tịch</span>,</a></span>
+                                                    <a class="linkmap" style="position: relative;"><i class="fa fa-map" aria-hidden="true"></i></a>
+                                                    <span><a href="/ho-chi-minh/khu-vuc-quan-tan-binh" title="Quận T&#226;n B&#236;nh"><span itemprop="addressLocality">Quận T&#226;n B&#236;nh</span></a></span>, <span itemprop="addressRegion">TP. HCM</span>
+                                                </div>
+                                                <div class="res-common-price">
+                                                    <div class="micro-timesopen">
+                                                        <span class="fa fa-clock-o houricon"></span>
+                                                        <span class="itsclosed" title=" | 08:00 AM - 10:00 PM">Chưa mở cửa</span>
+                                                        <span><span><span>@Model.ApprovedDay</span> - <span>@Model.ProducedYear</span></span></span>
+                                                    </div>
+                                                    <div class="res-common-minmaxprice">
+                                                        <span class="fa fa-tag minmaxpriceicon"></span>
+                                                        <span itemprop="priceRange">
+                                                            <span>@Model.CarPrice - <span>@Model.CarPrice</span>đ</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                            <meta itemprop="latitude" content="10.7964536316790">
+                            <meta itemprop="longitude" content="106.6587764024734">
+                        </span>
+                    </div>
+                    <div id="report-info-dialog" style="display: none" class="reporterrortooltip">
+                        <div>
+                            <div style="padding-bottom:5px;"><span class="errorkeyname"></span></div>
+                            <div style="padding-top:3px;"><textarea class="correctinfotextbox" spellcheck="false"></textarea></div>
+                            <div class="top-arrow"><img alt="" src="../FoodyCss/img/arrow-top.png"></div>
+                            <div><a class="send-resinfo-error" reporttype="1">Gửi thông tin</a></div>
+                            <div class="report-wating" style="display:none"><img src="../FoodyCss/img/loading.gif" /></div>
+                            <div class="report-success"></div>
+                            <div class="report-fail"></div>
+                        </div>
+                    </div>
+                    <div id="report-properties-dialog" style="display: none; height: 120px;" class="reporterrortooltip">
+                        <div>
+                            <div style="padding-bottom:5px;"><span class="errorkeyname"></span></div>
+                            <div class="left-arrow"><img alt="" src="~/Content/img/arrow-left.png"></div>
+                            <div>
+                                <label><input type="radio" value="true" name="property-truth" />Có</label>
+                                <label><input type="radio" value="false" name="property-truth" />Không</label>
+                            </div>
+                            <div style="padding-top:3px;"><textarea class="correctinfotextbox" spellcheck="false"></textarea></div>
+                            <div><a class="send-resproperties-error" reporttype="2">Gửi thông tin</a></div>
+                            <div class="report-wating" style="display:none"><img src=".~/Content/img/loading.gif" /></div>
+                            <div class="report-success"></div>
+                            <div class="report-fail"></div>
+                        </div>
+                    </div>
+                    <script type="text/ecmascript">
+                        $(function () {
+                        bindReviewReportErrorWithLogined();
+                        //$('.correctinfotextbox').watermark('Thông tin...', { className: 'comment-watermark' });
+                        });
+                    </script>
+                    <div id="review-report-dialog">
+                        <div class="top-arrow"><img src="../FoodyCss/img/arrow-top.png" alt=""></div>
+                        <div>
+                            <input type="hidden" id="review-error-hd" /><input type="hidden" id="review-error-type" />
+                            <div style="padding-bottom: 5px;"><span class="errorkeyname">Báo lỗi bình luận</span></div>
+                            <div>
+                                <textarea class="correctinfotextbox" spellcheck="false"></textarea>
+                            </div>
+                            <div><a class="send-resinfo-error">Gửi thông tin</a></div>
+                            <div class="report-wating" style="display:none"><img src="../FoodyCss/img/loading.gif" /></div>
+                            <div class="report-success"></div>
+                            <div class="report-fail"></div>
+                        </div>
+                    </div>
+                    <style>
+                        .send-resinfo-user {
+                            float: left;
+                            border: #9F1B1B 0px solid;
+                            line-height: 18px;
+                            border-radius: 2px;
+                            width: 100px;
+                            float: left;
+                            clear: both;
+                            margin-top: 5px;
+                            font-weight: bold;
+                            padding: 4px 0;
+                            color: #fff;
+                            text-align: center;
+                            background: rgb(236, 13, 13);
+                        }
+
+                        a.send-resinfo-user:hover {
+                            text-decoration: none;
+                        }
+                    </style>
+                    <div id="user-report-dialog">
+                        <div class="top-arrow"><img src="../FoodyCss/img/arrow-top.png" alt=""></div>
+                        <div>
+                            <input type="hidden" id="user-id" />
+                            <div style="padding-bottom: 5px;"><span class="errorkeyname">Báo lỗi người dùng</span></div>
+                            <div>
+                                <textarea class="correctinfotextbox" spellcheck="false"></textarea>
+                            </div>
+                            <div><a class="send-resinfo-user">Gửi thông tin</a></div>
+                            <div class="report-wating" style="display: none"><img src="../FoodyCss/img/loading.gif" /></div>
+                            <div class="report-success"></div>
+                            <div class="report-fail"></div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        var errorReport = new ErrorReport('185545');
+                        $(function () {
+                            $('.send-resproperties-error').click(function () {
+                                errorReport.sendResPropertiesReport();
+                            });
+                            propertiesWattermark = 'Ghi chú';
+                            infoWattermark = 'Nhập thông tin chính xác';
+                            reportErrorEmptyMsg = 'Vui lòng nhập thông tin';
+                            reportErrorSuccessMsg = 'Cám ơn bạn';
+                            $('.linkmap').click(function () {
+                                if (typeof loadMicroMap !== 'undefined' && $.isFunction(loadMicroMap))
+                                    loadMicroMap();
+                                else {
+                                    window.location.href = '/ho-chi-minh/the-coffee-house-ut-tich#map';
+                                }
+                            });
+                        });
+                        $('.send-resinfo-error').live('click', function () {
+                            errorReport.sendResInfoReport();
+                        });
+                        isLogin = true;
+                        $(function () {
+                            errorReport.InitWithLogined();
+                        });
+                    </script>
+                    <script>
+                        var isLoginSticker = 1;
+                        var resId = '185545';
+                        $(function () {
+                            if (isLoginSticker === 1) {
+                                var isFoodyShow6Month = false;
+                                var isDeliShow6Month = false;
+                                $.post('/__post/Restaurant/CheckUserSticker', { id: resId }, function (res) {
+                                    if (res == null)
+                                        return false;
+                                    if (res.FoodySticker === 1) {
+                                        $('#basicinfo-sticker').append('<span class="main-info-sticker-foody"><span class="fa fa-check-circle"></span><span class="sticker-title">Sticker Foody</span></span>');
+                                    } else if (res.FoodySticker === 2) {
+                                        if (!isFoodyShow6Month) {
+                                            $('#basicinfo-sticker').append('<span class="main-info-sticker-6months"><span class="fa fa-check-circle"></span><span class="sticker-title">Sticker</span></span>');
+                                            isFoodyShow6Month = true;
+                                        }
+                                    }
+                                    if (res.DeliverySticker === 1) {
+                                        $('#basicinfo-sticker').append('<span class="main-info-sticker-delivery"><span class="fa fa-check-circle"></span><span class="sticker-title">Sticker Delivery</span></span>');
+                                    } else if (res.DeliverySticker === 2) {
+                                        if (!isDeliShow6Month) {
+                                            $('#basicinfo-sticker').append('<span class="main-info-sticker-6months"><span class="fa fa-check-circle"></span><span class="sticker-title">Sticker</span></span>');
+                                            isDeliShow6Month = true;
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    </script><!--End of microsite header-->
+                    <script src="../FoodyCss/js/jquery.jcarousel.min.js"></script>
+                    <link href="../FoodyCss/css/booking.jcarousel.css" rel="stylesheet" />
+                    <script src="../FoodyCss/js/campaign.js"></script>
+                    <script type="text/javascript">
+                        var listBankCards = [{ "Id": 0, "BankCardName": "Chủ thẻ JCB", "BankName": "JCB ", "Discount": 0, "CardId": 0, "Policy": null, "Img": null }];
+                        Foody.Campaign.GaPushJCBCard(listBankCards);
+                    </script><img src="/__get/trace/RestaurantViewer.gif?id=185545" alt="" style="position: fixed;z-index: -1000;left:-1000px;" />
+                    <div id="reviewDialog" style="display: none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @* ------- *@
+    <div class="home2-container ng-scope">
+        <div class="home2-panel-left foody-toolbar">
+            <div class="fd-clearbox" style="top: 0px;">
+                <div class="category">
+                    Hãng xe
+                    <a href="javascript:void(0)"></a>
+                </div>
+                <ul>
+                    @{
+                        Html.RenderAction("Index", "CompanyCar");
+
+                    }
+                </ul>
+            </div>
+        </div>
+
+        @* ----Comment Post---- *@
+
+        <div class="micro-right1000">
+            <div class="foody-toolbar fd-clearbox" style="margin-bottom: 15px;height:48px;" ng-init="Init({ResId:'185545'})">
+                <div class="fd-clearbox" style="height:auto;">
+                    <ul class="micro-act-btns">
+                        <li>
+                            <a id="show-phone-number" data-item="the-coffee-house-ut-tich" resid="185545">
+                                <i class="fa fa-phone"></i>
+                                Gọi điện thoại
+                            </a>
+                        </li>
+                        <li>
+                            <a class="tool-custom-list-add" href="javascript:void(0);" data-id="185545" data-core="true">
+                                <div class="micro-act-btn-save">
+                                    <i class="fa fa-bookmark"></i>
+                                    Lưu vào Bộ sưu tập (68)
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a resid="185545" ng-click="ShowDlgWriteReview()">
+                                <i class="fa fa-comment"></i>
+                                Bình luận
+                            </a>
+                        </li>
+                        <li class="restaurant-action-upload-pic">
+                            <a class="upload">
+                                <i class="fa fa-camera"></i>
+                                Hình ảnh
+                            </a>
+                        </li>
+                        <li class="restaurant-action-item restaurant-action-share" data-title='Chia sẻ' data-des='Vui lòng chọn hình thức chia sẻ'>
+                            <a style="border-right: none;">
+                                <i class="fa fa-share-alt"></i>
+                                Chia sẻ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Popup PhoneNumber -->
+            <div class="microsite-popup-phone-number">
+                <div id="report-info-dialog" style="display: none" class="reporterrortooltip">
+                    <div>
+                        <div style="padding-bottom:5px;"><span class="errorkeyname"></span></div>
+                        <div style="padding-top:3px;"><textarea class="correctinfotextbox" spellcheck="false"></textarea></div>
+                        <div class="top-arrow"><img alt="" src="../FoodyCss/img/arrow-top.png"></div>
+                        <div><a class="send-resinfo-error" reporttype="1">Gửi thông tin</a></div>
+                        <div class="report-wating" style="display:none"><img src="../FoodyCss/img/loading.gif" /></div>
+                        <div class="report-success"></div>
+                        <div class="report-fail"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Popup PhoneNumber-->
+            <section class="microsite" style="clear: both; position: static;">
+                <div class="micro-top-container">
+                    <div class="content">
+                        <!--Start Micro content-->
+                        <div class="micro-main-content" style="min-height:500px;">
+                            <div class="leftbox" style="margin: 0 auto;">
+                                <div class="micro-left">
+                                    <div class="micro-left-content">
+                                        <script type="text/javascript">
+                                            var eventTrackingLabel = "Microsite Home";
+                                            backUrl = '/ho-chi-minh/the-coffee-house-ut-tich/album-anh';
+                                            backUrlMenu = '/ho-chi-minh/the-coffee-house-ut-tich/thuc-don';
+                                            window.IsHomeMicrosite = true;
+                                        </script>
+                                        <script type="text/javascript">
+                                            $(window).scroll(function () {
+                                                if (window._micNavTime)
+                                                    clearTimeout(_micNavTime);
+                                                window._micNavTime = setTimeout(function () {
+                                                    if (!window.microNavs) return;
+                                                    var wTop = $(window).scrollTop();
+                                                    for (var i = 0; i < microNavs.length; i++) {
+                                                        var top = microNavs[i].Block.offset().top;
+                                                        if (wTop + 300 > top) {
+                                                            var nav = $('.mic-navigation li[data-item-id="' + microNavs[i].Id + '"]');
+                                                            if (nav.length > 0) {
+                                                                $('.mic-navigation li').removeClass('active');
+                                                                nav.addClass('active');
+                                                            }
+                                                        }
+                                                        //console.log(wTop + ':' + top);
+                                                    }
+                                                }, 10)
+                                            });
+                                        </script>
+                                        <style>
+                                            .biz-banner-list-slide ol.bjqs-markers {
+                                                display: none;
+                                            }
+                                        </style>
+
+                                        @{Html.RenderAction("BannerDetails", "Banner");}
+                                        <script type="text/javascript">
+                                            $(function () {
+                                                $(".banner-slide-list-MICROSITE_BASIC_INFO").bjqs({
+                                                    height: 125,
+                                                    width: 995,
+                                                    responsive: true,
+                                                    showmarkers: false, // enable/disable individual slide UI markers
+                                                    centermarkers: true,
+                                                    showcontrols: false, // enable/disable next + previous UI elements
+                                                    centercontrols: false,
+                                                    animduration: 1000, // how fast the animation are
+                                                    animspeed: 4000,
+                                                    showmarkers: true,
+                                                    randomstart: true
+                                                });
+                                            });
+                                        </script>
+                                        <style>
+                                            .biz-banner-list-slide ol.bjqs-markers {
+                                                width: inherit;
+                                            }
+                                        </style>
+                                        <div class="microsite-gallery" data-mic-nav="5">
+                                            <script type="text/javascript">
+                                                var popularPicSlide = new TopReviewOfDayModel();
+                                                $(function () {
+                                                    popularPicSlide.Init({
+                                                        containerId: "top-popular-pic-container",
+                                                        btnAnimationId: "btn-top-popular-pic",
+                                                        itemWidth: 101,
+                                                        totalItems: 14,
+                                                        displayItems: 10
+                                                    });
+                                                });
+                                            </script>
+                                            <div class="microsite-box">
+                                                <div class="microsite-box-heading">
+                                                    <div class="title">
+                                                        Hình món ăn từ cộng đồng
+                                                    </div>
+                                                </div>
+                                                <div class="microsite-box-popular-pic">
+                                                    <div class="microsite-box-content">
+                                                        <!-- start fod slide -->
+                                                        <div style="width: 1000px;">
+                                                            @{
+                                                                Html.RenderAction("PartialImageOfPost", "CarDetail", new { postId = @Model.PostId });
+                                                            }
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="microsite-box">
+                                                <div class="microsite-box-heading">
+                                                    <div class="title">
+                                                        Albums
+                                                    </div>
+                                                </div>
+                                                <!--End of box heading -->
+                                                <div class="microsite-box-album">
+                                                    <div class="microsite-box-content">
+                                                        <div class="microsite-box-content predefine-album-box" style="padding: 0 0;width:1000px;">
+                                                            <div class="micro-album">
+                                                                <div class="img-box">
+                                                                    <a href="javascript:void(0);" class="btn-upload" ng-click="ShowDlgWriteReview()" ng-controller="MicroSiteCtrl" ng-init="Init({ResId:'185545'})">
+                                                                        +&nbsp;Tải video
+                                                                    </a>
+                                                                </div>
+                                                                <div class="name">
+                                                                    <a href="/ho-chi-minh/the-coffee-house-ut-tich/video">Video</a>
+                                                                </div>
+                                                                <div class="summary">
+                                                                    <span>0</span>
+                                                                    video
+                                                                </div>
+                                                            </div>
+                                                            <div class="micro-album">
+                                                                <div class="img-box">
+                                                                    <a href="/ho-chi-minh/the-coffee-house-ut-tich/album-khong-gian">
+                                                                        <img class="img" src="https://media.foody.vn/res/g19/185545/s180x180/foody-the-coffee-house-ut-tich-663-636382402115946522.jpg" style="background: #8e867d " />
+                                                                    </a>
+                                                                </div>
+                                                                <div class="name">
+                                                                    <a href="/ho-chi-minh/the-coffee-house-ut-tich/album-khong-gian">Kh&#244;ng gian</a>
+                                                                </div>
+                                                                <div class="summary">
+                                                                    <span>134</span>
+                                                                    ảnh
+                                                                </div>
+                                                            </div>
+                                                            <div class="micro-album">
+                                                                <div class="img-box">
+                                                                    <a href="/ho-chi-minh/the-coffee-house-ut-tich/album-mon-an">
+                                                                        <img class="img" src="https://media.foody.vn/res/g19/185545/s180x180/foody-the-coffee-house-ut-tich-710-636384335258295186.jpg" style="background: #8a7a65 " />
+                                                                    </a>
+                                                                </div>
+                                                                <div class="name">
+                                                                    <a href="/ho-chi-minh/the-coffee-house-ut-tich/album-mon-an">M&#243;n ăn</a>
+                                                                </div>
+                                                                <div class="summary">
+                                                                    <span>190</span>
+                                                                    ảnh
+                                                                </div>
+                                                            </div>
+                                                            <div class="micro-album">
+                                                                <div class="img-box">
+                                                                    <a href="/ho-chi-minh/the-coffee-house-ut-tich/album-thuc-don">
+                                                                        <img class="img" src="https://media.foody.vn/res/g19/185545/s180x180/foody-the-coffee-house-ut-tich-502-636345106477629143.jpg" style="background: #6c645f " />
+                                                                    </a>
+                                                                </div>
+                                                                <div class="name">
+                                                                    <a href="/ho-chi-minh/the-coffee-house-ut-tich/album-thuc-don">Thực đơn</a>
+                                                                </div>
+                                                                <div class="summary">
+                                                                    <span>34</span>
+                                                                    ảnh
+                                                                </div>
+                                                            </div>
+                                                            <div class="micro-album">
+                                                                <div class="img-box">
+                                                                    <a href="/ho-chi-minh/the-coffee-house-ut-tich/album-tong-hop">
+                                                                        <img class="img" src="https://media.foody.vn/res/g19/185545/s180x180/foody-the-coffee-house-ut-tich-142-636382402088913158.jpg" style="background: #9e8a7f " />
+                                                                    </a>
+                                                                </div>
+                                                                <div class="name">
+                                                                    <a href="/ho-chi-minh/the-coffee-house-ut-tich/album-tong-hop">Tổng hợp</a>
+                                                                </div>
+                                                                <div class="summary">
+                                                                    <span>69</span>
+                                                                    ảnh
+                                                                </div>
+                                                            </div>
+                                                            <div class="micro-album">
+                                                                <div class="img-box">
+                                                                    <a href="javascript:void(0);" class="btn-upload upload">
+                                                                        +&nbsp;Tải ảnh lên
+                                                                    </a>
+                                                                </div>
+                                                                <div class="name">
+                                                                    <a href="/ho-chi-minh/the-coffee-house-ut-tich/album-professional">Professional</a>
+                                                                </div>
+                                                                <div class="summary">
+                                                                    <span>0</span>
+                                                                    ảnh
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="p-ecard" class="micro-popup-small pb-e-card" style="min-height:250px; overflow:visible;display:none">
+                                                <div class="ps-title">Tải video</div>
+                                                <div class="btn-close"></div>
+                                                <div class="mc-ps-content">
+                                                    <div style="float:left; width:105px;">
+                                                        <img src="../FoodyCss/img/ecard-popup.png" style="display: block; float: left; width: 90px;" />
+                                                    </div>
+                                                    <div style="float: left; width: 360px;">
+                                                        <div style="clear: both; margin-top: 50px;">
+                                                            Để upload video vui lòng tải App Foody.
+                                                        </div>
+                                                    </div>
+                                                    <div class="ecard-register-more"><a href="/ung-dung-mobile" target="_blank">Tải App Foody</a></div>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                $('.upload-video').click(function () {
+                                                    $('#p-ecard').bPopup({
+                                                        closeClass: 'btn-close'
+                                                    });
+                                                });
+                                            </script>
+                                            <div class="pn-loadmore fd-clearbox" style="margin-top: 10px;display:none">
+                                                <a class="fd-btn-more" href="/ho-chi-minh/the-coffee-house-ut-tich/album-anh">
+                                                    <label>Xem Thêm Hình Ảnh</label>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <script type="text/javascript">
+                                            var initData = { "UserId": 8251637, "RestaurantId": 185545, "TotalReviews": 0, "TotalCheckIns": 0, "TotalFriends": 0, "ListFriends": [] };
+                                            initData.UrlImgBg = '../FoodyCss/img/bg-trans.png';
+                                        </script>
+                                        <div class="microsite-user-info-reviews-box fd-clearbox" ng-controller="UserReviewInfoCtrl" ng-init="Init('initData')" data-mic-nav="6" ng-cloak>
+                                            <div class="user-friend-info" ng-if="TotalFriends > 0">
+                                                <div class="top-friend-avatar avatar-width-{{ListFriends.length}}">
+                                                    <div class="item" ng-repeat="a in ListFriends" ng-style="{'padding-left': $index * 25}">
+                                                        <img alt="{{a.displayname}}" ng-src="{{a.Avatar}}" />
+                                                    </div>
+                                                </div>
+                                                <div class="total-friend-reviews">
+                                                    <a href="/ho-chi-minh/the-coffee-house-ut-tich/binh-luan#friend">
+                                                        <span ng-repeat="b in ListFriends" class="bold">{{b.DisplayName}}<span ng-if="$index < 2 && ($index + 1) != ListFriends.length">, </span></span>
+                                                        <span ng-if="TotalFriends > 3">và</span>
+                                                        <span ng-if="TotalFriends > 3" ng-bind="TotalFriends - 3" class="bold"></span>
+                                                        <span ng-if="TotalFriends > 3" class="bold">bạn<span style="font-weight: normal"> đã bình luận</span></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="user-info-summary" ng-if="TotalReviews > 0 || TotalCheckIns> 0">
+                                                <a href="/ho-chi-minh/the-coffee-house-ut-tich/binh-luan#owner" class="fd-btn-more">
+                                                    <span>
+                                                        Bạn có<span class="bold"> {{TotalReviews}}</span>
+                                                        bình luận<span ng-if="TotalCheckIns > 0">
+                                                            <span ng-if="TotalReviews > 0">&</span>
+                                                            <span class="bold"> {{TotalCheckIns}}</span> check-in
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="microsite-reviews-box fd-clearbox micro-review-list" data-mic-nav="6">
+                                            <div class="lists list-reviews">
+
+                                                <div class="foody-box-review">
+                                                    @{
+                                                        Html.RenderAction("PartialCommentOfPost", "CarDetail", new { postId = @Model.PostId });
+                                                    }
+                                                </div>
+                                            </div>
+
+                                            <div class="stats">
+                                                <div class="foody-toolbar" data-padding-top="48">
+                                                    <script type="text/javascript">
+                                                        $(function () {
+                                                            var positionPoint = Math.round(parseFloat(parseLocalNum('7,40')) * 10);
+                                                            var pricePoint = Math.round(parseFloat(parseLocalNum('6,80')) * 10);
+                                                            var foodPoint = Math.round(parseFloat(parseLocalNum('7,40')) * 10);
+                                                            var servicePoint = Math.round(parseFloat(parseLocalNum('7,50')) * 10);
+                                                            var atmospherePoint = Math.round(parseFloat(parseLocalNum('7,50')) * 10);
+                                                            $("#positionPointBar").progressbar({
+                                                                value: positionPoint
+                                                            });
+                                                            $("#pricePointBar").progressbar({
+                                                                value: pricePoint
+                                                            });
+                                                            $("#foodPointBar").progressbar({
+                                                                value: foodPoint
+                                                            });
+                                                            $("#servicePointBar").progressbar({
+                                                                value: servicePoint
+                                                            });
+                                                            $("#atmospherePointBar").progressbar({
+                                                                value: atmospherePoint
+                                                            });
+                                                            $('.reviewCounter').text(59);
+                                                            $('div.from-review > a[property="v:count"]').text('59');
+                                                            var totalreviewsummary = 59;
+                                                            if (typeof (totalReviews) != 'undefined') {
+                                                                totalReviews = totalreviewsummary;
+                                                            }
+                                                            var totalPRs = 0;
+                                                            var totalQAs = 0;
+                                                            if (totalreviewsummary <= 0) {
+                                                                $('#reviewSummaryDiv').hide();
+                                                                $('.mico-reviews-home').hide();
+                                                                $('#microNoReview').show();
+                                                            } else {
+                                                                $('#reviewSummaryDiv').parent().show();
+                                                                $('#microNoReview').hide();
+                                                            }
+                                                        });
+
+                                                        function parseLocalNum(num) {
+                                                            return (num.replace(",", "."));
+                                                        }
+                                                    </script>
+                                                    <div class="microsite-sumary-new">
+                                                        <div class="microsite-box-rating-new">
+                                                            <div class="ratings-boxes">
+                                                                <div class="summary">
+                                                                    <b>59</b> bình luận đã chia sẻ
+                                                                </div>
+                                                                <div class="ratings-numbers">
+                                                                    <span class="rating-levels">
+                                                                        <b class="exellent">
+                                                                            3
+                                                                        </b> Tuyệt vời
+                                                                    </span>
+                                                                </div>
+                                                                <div class="ratings-numbers">
+                                                                    <span class="rating-levels">
+                                                                        <b class="good">
+                                                                            42
+                                                                        </b> Khá tốt
+                                                                    </span>
+                                                                </div>
+                                                                <div class="ratings-numbers">
+                                                                    <span class="rating-levels">
+                                                                        <b class="average">
+                                                                            13
+                                                                        </b> Trung bình
+                                                                    </span>
+                                                                </div>
+                                                                <div class="ratings-numbers">
+                                                                    <span class="rating-levels">
+                                                                        <b class="bad">
+                                                                            1
+                                                                        </b> Kém
+                                                                    </span>
+                                                                </div>
+                                                                <div class="micro-home-point">
+                                                                    <div class="micro-home-static">
+                                                                        <table>
+                                                                            <tr>
+                                                                                <td width="150"><strong>Tiêu chí</strong></td>
+                                                                                <td width="140">
+                                                                                    <img src="../FoodyCss/img/ratin-rank.png" />
+                                                                                </td>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    Vị trí
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div id="positionPointBar" class="reviewPointBar"></div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <b>7.4</b>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    Giá cả
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div id="pricePointBar" class="reviewPointBar"></div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <b>6.8</b>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    Chất lượng
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div id="foodPointBar" class="reviewPointBar"></div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <b>7.4</b>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    Phục vụ
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div id="servicePointBar" class="reviewPointBar"></div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <b>7.5</b>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    Không gian
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div id="atmospherePointBar" class="reviewPointBar"></div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <b>7.5</b>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ratings-boxes-points">
+                                                                    <div>
+                                                                        <span style="padding-bottom: 5px; overflow: hidden;">
+                                                                            <b style="font-size: 22px; color: #03ae03;">
+                                                                                7.3
+                                                                            </b>
+                                                                            <span style="color: #999; font-size: 11px;">điểm</span>
+                                                                        </span>
+                                                                        - Kh&#225; tốt
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ratings-boxes-review">
+                                                            <a class="js-apply js-url-apply short-link" data="@Model.PostId">
+                                                                <span class="fa fa-comment"></span> Viết bình luận
+                                                            </a>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="microsite-res-mapfacilities" data-mic-nav="7">
+                                            <a name="res-info"></a>
+                                            <div class="microsite-box-heading">
+                                                <div class="title">
+                                                    Thông tin & Bản đồ
+                                                </div>
+                                            </div>
+                                            <div class="micro-home-intro disableSection">
+                                                <div style="position: relative; clear: both;">
+                                                    <div id="microMap" ng-controller="MicrositeMapCtr" bind-unsafe-html="HtmlForm" ng-init="Init({ResId:'185545'})"></div>
+                                                    <script type="text/javascript">
+                                                        $(function () {
+                                                            if (window.location.hash == "#map") {
+                                                                loadMicroMap();
+                                                            }
+                                                            $('#map-report-error').click(function () {
+                                                                angular.element('#microMap').scope().ShowReport();
+                                                                angular.element('#microMap').scope().$apply();
+                                                            });
+                                                        })
+                                                        function loadMicroMap() {
+                                                            if (angular) {
+                                                                angular.element('#microMap').scope().Show();
+                                                                angular.element('#microMap').scope().$apply();
+                                                            }
+                                                        }
+                                                    </script>
+                                                    <div class="microsite-map">
+                                                        <a href="javascript:void(0)" id="map-report-error" class="map-report">Báo lỗi vị trí</a>
+                                                        <div><a class="linkmap"><img src="https://media.foody.vn/res/g19/185545/map/s1000/foody-map-185545_10-7964536316790_106-6587764024734.jpg" /></a></div>
+                                                    </div>
+                                                </div>
+                                                <div class="microsite-res-info">
+                                                    <div class="new-detail-info-sec">
+                                                        <div class="new-detail-info-area">
+                                                            <div class="new-detail-info-label">
+                                                                Thời gian hoạt động
+                                                            </div>
+                                                            <div>
+                                                                <span>08:00 AM - 10:00 PM</span>
+                                                                <span class="report-data-error">
+                                                                    <a class="resinfo-report" errorkeyname="Thích hợp" href="javascript:void(0);"><span class="fa fa-pencil"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="new-detail-info-area">
+                                                            <div class="new-detail-info-label">
+                                                                Thích hợp
+                                                            </div>
+                                                            <div>
+                                                                <a href="/ho-chi-minh/dia-diem-phuc-vu-vao-buoi-sang" title="Buổi s&#225;ng">Buổi s&#225;ng</a>
+                                                                <span style="margin-left: -3px;">,</span>
+                                                                <a href="/ho-chi-minh/dia-diem-phuc-vu-vao-buoi-trua" title="Buổi  trưa">Buổi  trưa</a>
+                                                                <span style="margin-left: -3px;">,</span>
+                                                                <a href="/ho-chi-minh/dia-diem-phuc-vu-vao-buoi-xe" title="Buổi xế">Buổi xế</a>
+                                                                <span style="margin-left: -3px;">,</span>
+                                                                <a href="/ho-chi-minh/dia-diem-phuc-vu-vao-buoi-toi" title="Buổi  tối">Buổi  tối</a>
+                                                                <span class="report-data-error">
+                                                                    <a class="resinfo-report" errorkeyname="Thích hợp" href="javascript:void(0);"><span class="fa fa-pencil"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="new-detail-info-area">
+                                                            <div class="new-detail-info-label">
+                                                                Giờ nhận khách cuối
+                                                            </div>
+                                                            <div>
+                                                                09:30 PM<span class="report-data-error">
+                                                                    <a class="resinfo-report" errorkeyname="Giờ nhận khách cuối" href="javascript:void(0);"><span class="fa fa-pencil"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="new-detail-info-area">
+                                                            <div class="new-detail-info-label">
+                                                                Thời gian chuẩn bị
+                                                            </div>
+                                                            <div>
+                                                                <span>
+                                                                    Khoảng 10 - 20 ph&#250;t
+                                                                </span>
+                                                                <span class="report-data-error">
+                                                                    <a class="resinfo-report" errorkeyname="Thời gian chuẩn bị" href="javascript:void(0);"><span class="fa fa-pencil"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="new-detail-info-area">
+                                                            <div class="new-detail-info-label">
+                                                                Nghỉ lễ
+                                                            </div>
+                                                            <div>
+                                                                <span>Các ngày lễ trong năm</span>
+                                                                <span class="report-data-error">
+                                                                    <a class="resinfo-report" errorkeyname="Nghỉ lễ" href="javascript:void(0);"><span class="fa fa-pencil"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="new-detail-info-area">
+                                                            <div class="new-detail-info-label">
+                                                                Thể loại
+                                                            </div>
+                                                            <div>
+                                                                <a href="/ho-chi-minh/cafe">Caf&#233;/Dessert</a>
+                                                                <span class="report-data-error">
+                                                                    <a class="resinfo-report" errorkeyname="Thể loại" href="javascript:void(0);"><span class="fa fa-pencil"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="new-detail-info-area">
+                                                            <div class="new-detail-info-label">
+                                                                Sức chứa
+                                                            </div>
+                                                            <div>
+                                                                <span>50 người lớn</span>
+                                                                <span class="report-data-error">
+                                                                    <a class="resinfo-report" errorkeyname="Sức chứa" href="javascript:void(0);"><span class="fa fa-pencil"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="new-detail-info-area">
+                                                            <div class="new-detail-info-label">
+                                                                Phong cách ẩm thực
+                                                            </div>
+                                                            <div>
+                                                                <a href="/ho-chi-minh/dia-diem-phong-cach-viet-nam">Việt Nam </a>
+                                                                <span class="report-data-error">
+                                                                    <a class="resinfo-report" errorkeyname="Phong cách ẩm thực" href="javascript:void(0);"><span class="fa fa-pencil"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="new-detail-info-area">
+                                                            <div class="new-detail-info-label">
+                                                                Phù hợp với
+                                                            </div>
+                                                            <div>
+                                                                <a href="/ho-chi-minh/dia-diem-phu-hop-hen-ho">Hẹn h&#242;</a>
+                                                                <span style="margin-left:-3px">,&nbsp;</span>
+                                                                <a href="/ho-chi-minh/dia-diem-phu-hop-hop-nhom">Họp nh&#243;m</a>
+                                                                <span style="margin-left:-3px">,&nbsp;</span>
+                                                                <a href="/ho-chi-minh/dia-diem-phu-hop-tiep-khach">Tiếp kh&#225;ch</a>
+                                                                <span style="margin-left:-3px">,&nbsp;</span>
+                                                                <a href="/ho-chi-minh/dia-diem-phu-hop-ngam-canh">Ngắm cảnh</a>
+                                                                <span style="margin-left:-3px">,&nbsp;</span>
+                                                                <a href="/ho-chi-minh/dia-diem-phu-hop-takeaway-mang-ve">Takeaway - Mang về</a>
+                                                                <span style="margin-left:-3px">,&nbsp;</span>
+                                                                <a href="/ho-chi-minh/dia-diem-phu-hop-doc-sach-hoc-bai">Đọc s&#225;ch - học b&#224;i</a>
+                                                                <span class="report-data-error">
+                                                                    <a class="resinfo-report" errorkeyname="Phù hợp với" href="javascript:void(0);"><span class="fa fa-pencil"></span></a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="new-detail-info-area">
+                                                            <div class="new-detail-info-label">
+                                                                Phục vụ các món
+                                                            </div>
+                                                            <div>
+                                                                <a href="/ho-chi-minh/dia-diem-phuc-vu-banh-ngot">B&#225;nh - Kẹo</a>
+                                                                <span style="margin-left:-3px">,&nbsp;</span>
+                                                                <a href="/ho-chi-minh/dia-diem-phuc-vu-cafe-kem">Caf&#233; - Kem</a>
+                                                                <span style="margin-left:-3px">,&nbsp;</span>
+                                                                <a href="/ho-chi-minh/dia-diem-phuc-vu-thuc-uong">Thức uống</a>
+                                                                <span class="report-data-error"><a class="resinfo-report" errorkeyname="Phục vụ các món" href="javascript:void(0);"><span class="fa fa-pencil"></span></a></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="new-detail-info-area">
+                                                            <div class="new-detail-info-label">
+                                                                Website
+                                                            </div>
+                                                            <div>
+                                                                <b>www.thecoffeehouse.vn</b>
+                                                                <div class="report-data-error"><a class="resinfo-report" errorkeyname="Chỉ đường" href="javascript:void(0);"><span class="fa fa-pencil"></span></a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="new-detail-info-sec"></div>
+                                                </div>
+                                            </div>
+                                            <!-- property -->
+                                            <!-- end property --><!-- Start Banner Ads -->
+                                            <!-- End Banner Ads -->
+                                        </div>
+                                        <div style="overflow:hidden;padding:15px;margin-top:20px;">
+                                            <div class="microsite-box-content-right">
+                                                <div id="areas-block">
+                                                    <ul class="microsite-areas">
+                                                        <li>
+                                                            <a href="/ho-chi-minh/khu-vuc-bau-cat">
+                                                                <b style="float:left;"></b>
+                                                                <span></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/ho-chi-minh/khu-vuc-truong-son-san-bay">
+                                                                <b style="float:left;"></b>
+                                                                <span></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/ho-chi-minh/khu-vuc-nga-4-bay-hien">
+                                                                <b style="float:left;"></b>
+                                                                <span></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/ho-chi-minh/khu-vuc-lang-cha-ca">
+                                                                <b style="float:left;"></b>
+                                                                <span></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/ho-chi-minh/khu-vuc-cho-pham-van-hai">
+                                                                <b style="float:left;"></b>
+                                                                <span></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/ho-chi-minh/khu-vuc-etown">
+                                                                <b style="float:left;"></b>
+                                                                <span></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/ho-chi-minh/khu-vuc-cho-tan-binh">
+                                                                <b style="float:left;"></b>
+                                                                <span></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/ho-chi-minh/khu-vuc-bac-hai">
+                                                                <b style="float:left;"></b>
+                                                                <span></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/ho-chi-minh/khu-vuc-pico-plaza">
+                                                                <b style="float:left;"></b>
+                                                                <span></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/ho-chi-minh/khu-vuc-cho-hoang-hoa-tham">
+                                                                <b style="float:left;"></b>
+                                                                <span></span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div id="areas-show-all-block" class="viewmore">
+                                                    <a href="/ho-chi-minh/khu-vuc-quan-tan-binh" id="areas-show-all-link"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script type="text/javascript">
+                                            $(function () {
+                                                $('#areas-show-all-link').click(function () {
+                                                    $('#areas-block').css('height', 'auto');
+                                                    $('#areas-show-all-block').remove();
+                                                });
+                                            });
+                                        </script>
+                                        <script type="text/javascript">
+                                            $('.mic-navigation li[data-item-id] a').on('click', function () {
+                                                var aLink = $(this);
+                                                var parent = aLink.parent();
+                                                var itemId = parent.data('item-id');
+                                                if (itemId == 7 || itemId == 1 || itemId == 2) {
+                                                    var offset = $('*[data-mic-nav="' + parent.data('item-id') + '"]').offset();
+                                                    var body = $("html, body");
+                                                    body.stop().animate({ scrollTop: offset.top - 110 }, '500', 'swing', function () {
+                                                        //alert("Finished animating");
+                                                    });
+                                                    return false;
+                                                }
+                                            });
+                                            var microNavs = [];
+                                            for (var i = 0; i < 10; i++) {
+                                                var block = $('*[data-mic-nav="' + i + '"]');
+                                                if (block.length > 0)
+                                                    microNavs.push({ Block: block, Id: i })
+                                            }
+                                        </script>
+                                        <script>
+                                            $(document).ready(function () {
+                                                var total = 0;
+                                                $('.data-album-count').each(function () {
+                                                    total += parseInt($(this).data('album-count'));
+                                                });
+                                                if (total > 0)
+                                                    $('.pn-loadmore').css('display', 'block');
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <!--End of micro content-->
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<div class="w-100 pull-left">
+    <ul class="course-list" id="c-list">
+        @Html.Action("PartialCreateCommnet", "CarDetail", new { postId = Model.PostId, carCode = Model.CarCode })
+
+    </ul>
+</div>
+
+
+<script>
+    $('.short-link').on('click', function () {
+        if ($('.short-link').hasClass('share-link')) {
+            $('.short-link').removeClass('share-link');
+            $('.share-tip').css('display', 'none');
+        } else {
+            $('.short-link').addClass('share-link');
+            $('.share-tip').css('display', 'inline-block');
+        }
+
+    });
+
+    $('.close').on('click', function () {
+
+        $('.short-link').removeClass('share-link');
+        $('.share-tip').css('display', 'none');
+    });
+
+</script>

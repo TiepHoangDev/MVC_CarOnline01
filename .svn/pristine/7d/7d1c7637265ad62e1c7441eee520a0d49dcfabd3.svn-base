@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<li>
+    <a href="/ho-chi-minh#/booking" title="Đặt b&#224;n">
+        <span>Đặt ban</span>
+    </a>
+</li>
+<li>
+    <a href="/ho-chi-minh#/delivery" title="Giao h&#224;ng">
+        <span>Giao hang</span>
+    </a>
+</li>
+<li>
+    <a href="/ho-chi-minh/hinh-anh" title="Ăn g&#236;">
+        <span>Ăn gi</span>
+    </a>
+</li>
+<li>
+    <a href="/ho-chi-minh/bo-suu-tap" title="Sưu tập">
+        <span>Sưu tập</span>
+    </a>
+</li>
+<li>
+    <a href="/ho-chi-minh/video" title="TV">
+        <span>TV</span>
+    </a>
+</li>
+<li>
+    <a href="/ho-chi-minh/coupon" title="Coupons">
+        <span>Coupons</span>
+    </a>
+</li>
+<li>
+    <a href="/ho-chi-minh/binh-luan" title="B&#236;nh luận">
+        <span>Binh luận</span>
+    </a>
+</li>
+<li>
+    <a href="/ho-chi-minh/food/bai-viet" title="Blogs">
+        <span>Blogs</span>
+    </a>
+</li>
+<li>
+    <a href="/ho-chi-minh/khuyen-mai" title="Khuyến m&#227;i">
+        <span>Khuyến mai</span>
+    </a>
+</li>
+<li>
+    <a href="/ho-chi-minh/bank-card" title="Bank-Card">
+        <span>Bank-Card</span>
+    </a>
+</li>
+<li>
+    <a href="/ho-chi-minh/su-kien" title="Miễn ph&#237;">
+        <span>Miễn phi</span>
+    </a>
+</li>

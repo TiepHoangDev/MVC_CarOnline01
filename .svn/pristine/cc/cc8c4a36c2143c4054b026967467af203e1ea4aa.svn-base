@@ -1,0 +1,108 @@
+﻿@model Guid
+
+<div class="tit">Hình ảnh <span style="color: #222; text-transform: none;font: italic 13px 'Open Sans';">(Vui lòng không chèn thêm link của bất kỳ website nào khác)</span></div>
+<div class="uploadimg">
+    <p>Ảnh đầu tiên sẽ là ảnh đại diện cho tin của bạn.</p>
+</div>
+<div id="uploadimage" class="default-theme">
+    <input id="fileuploadsingle0" class="fileuploadsingle" type="file" style="display:none" name="userfile" target="uploadsingle0">
+    <div class="upload-item-single" id="uploadsingle0">
+        <img src="/Areas/Admin/Content/file/1-upload.png">
+    </div>
+
+    <input id="fileuploadsingle1" class="fileuploadsingle" type="file" style="display:none" name="userfile" target="uploadsingle1">
+    <div class="upload-item-single" id="uploadsingle1">
+        <img src="/Areas/Admin/Content/file/2-upload.png">
+    </div>
+
+    <input id="fileuploadsingle2" class="fileuploadsingle" type="file" style="display:none" name="userfile" target="uploadsingle2">
+    <div class="upload-item-single" id="uploadsingle2">
+        <img src="/Areas/Admin/Content/file/3-upload.png">
+    </div>
+
+    <input id="fileuploadsingle3" class="fileuploadsingle" type="file" style="display:none" name="userfile" target="uploadsingle3">
+    <div class="upload-item-single" id="uploadsingle3">
+        <img src="/Areas/Admin/Content/file/4-upload.png">
+    </div>
+    <div id="result-image"></div>
+    <input multiple="" class="fileuploadsingle input-hidden" id="fileuploadsingle4" type="file">
+    <div class="upload-item working-upload-item upload-item-single" id="uploadsingle4"></div>
+
+    <div style=" clear: both">
+        <img src="~/Areas/Admin/Content/file/images/ajax-loader.gif" id="ajax-img-upload" style="height: 44px; display: none;" />
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    function deleteImage(target) {
+        var pr = $(target).closest('.upload-item');
+        if (pr.attr('id') == 'uploadsingle0') {
+            $('#uploadsingle0').html('<img src="/Areas/Admin/Content/file/1-upload.png">');
+            $('#uploadsingle0').removeClass();
+            $('#uploadsingle0').addClass('upload-item-single');
+            pr.on('click');
+        } else {
+            pr.remove();
+        }
+    }
+
+    function selectFile(target) {
+        e_file = $('#file' + $(target).attr('id'));
+        if (e_file) {
+            e_file.click();
+        }
+    }
+
+    function showImage(url) {
+        $('#result-image').append($('<div  class="upload-item uploadsortable"></div>'));
+        $('.upload-item.uploadsortable').last().attr("style", "background: url('/" + url + "')  no-repeat scroll 0% 0% / 127px 95px transparent;").attr('rel', url).html('<a href="javascript:void(0)" onclick="deleteImage(this)" class="upload-item-delete" rel="nofollow"></a><a href="javascript:void(0)" class="upload-item-rotate"></a>')
+    }
+
+    var eClick;
+    //show select file image
+    $('.upload-item-single').click(function () {
+        selectFile(this);
+        eClick = $(this);
+    });
+
+    //upload file
+    $('.fileuploadsingle').change(function () {
+        let v = $(this).val();
+        if (v) {
+            $('#ajax-img-upload').css('display', 'block');
+            let data = new FormData();
+            if ($(this)[0].files.length > 0) {
+                for (var i = 0; i < $(this)[0].files.length; i++) {
+                    data.append("image", $(this)[0].files[i]);
+                }
+                data.append("rank", $(this)[0].id.replace('fileuploadsingle',''));
+                data.append("postId", $('#PostId').val());
+                debugger
+                $.ajax({
+                    url: '@Url.Action("Upload")',
+                    data: data,
+                    type: 'post',
+                    processData: false,
+                    contentType: false,
+                    success: function (d) {
+                        $('#ajax-img-upload').css('display', 'none');
+                        if (d.length == 1) {
+                            if ($(eClick).attr('class') == 'upload-item-single') {
+                                $(eClick).removeClass().addClass('upload-item uploadsortable').attr("style", "background: url('/" + d[0] + "')  no-repeat scroll 0% 0% / 127px 95px transparent;").html('<a href="javascript:void(0)" onclick="deleteImage(this)" class="upload-item-delete" rel="nofollow"></a><a href="javascript:void(0)" class="upload-item-rotate"></a>');
+                            }
+                        }
+                        else for (var i = 0; i < d.length; i++) {
+                            showImage(d[i]);
+                        }
+                        eClick = undefined;
+                    },
+                    error: function () {
+                        $('#ajax-img-upload').css('display', 'none');
+                        alert("Đã xảy ra lỗi upload ảnh");
+                    }
+                })
+            }
+        }
+    })
+</script>

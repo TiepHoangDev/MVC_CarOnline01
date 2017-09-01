@@ -1,0 +1,14 @@
+﻿.bxhvalidatetooltip {
+    background: url(Images/err.png) no-repeat scroll left center;
+    color: #e58f3c;
+    display: inline-block;
+    float: left;
+    font: 12px "Arial";
+    margin-bottom: 10px;
+    min-width: 185px;
+    padding: 4px 4px 4px 27px;
+    z-index: 1000;
+}
+.bxhvalierror {
+    border:1px solid red !important;
+}

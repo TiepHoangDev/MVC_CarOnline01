@@ -1,0 +1,14 @@
+﻿@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.CompanyCar_Object>
+@{
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+
+    <li>
+        <a href="#" class="active">
+            @Html.DisplayFor(modelItem => item.CompanyName)
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </li>
+}

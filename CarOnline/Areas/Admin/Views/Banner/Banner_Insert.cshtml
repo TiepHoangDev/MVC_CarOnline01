@@ -1,0 +1,277 @@
+﻿@model IMIC.BUSINESSOBJECTS.EntityObject.Banner_Object
+
+@{
+    ViewBag.Title = "Thêm mới Các Banner";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .file-box {
+        display: none;
+        width: 100%;
+    }
+</style>
+
+<div style="padding-bottom:20px; width:100%">
+    <div class="portlet light">
+        <div class="portlet-body" style="padding-top:0px">
+            @using (Html.BeginForm("Banner_Insert", "Banner", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group">
+                    <h4>&nbsp;Thêm Mới Các Banner:</h4>                  
+                </div>
+
+                <div class="form-group">
+                    <h4>&nbsp;Tên Banner:</h4>
+                    @Html.TextBoxFor(m => m.BannerName, new { @type = "text", @class = "form-control", id = "BannerName" })
+                </div>
+                <h5 style="color:red; font-weight:bold; display:none" class="name_warning">Tên Banner không được phép trống.</h5>
+
+                <div class="form-group">
+                    <h4>&nbsp;Link:</h4>
+                    @Html.TextBoxFor(m => m.Link, new { @type = "text", @class = "form-control", id = "Link" })
+                </div>
+                
+                <div class="form-group">
+                    <label style="width:100%">Ảnh đại diện bài viết</label>
+                    <input type="checkbox" name="localfile" value="1" /> Chọn ảnh từ máy tính
+
+                    @Html.TextBoxFor(x => x.Image, new
+                       {
+                           @class = "form-control",
+                           @type = "text",
+                           @placeholder = "Dán link ảnh đại diện vào đây",
+                       })
+
+                    <div class="file-box">
+                        <input type="file" name="Avatar" id="ava">
+
+                    </div>
+
+                </div>
+                <div style="margin-top: 15px;">
+                    <img style="width: 200px; height: 180px;" class="img-thumbnail rimage" />
+                </div>
+
+                <div class="form-group">
+                    <h4>&nbsp;Vị trí:</h4>
+                    @Html.TextBoxFor(m => m.Position, new { @type = "text", @class = "form-control", id = "Position" })
+                </div>
+
+                <div style="padding-left:0px;width:100%;margin-top:30px;margin-bottom:20px">
+                    <a class="btn btn-primary" id="btn-update">Cập nhật</a>
+                    <a href="@Url.Action("Manage_Banner", "Banner")" class="btn btn-default" style="height:34px;width:86.75px">Đóng</a>
+                </div>
+
+                <!-- /.modal -->
+                <div class="modal fade bs-modal-lg" id="confirm-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                <h4 class="modal-title">Thông báo xác nhận</h4>
+                            </div>
+                            <div class="modal-body">
+                                Bạn có muốn thêm bài học này không ?
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn default" data-dismiss="modal">Hủy</button>
+                                <button onclick="submit" class="btn blue">Xác nhận</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section script_footer{
+    <script>
+        $("#btn-update").click(function () {
+            var name = $('#BannerName').val();
+            if (name == null || name.trim() == '') {
+                $('.name_warning').show();
+            }
+            else {
+                $("#confirm-modal").modal({ show: true });
+            }
+        });
+        $('input[name=Avatar]').on('change', function (e) {
+
+            readURL(this, '.rimage');
+
+        });
+
+        $('input[name=Image]').on('keydown', function (e) {
+            if (e.which == 13) {
+                e.preventDefault();
+
+                $('.rimage').attr('src', $(this).val());
+            }
+        })
+        $(document).on("keydown", "input", function (e) {
+            if (e.which == 13) e.preventDefault();
+        });
+        $(document).on("click", ".delete-tag", function () {
+            $(this).parent().remove();
+
+        });
+        $('input[name=localfile]').on('click', function () {
+            if ($(this).is(':checked')) {
+                $('.file-box').fadeIn('fast');
+                $('input[name=Image]').fadeOut('fast');
+            }
+            else {
+                $('.file-box').fadeOut('fast');
+                $('input[name=Image]').fadeIn('fast');
+            }
+        })
+
+    </script>
+}
+
+@*<div class="portlet-body">
+    @using (Html.BeginForm("Banner_Insert", "Banner", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Thêm Mới Các Banner</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                <h4>&nbsp;Tên Banner</h4>
+                @Html.TextBoxFor(m => m.BannerName, new { @type = "text", @class = "form-control", id = "BannerName" })
+            </div>
+
+            <div class="form-group">
+                <h4>&nbsp;Link</h4>
+                @Html.TextBoxFor(m => m.Link, new { @type = "text", @class = "form-control", id = "Link" })
+            </div>*@
+
+            @*<div class="form-group">
+                @Html.Label("Tên Banner", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.BannerName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BannerName, "", new { @class = "text-danger" })
+                </div>
+            </div>      
+
+            <div class="form-group">
+                @Html.Label("Image", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="checkbox" name="localfile" value="1" />Chọn ảnh từ máy tính
+                </div>
+            </div>*@
+
+            @*<div class="form-group">
+                <label style="width:100%">Ảnh đại diện bài viết</label>
+                <input type="checkbox" name="localfile" value="1" />Chọn ảnh từ máy tính
+
+                @Html.TextBoxFor(x => x.Image, new
+                       {
+                           @class = "form-control",
+                           @type = "text",
+                           @placeholder = "Dán link ảnh đại diện vào đây",
+                       })
+
+                <div class="file-box">
+                    <input type="file" name="Avatar" id="ava">
+
+                </div>
+
+            </div>
+            <div style="margin-top: 15px;">
+                <img style="width: 200px; height: 180px;" class="img-thumbnail rimage" />
+            </div>*@
+
+            @*<div class="form-group">
+                @Html.EditorFor(x => x.Image, new
+                       {
+                           @class = "form-control",
+                           @type = "text",
+                           @placeholder = "Dán link ảnh vào đây",
+                       })
+                
+            </div>
+             
+                  
+            <div class="form-group">
+
+                <div class="file-box">
+                    <input type="file" name="Avatar" id="ava">
+                </div>
+
+            </div>
+
+            <div style="margin-top: 15px;">
+                <img style="width: 200px; height: 180px;" class="img-thumbnail rimage" />
+            </div>*@
+
+            @*<div class="form-group">
+                <h4>&nbsp;Vị trí</h4>
+                @Html.TextBoxFor(m => m.Position, new { @type = "text", @class = "form-control", id = "Position" })
+            </div>*@
+
+            @*<div class="form-group">
+                @Html.Label("Vị trí", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Position, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Position, "", new { @class = "text-danger" })
+                </div>
+            </div>*@         
+
+           
+            @*<div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Thêm mới" class="btn btn-default green-haze" />
+                </div>
+            </div>
+        </div>
+    }*@
+
+    @*<div>
+        @Html.ActionLink("Về trang Manage_Banner", "Manage_Banner")
+    </div>
+</div>*@
+
+@*<script>
+
+    $('input[name=Avatar]').on('change', function (e) {
+
+        readURL(this, '.rimage');
+
+    });
+
+    $('input[name=Image]').on('keydown', function (e) {
+        if (e.which == 13) {
+            e.preventDefault();
+
+            $('.rimage').attr('src', $(this).val());
+        }
+    })
+
+    $('input[name=localfile]').on('click', function () {
+        if ($(this).is(':checked')) {
+            $('.file-box').fadeIn('fast');
+            $('input[name=Image]').fadeOut('fast');
+        }
+        else {
+            $('.file-box').fadeOut('fast');
+            $('input[name=Image]').fadeIn('fast');
+        }
+    })
+
+</script>*@
+
+
+
+
+
+
+
+

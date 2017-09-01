@@ -1,0 +1,13 @@
+﻿@model IMIC.BUSINESSOBJECTS.EntityObject.Image_Object
+<a href="#">
+    @if (Model != null)
+    {
+        <img src="@Model.ImageName" />
+    }
+    else
+    {
+        <img src="" alt="Chưa có" />
+    }
+
+</a>
+

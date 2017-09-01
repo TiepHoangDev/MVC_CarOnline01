@@ -1,0 +1,13 @@
+﻿@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.Image_Object>
+
+@foreach (var item in Model)
+{
+    <div class="micro-home-album" style="float: left; margin-right: 15px;">
+        <div class="micro-home-album-items">
+            <a href="@item.ImageName" class="foody-photo" data-group="2" data-id="5355916">
+                <img src="@item.ImageName" alt="@item.ImageAlt" title="" style="background: #836663" />
+            </a>
+            @*<div class="edit-album-title"></div>*@
+        </div>
+    </div>
+}

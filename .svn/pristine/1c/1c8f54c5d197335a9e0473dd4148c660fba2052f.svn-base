@@ -1,0 +1,19 @@
+﻿@model List<IMIC.BUSINESSOBJECTS.EntityObject.SafeDetail_Object>
+
+@using (Html.BeginForm("pv_anToan", "Post", FormMethod.Post, new { @class = "frm-pv" }))
+{
+    @Html.Hidden("postID", Model[0].PostId)
+    <div class="titlerightbox" id="at">An toàn</div>
+    <div class="antoans ats boxs">
+        <div class="-left">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <div class="inforow-s">
+                    @Html.HiddenFor(q => Model[i].SafeCategoryId)
+                    @Html.CheckBoxFor(q => Model[i].Applyed)
+                    @Html.LabelFor(q => Model[i].Applyed, Model[i].SafeCategoryObject.SafeCategoryName)
+                </div>
+            }
+        </div>
+    </div>
+}

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.CompanyCar_Object>
+@{
+    Layout = null;
+}
+@foreach(var item in Model)
+{
+                   
+    <li>
+        <a href="#" class="active">
+            @Html.DisplayFor(modelItem => item.CompanyName)
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </li>
+}
+@*-----------------------------------------*@
+@*<li>
+    <a href="#" class="active">
+        Ở đâu
+        <i class="fa fa-angle-right"></i>
+    </a>
+</li>
+<li>
+    <a href="#">
+        Đặt bàn
+        <i class="fa fa-angle-right"></i>
+    </a>
+</li>
+<li>
+    <a href="#>
+									Giao hàng
+									<i class=" fa fa-angle-right">
+        </i>
+    </a>
+</li>
+<li>
+    <a href="#">
+        Ăn gì
+        <i class="fa fa-angle-right"></i>
+    </a>
+</li>
+<li>
+    <a href="#">
+        Sưu tập
+        <i class="fa fa-angle-right"></i>
+    </a>
+</li>
+<li>
+    <a href="#">
+        TV
+        <i class="fa fa-angle-right"></i>
+    </a>
+</li>
+<li>
+    <a href="#">
+        Bình luận
+        <i class="fa fa-angle-right"></i>
+    </a>
+</li>
+<li>
+    <a href="#">
+        Blogs
+        <i class="fa fa-angle-right"></i>
+    </a>
+</li>
+<li>
+    <a href="#">
+        Khuyến mãi
+        <i class="fa fa-angle-right"></i>
+    </a>
+</li>
+<li>
+    <a href="#">
+        Bank-Card
+        <i class="fa fa-angle-right"></i>
+    </a>
+</li>*@

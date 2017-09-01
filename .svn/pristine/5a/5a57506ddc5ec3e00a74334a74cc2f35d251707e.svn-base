@@ -1,0 +1,20 @@
+﻿@model IMIC.BUSINESSOBJECTS.EntityObject.Comment_Object
+@if (Model != null)
+{
+    <div class="avatar">
+        <a href="#">
+            <img src="@Model.UserCreateCommnet.Avatar" />
+        </a>
+    </div>
+    <div class="users-content block-with-text">
+        <a href="#">
+            <b class="ng-binding">
+                @Model.UserCreateCommnet.FullName
+            </b>
+        </a>
+        <a href="#" class="ng-binding">
+            @Model.ContentComment
+        </a>
+    </div>
+}
+

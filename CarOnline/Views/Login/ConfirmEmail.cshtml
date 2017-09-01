@@ -1,0 +1,37 @@
+﻿@model IMIC.BUSINESSOBJECTS.EntityObject.AccountObject
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ConfirmMail</title>
+</head>
+<body>
+    @using (Html.BeginForm("ConfirmEmail", "Login", FormMethod.Post, new { }))
+    {
+        @Html.HiddenFor(m => m.AccountID)
+        @Html.HiddenFor(m => m.BirthDay)
+        @Html.HiddenFor(m => m.Email)
+        @Html.HiddenFor(m => m.ID_Facebook)
+        @Html.HiddenFor(m => m.FullName)
+        @*@Html.HiddenFor(m => m.Gender)*@
+        @Html.HiddenFor(m => m.ID_Gmail)
+        @Html.HiddenFor(m => m.Avatar)
+        @Html.HiddenFor(m => m.Password)
+        @Html@*.HiddenFor(m => m.Phone)*@
+        @Html.HiddenFor(m => m.UserName)
+
+        <label>Địa chỉ email của bạn là: </label><br />
+        @Html.TextBoxFor(m => m.Email)<br />
+        <input type="submit" value="Đồng ý" />
+    }
+
+    @if (ViewBag.ErrorEmail)
+    {
+        <p style="color: red;">Vui lòng check lại </p>
+    }
+</body>
+</html>

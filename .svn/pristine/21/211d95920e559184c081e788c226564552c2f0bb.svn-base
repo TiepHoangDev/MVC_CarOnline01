@@ -1,0 +1,12 @@
+﻿@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.Banner_Object>
+
+@foreach (var item in Model)
+{
+
+    <li>
+        <a target="_blank" href="@item.Link">
+            <img src="@item.Image" width="1170" height="60" />
+        </a>
+    </li>
+
+} 

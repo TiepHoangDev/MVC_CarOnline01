@@ -1,0 +1,16 @@
+﻿<a href="#">
+    <i class="fa fa-comment"></i>
+    <span class="ng-binding">@ViewBag.CountCM</span>
+</a>
+<a href="#">
+    <i class="fa fa-camera"></i>
+    <span class="ng-binding">@ViewBag.CountImg</span>
+</a>
+<a href="#">
+    <i class="fa fa-bookmark"></i>
+    <span class="ng-binding">137</span>
+</a>
+<a href="#" class="item-save tool-custom-list-add">
+    <i class="fa fa-bookmark"></i>
+    <span>Lưu</span>
+</a>

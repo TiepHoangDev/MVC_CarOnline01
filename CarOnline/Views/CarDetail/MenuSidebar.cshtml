@@ -1,0 +1,10 @@
+﻿
+@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.CompanyCar_Object>
+    @foreach (var item in Model)
+    {
+        <li data-item-id="0" class="">
+            <a data-item-type="home" itemprop="url" href="javascript:;">
+                @item.CompanyName <span class="fa fa-angle-right" style="float: right; font-size: 14px;"></span>
+            </a>
+        </li>
+    }

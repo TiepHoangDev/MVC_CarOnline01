@@ -1,0 +1,42 @@
+﻿@model IMIC.BUSINESSOBJECTS.EntityObject.PostObject
+           
+<div>
+    <img class="fldr-res-avatar" src="@Model.ImageObjectFirstShow.ImageName">
+</div>
+<div style="overflow: hidden; clear: both; margin: 0 0 10px 0;">
+    <div class="review-points green">
+        <span class="ng-binding">7.4</span>
+    </div>
+
+    <div style="float: left; width: 255px; margin-left: 10px;">
+        <div class="fldr-res-title ng-binding" ng-bind="SummaryRes.Restaurant.Name">@(Model.AccountPostJoin!=null?Model.AccountPostJoin.FullName: "Chưa có")</div>
+        <div class="fldr-res-address ng-binding" ng-bind="SummaryRes.Restaurant.Address">@(Model.AccountPostJoin!=null?Model.AccountPostJoin.Address:"Chưa có")</div>
+    </div>
+</div>
+<div class="fldr-summary">
+    <div class="baseinfo mgb15">
+        <div class="titlebox">Thông số cơ bản</div>
+        <div class="colleft">
+            <div class="row highlight">
+                <label style="width: 79px;">Số Km đã đi</label>
+                <span>@Model.KmWent</span>
+            </div>
+            <div class="row">
+                <label style="width: 79px;">Số cửa</label>
+                <span>@Model.NumberOfDoorObjectJoin.NumberOfDoorName</span>
+            </div>
+            <div class="row highlight">
+                <label style="width: 79px;">Số chỗ</label>
+                <span>@Model.NumberOfSeatObjectJoin.NumberOfSeatName</span>
+            </div>
+            <div class="row">
+                <label style="width: 79px;">Hộp số</label>
+                <span>@Model.GearCarObjectJoin.CarGearName</span>
+            </div>
+            <div class="row">
+                <label style="width: 79px;">Xuất xứ</label>
+                <span>@Model.MadeInCarObjectJoin.MadeInName</span>
+            </div>
+        </div>
+    </div>
+</div>

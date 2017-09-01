@@ -1,0 +1,661 @@
+
+/** Shared carousel styles **/
+.tb-offers-box {
+    position: relative;
+    padding: 0;
+}
+
+    .tb-offers-box .tb-content .tb-offer-item {
+        overflow: hidden;
+           padding: 10px 15px;
+        border-top: 1px solid #eeeeee;
+        float: left;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+        .tb-offers-box .tb-content .tb-offer-item .labelshort {
+            float: left;
+            width: 200px;
+        }
+
+    .tb-offers-box .tb-content {
+    }
+
+            .tb-offers-box .tb-content .tb-offer-item .tb-item-left {
+            float: left;
+            width: 14%;
+            box-sizing: border-box;
+            padding: 0 25px 0 0;
+        }
+        .tb-offers-box .tb-content .tb-offer-item .tb-item-mid {
+            float: left;
+            width: 36%;
+            box-sizing: border-box;
+            padding: 0 25px 0 0;
+        }
+
+        .tb-offers-box .tb-content .tb-offer-item .tb-item-right {
+            float: right;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+.microsite-table-book {
+    position: relative;
+    background: #fff;
+}
+
+    .microsite-table-book table.tb-content {
+        font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+.booking-schedules {
+    display: block;
+    padding: 10px;
+    color: #888;
+    float: left;
+}
+
+.microsite-table-book .tb-title {
+    overflow: hidden;
+    background: #fff;
+    padding: 10px 20px;
+}
+
+    .microsite-table-book .tb-title a {
+        float: left;
+    }
+
+.microsite-table-book table.tb-content th {
+    font-size: 12px;
+    color: #888;
+    padding: 5px 5px 0 5px;
+}
+
+.microsite-table-book table.tb-content tr {
+}
+
+.microsite-table-book table.tb-content td {
+    padding: 5px;
+}
+
+.microsite-table-book .tb-input-date {
+    padding: 12px 12px 12px 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2aaf11;
+    text-align: left;
+    width: 80px;
+}
+
+.microsite-table-book .tb-oi-text {
+    color: #fff;
+}
+
+.microsite-table-book .tb-oi-time {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 5px 0;
+}
+
+.microsite-table-book .tb-shorttitle {
+    display: block;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.microsite-table-book .tb-time-select {
+}
+
+.microsite-table-book .tb-oi-time.dinner {
+    color: #277bb9;
+}
+
+.tablenow-booking-popup .tbp-content .tbp-time-label.dinner {
+    color: #277bb9;
+}
+
+.microsite-table-book .tb-oi-time.breakfast {
+    color: #88bfbf;
+}
+
+.tablenow-booking-popup .tbp-content .tbp-time-label.breakfast {
+    color: #88bfbf;
+}
+
+.microsite-table-book .tb-oi-time.lunch {
+    color: #f1c758;
+}
+
+.tablenow-booking-popup .tbp-content .tbp-time-label.lunch {
+    color: #f1c758;
+}
+
+.microsite-table-book .tb-oi-time.teatime {
+    color: #a6ac3e;
+}
+
+.tablenow-booking-popup .tbp-content .tbp-time-label.teatime {
+    color: #a6ac3e;
+}
+
+.microsite-table-book .tb-oi-time.midnight-snack {
+    color: #277bb9;
+}
+
+.tablenow-booking-popup .tbp-content .tbp-time-label.midnight-snack {
+    color: #277bb9;
+}
+
+.microsite-table-book .tb-oi-time.allday {
+    color: #277bb9;
+}
+
+.tablenow-booking-popup .tbp-content .tbp-time-label.allday {
+    color: #277bb9;
+}
+
+.microsite-table-book .connected-carousels .navigation {
+    width: 463px;
+    margin: 0;
+    position: relative;
+    overflow: visible;
+}
+
+.microsite-table-book .connected-carousels .prev-navigation,
+.microsite-table-book .connected-carousels .next-navigation {
+    display: block;
+    position: absolute;
+    background: none;
+    border: none;
+    color: #27982B;
+    text-shadow: none;
+    box-shadow: none;
+    font-size: 20px;
+    font-weight: bold;
+    width: 15px;
+    text-align: center;
+    text-indent: 0;
+}
+
+.microsite-table-book .connected-carousels .prev-navigation {
+    left: -15px;
+    top: 6px;
+}
+
+.microsite-table-book .connected-carousels .next-navigation {
+    right: -15px;
+    top: 6px;
+}
+
+    .microsite-table-book .connected-carousels .prev-navigation.inactive,
+    .microsite-table-book .connected-carousels .next-navigation.inactive {
+        opacity: .5;
+        cursor: default;
+    }
+
+
+.microsite-table-book .connected-carousels .carousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.microsite-table-book .connected-carousels .carousel li {
+    padding: 0 3px;
+    cursor: pointer;
+    float: left;
+}
+
+    .microsite-table-book .connected-carousels .carousel li > a > span {
+        display: block;
+        border-radius: 2px;
+        width: 60px;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        line-height: 40px;
+        background: #aaa no-repeat center center;
+    }
+
+        .microsite-table-book .connected-carousels .carousel li > a > span.active {
+            background-color: #27982B;
+            color: #fff;
+            cursor: pointer;
+        }
+
+.microsite-table-book .deal-loading {
+    position: absolute;
+    z-index: 2;
+    background: #ffffff url('/Style/images/loading.gif') no-repeat center center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.microsite-table-book.tbn .deal-loading:after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(../images/logo-tablenow-2.png)no-repeat center center;
+    background-size: 100px;
+    background-position: center 45%;
+}
+.tb-offers-box .tb-offer-item .offer-loading {
+    background-position: center;
+    position: absolute;
+    z-index: 2;
+    background: #ffffff url(/Style/images/loading.gif) no-repeat center center;
+    top: 2px;
+    bottom: 0;
+    right: 0;
+    height: 61px;
+    width: 520px;
+}
+.microsite-table-book.tbn .deal-loading {
+    background-position: center;
+}
+
+.tablenow-booking-popup {
+    background: #fff;
+    width: 1000px;
+    float: left;
+    border-radius: 2px;
+    display: none;
+}
+
+    .tablenow-booking-popup .tbp-form {
+        width: 400px;
+        float: right;
+        font-size: 14px;
+        color: #999;
+        background: #f5f5f5;
+        border: 1px solid #e1e1e1;
+        border-radius: 2px;
+        padding: 0 10px 10px 10px;
+        box-sizing: border-box;
+        margin: 10px 10px 10px 0;
+    }
+
+        .tablenow-booking-popup .tbp-form h4 {
+            font-weight: bold;
+            padding: 10px 0 0 5px;
+            font-size: 1.2em;
+            color: #565656;
+        }
+
+    .tablenow-booking-popup .tbp-para {
+        padding: 15px 0 5px 5px;
+        color: #565656;
+        width: 100%;
+        float: left;
+    }
+
+        .tablenow-booking-popup .tbp-para > span {
+            font-size: 1.0em;
+            display: inline-block;
+            padding: 3px 0 0 3px;
+        }
+
+        .tablenow-booking-popup .tbp-para > label {
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            font-size: 12px;
+            color: #fff;
+            background-color: #f37934;
+            display: inline-block;
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            font-weight: bold;
+            line-height: 20px;
+            float: left;
+        }
+
+    .tablenow-booking-popup .tbp-form .tbp-col-6 {
+        width: 50%;
+    }
+
+    .tablenow-booking-popup .tbp-form .tbp-col-12 {
+        width: 100%;
+    }
+
+    .tablenow-booking-popup .tbp-form .tbp-col-6,
+    .tablenow-booking-popup .tbp-form .tbp-col-12 {
+        float: left;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .tablenow-booking-popup .tbp-form input[type=text],
+    .tablenow-booking-popup .tbp-form input[type=email],
+    .tablenow-booking-popup .tbp-form select,
+    .tablenow-booking-popup .tbp-form textarea {
+        width: 100%;
+        border: 1px solid #ccc;
+        padding: 5px;
+        box-sizing: border-box;
+        font-size: 15px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    .tablenow-booking-popup .tbp-hotline {
+        text-align: center;
+        float: left;
+        position: absolute;
+        top: 8px;
+        right: 24px;
+    }
+
+        .tablenow-booking-popup .tbp-hotline > span {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .tablenow-booking-popup .tbp-hotline > label {
+        }
+
+.tbp-btn-book {
+    width: 100%;
+    padding: 10px;
+    background: #f37934;
+    display: inline-block;
+    box-sizing: border-box;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    ;
+}
+
+.tablenow-booking-popup .tbp-icon {
+    position: relative;
+}
+
+    .tablenow-booking-popup .tbp-icon .fa {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 18px;
+    }
+
+    .tablenow-booking-popup .tbp-icon input[type=text],
+    .tablenow-booking-popup .tbp-icon select {
+        outline: none;
+        padding-left: 25px;
+    }
+
+    .tablenow-booking-popup .tbp-icon .i-date:before {
+        content: "\f073";
+    }
+
+    .tablenow-booking-popup .tbp-icon .i-time:before {
+        content: "\f017";
+    }
+
+.tablenow-booking-popup .tbp-title {
+    font-weight: bold;
+    font-size: 1.4em;
+    display: block;
+    width: 100%;
+    padding: 10px 10px 10px 20px;
+    background: #e8e8e8;
+    box-sizing: border-box;
+    color: #565656;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tablenow-booking-confirm .tbp-btn-close,
+.tablenow-booking-popup .tbp-btn-close {
+    background: url(/Style/css/ico/x.png);
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    width: 25px;
+    height: 29px;
+    cursor: pointer;
+}
+
+.tablenow-booking-popup .tbp-content {
+    width: 590px;
+    float: left;
+    padding: 10px 0 10px 20px;
+    font-size: 14px;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+    .tablenow-booking-popup .tbp-content .tbp-time-label {
+        font-size: 16px;
+        padding: 10px 0;
+        float: left;
+        font-weight: bold;
+    }
+
+    .tablenow-booking-popup .tbp-content .tbp-c-title {
+        font-size: 1.8em;
+        font-size: 16px;
+        line-height: 29px;
+        font-weight: bold;
+        float: left;
+        padding: 4px 0;
+        max-width: 550px;
+    }
+
+    .tablenow-booking-popup .tbp-content .tbp-c-description {
+        overflow: auto;
+        height: 378px;
+        clear: both;
+        white-space: pre-line;
+        margin-right: 20px;
+        padding-right: 10px;
+    }
+
+        .tablenow-booking-popup .tbp-content .tbp-c-description img {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+.tablenow-booking-popup .tbp-download-app {
+    text-align: center;
+    width: 395px;
+    float: right;
+    margin: 10px 10px 10px 0;
+}
+
+    .tablenow-booking-popup .tbp-download-app > label {
+        color: #999;
+        font-size: 14px;
+    }
+
+    .tablenow-booking-popup .tbp-download-app > ul {
+    }
+
+        .tablenow-booking-popup .tbp-download-app > ul > li {
+            display: block;
+            float: left;
+            width: 50%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+            .tablenow-booking-popup .tbp-download-app > ul > li > a {
+                display: block;
+                border: 1px solid #b7b7b7;
+                float: left;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;
+                padding: 5px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+                .tablenow-booking-popup .tbp-download-app > ul > li > a > div {
+                    display: inline-block;
+                }
+
+                .tablenow-booking-popup .tbp-download-app > ul > li > a .fa {
+                    font-size: 20px;
+                    color: #b7b7b7;
+                    float: left;
+                }
+
+            .tablenow-booking-popup .tbp-download-app > ul > li:hover > a .fa,
+            .tablenow-booking-popup .tbp-download-app > ul > li:hover > a label {
+                color: #545454;
+            }
+
+            .tablenow-booking-popup .tbp-download-app > ul > li:hover > a {
+                border-color: #545454;
+            }
+
+            .tablenow-booking-popup .tbp-download-app > ul > li > a label {
+                display: inline-block;
+                margin: 4px 0 0 5px;
+                font-size: 15px;
+                float: left;
+                color: #b7b7b7;
+                cursor: pointer;
+            }
+/*--------------------------*/
+.tablenow-booking-confirm {
+    background: #fff;
+    width: 800px;
+    font-size: 14px;
+    padding: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    .tablenow-booking-confirm .tbc-content {
+            margin-bottom: 10px;
+    }
+
+    .tablenow-booking-confirm .tbc-title {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    .tablenow-booking-confirm .tbc-summary {
+        display: block;
+        padding: 10px;
+    }
+
+        .tablenow-booking-confirm .tbc-summary > li {
+            display: block;
+            padding: 4px;
+        }
+
+            .tablenow-booking-confirm .tbc-summary > li > b {
+                font-weight: bold;
+                color: #f37934;
+                margin-left: 5px;
+            }
+
+    .tablenow-booking-confirm .tbc-hl-1 {
+        color: #f37934;
+        padding: 5px 0;
+    }
+
+    .tablenow-booking-confirm .tbc-hl-2 {
+        font-weight: bold;
+        font-size: 1.2em;
+        line-height: 1.2em;
+    }
+
+    .tablenow-booking-confirm .tbc-btns {
+    }
+
+        .tablenow-booking-confirm .tbc-btns a {
+            background: #f37934;
+            display: block;
+            float: right;
+            padding: 10px;
+            min-width: 100px;
+            text-align: center;
+            color: #fff;
+            margin: 0 0 0 5px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+    .tablenow-booking-confirm .tbc-h1 {
+        padding: 20px 0;
+        background-color: #fff;
+        text-transform: uppercase;
+        color: #f37934;
+        font-size: 30px;
+    }
+
+#tablenow-booking-success {
+    width: 500px;
+    text-align: center;
+}
+
+.tablenow-booking-confirm .tbc-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tablenow-booking-confirm .tbc-text {
+    padding: 10px 0 0 0;
+    font-size: 14px;
+}
+
+.unavailable-span {
+    border: #eee 1px solid;
+    padding: 10px 10px;
+    text-align: center;
+    display: block;
+    margin: 0 5px;
+    background: #eee;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 450px;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.tablenow-booking-popup .tbp-form input[type=text].input-error {
+    border: 1px solid red;
+}

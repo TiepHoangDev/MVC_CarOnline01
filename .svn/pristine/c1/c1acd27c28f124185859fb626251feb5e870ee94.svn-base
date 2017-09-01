@@ -1,0 +1,140 @@
+﻿@model IMIC.BUSINESSOBJECTS.EntityObject.Ads_Object
+
+@{
+    ViewBag.Title = "Thêm mới Các Quảng Cáo";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .file-box {
+        display: none;
+        width: 100%;
+    }
+</style>
+
+<div style="padding-bottom:20px; width:100%">
+    <div class="portlet light">
+        <div class="portlet-body" style="padding-top:0px">
+            @using (Html.BeginForm("Ads_Insert", "Ads", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group">
+                    <h4>&nbsp;Thêm Mới Các Quảng Cáo:</h4>
+                </div>
+
+                <div class="form-group">
+                    <h4>&nbsp;Tên Quảng Cáo:</h4>
+                    @Html.TextBoxFor(m => m.Tittle, new { @type = "text", @class = "form-control", id = "Tittle" })
+                </div>
+                <h5 style="color:red; font-weight:bold; display:none" class="name_warning">Tên QC không được phép trống.</h5>
+
+                <div class="form-group">
+                    <h4>&nbsp;Icon:</h4>
+                    @Html.TextBoxFor(m => m.Icon, new { @type = "text", @class = "form-control", id = "Icon" })
+                </div>
+
+                <div class="form-group">
+                    <label style="width:100%">Ảnh đại diện bài viết</label>
+                    <input type="checkbox" name="localfile" value="1" /> Chọn ảnh từ máy tính
+
+                    @Html.TextBoxFor(x => x.Image, new
+                       {
+                           @class = "form-control",
+                           @type = "text",
+                           @placeholder = "Dán link ảnh đại diện vào đây",
+                       })
+
+                    <div class="file-box">
+                        <input type="file" name="Avatar" id="ava">
+
+                    </div>
+
+                </div>
+                <div style="margin-top: 15px;">
+                    <img style="width: 200px; height: 180px;" class="img-thumbnail rimage" />
+                </div>
+
+                <div class="form-group">
+                    <h4>&nbsp;Rank:</h4>
+                    @Html.TextBoxFor(m => m.Rank, new { @type = "text", @class = "form-control", id = "Rank" })
+                </div>
+
+                <div class="form-group">
+                    <h4>&nbsp;Nội dung:</h4>
+                    @Html.TextBoxFor(m => m.Content, new { @type = "text", @class = "form-control", id = "Content" })
+                </div>
+
+                <div style="padding-left:0px;width:100%;margin-top:30px;margin-bottom:20px">
+                    <a class="btn btn-primary" id="btn-update">Cập nhật</a>
+                    <a href="@Url.Action("Manage_Ads", "Ads")" class="btn btn-default" style="height:34px;width:86.75px">Đóng</a>
+                </div>
+
+                <!-- /.modal -->
+                <div class="modal fade bs-modal-lg" id="confirm-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                <h4 class="modal-title">Thông báo xác nhận</h4>
+                            </div>
+                            <div class="modal-body">
+                                Bạn có muốn thêm bài học này không ?
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn default" data-dismiss="modal">Hủy</button>
+                                <button onclick="submit" class="btn blue">Xác nhận</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section script_footer{
+    <script>
+        $("#btn-update").click(function () {
+            var name = $('#Tittle').val();
+            if (name == null || name.trim() == '') {
+                $('.name_warning').show();
+            }
+            else {
+                $("#confirm-modal").modal({ show: true });
+            }
+        });
+        $('input[name=Avatar]').on('change', function (e) {
+
+            readURL(this, '.rimage');
+
+        });
+
+        $('input[name=Image]').on('keydown', function (e) {
+            if (e.which == 13) {
+                e.preventDefault();
+
+                $('.rimage').attr('src', $(this).val());
+            }
+        })
+        $(document).on("keydown", "input", function (e) {
+            if (e.which == 13) e.preventDefault();
+        });
+        $(document).on("click", ".delete-tag", function () {
+            $(this).parent().remove();
+
+        });
+        $('input[name=localfile]').on('click', function () {
+            if ($(this).is(':checked')) {
+                $('.file-box').fadeIn('fast');
+                $('input[name=Image]').fadeOut('fast');
+            }
+            else {
+                $('.file-box').fadeOut('fast');
+                $('input[name=Image]').fadeIn('fast');
+            }
+        })
+
+    </script>
+}
+

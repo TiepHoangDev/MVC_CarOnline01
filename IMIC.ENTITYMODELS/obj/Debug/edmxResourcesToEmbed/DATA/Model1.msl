@@ -135,6 +135,7 @@
           <ScalarProperty Name="RegionName" ColumnName="RegionName" />
           <ScalarProperty Name="RegionId" ColumnName="RegionId" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -160,6 +161,7 @@
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LogoCar" ColumnName="LogoCar" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -659,6 +661,11 @@
           <ScalarProperty Name="TypeName_TypeOfCarJoin" ColumnName="TypeName_TypeOfCarJoin" />
           <ScalarProperty Name="IsDeleted_WheelDriveJoin" ColumnName="IsDeleted_WheelDriveJoin" />
           <ScalarProperty Name="WheelDriveName_WheelDriveJoin" ColumnName="WheelDriveName_WheelDriveJoin" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="IsDeleted_City" ColumnName="IsDeleted_City" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -753,6 +760,11 @@
           <ScalarProperty Name="TypeName_TypeOfCarJoin" ColumnName="TypeName_TypeOfCarJoin" />
           <ScalarProperty Name="IsDeleted_WheelDriveJoin" ColumnName="IsDeleted_WheelDriveJoin" />
           <ScalarProperty Name="WheelDriveName_WheelDriveJoin" ColumnName="WheelDriveName_WheelDriveJoin" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="IsDeleted_City" ColumnName="IsDeleted_City" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -779,5 +791,346 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SaleStatusCar_Insert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SaleStatusCar_Insert" />
     <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_SaleStatusCar_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_SaleStatusCar_Update" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Ads_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Ads_Delete" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Ads_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Ads_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Ads_GetAll_Result">
+          <ScalarProperty Name="AdsID" ColumnName="AdsID" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Tittle" ColumnName="Tittle" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ImageFlag" ColumnName="ImageFlag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Ads_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Ads_GetByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Ads_GetByID_Result">
+          <ScalarProperty Name="AdsID" ColumnName="AdsID" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Tittle" ColumnName="Tittle" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ImageFlag" ColumnName="ImageFlag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Ads_InSert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Ads_InSert" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Ads_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Ads_Update" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Banner_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Banner_Delete" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Banner_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Banner_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Banner_GetAll_Result">
+          <ScalarProperty Name="BannerID" ColumnName="BannerID" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="BannerName" ColumnName="BannerName" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ImageFlag" ColumnName="ImageFlag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Banner_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Banner_GetByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Banner_GetByID_Result">
+          <ScalarProperty Name="BannerID" ColumnName="BannerID" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="BannerName" ColumnName="BannerName" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ImageFlag" ColumnName="ImageFlag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Banner_InSert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Banner_InSert" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Banner_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Banner_Update" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Menu_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Menu_Delete" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Menu_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Menu_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Menu_GetAll_Result">
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="Tittle" ColumnName="Tittle" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Menu_GetByID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Menu_GetByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Menu_GetByID_Result">
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="Tittle" ColumnName="Tittle" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Menu_InSert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Menu_InSert" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Menu_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Menu_Update" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Account_GetByEmail" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Account_GetByEmail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Account_GetByEmail_Result">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ID_Facebook" ColumnName="ID_Facebook" />
+          <ScalarProperty Name="ID_Gmail" ColumnName="ID_Gmail" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NumberOfLikeProfile" ColumnName="NumberOfLikeProfile" />
+          <ScalarProperty Name="NumberOfPost" ColumnName="NumberOfPost" />
+          <ScalarProperty Name="NumberOfFlow" ColumnName="NumberOfFlow" />
+          <ScalarProperty Name="NumberOfComment" ColumnName="NumberOfComment" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+          <ScalarProperty Name="JoinDay" ColumnName="JoinDay" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Account_GetByFacebookId" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Account_GetByFacebookId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Account_GetByFacebookId_Result">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ID_Facebook" ColumnName="ID_Facebook" />
+          <ScalarProperty Name="ID_Gmail" ColumnName="ID_Gmail" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NumberOfLikeProfile" ColumnName="NumberOfLikeProfile" />
+          <ScalarProperty Name="NumberOfPost" ColumnName="NumberOfPost" />
+          <ScalarProperty Name="NumberOfFlow" ColumnName="NumberOfFlow" />
+          <ScalarProperty Name="NumberOfComment" ColumnName="NumberOfComment" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+          <ScalarProperty Name="JoinDay" ColumnName="JoinDay" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Account_GetByGmailId" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Account_GetByGmailId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Account_GetByGmailId_Result">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ID_Facebook" ColumnName="ID_Facebook" />
+          <ScalarProperty Name="ID_Gmail" ColumnName="ID_Gmail" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NumberOfLikeProfile" ColumnName="NumberOfLikeProfile" />
+          <ScalarProperty Name="NumberOfPost" ColumnName="NumberOfPost" />
+          <ScalarProperty Name="NumberOfFlow" ColumnName="NumberOfFlow" />
+          <ScalarProperty Name="NumberOfComment" ColumnName="NumberOfComment" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+          <ScalarProperty Name="JoinDay" ColumnName="JoinDay" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Post_GetByDateCreate_Paging" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Post_GetByDateCreate_Paging">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Post_GetByDateCreate_Paging_Result">
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="CarPrice" ColumnName="CarPrice" />
+          <ScalarProperty Name="CarStatusID" ColumnName="CarStatusID" />
+          <ScalarProperty Name="KmWent" ColumnName="KmWent" />
+          <ScalarProperty Name="LastContactDay" ColumnName="LastContactDay" />
+          <ScalarProperty Name="MadeInId" ColumnName="MadeInId" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="PostContent" ColumnName="PostContent" />
+          <ScalarProperty Name="PostDay" ColumnName="PostDay" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="PostTitle" ColumnName="PostTitle" />
+          <ScalarProperty Name="SaleStatusCarID" ColumnName="SaleStatusCarID" />
+          <ScalarProperty Name="TypeOfCarID" ColumnName="TypeOfCarID" />
+          <ScalarProperty Name="Address_AccountPostJoin" ColumnName="Address_AccountPostJoin" />
+          <ScalarProperty Name="FullName_AccountPostJoin" ColumnName="FullName_AccountPostJoin" />
+          <ScalarProperty Name="Mobile_AccountPostJoin" ColumnName="Mobile_AccountPostJoin" />
+          <ScalarProperty Name="RC" ColumnName="RC" />
+          <ScalarProperty Name="Carcode" ColumnName="Carcode" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Comment_GetByPostId" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Comment_GetByPostId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Comment_GetByPostId_Result">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ContentComment" ColumnName="ContentComment" />
+          <ScalarProperty Name="TotalOfLike" ColumnName="TotalOfLike" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Comment_InsertOrUpdate" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Comment_InsertOrUpdate" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Image_GetByPostId" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Image_GetByPostId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Image_GetByPostId_Result">
+          <ScalarProperty Name="PostImageID" ColumnName="PostImageID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="ImageAlt" ColumnName="ImageAlt" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Post_getbycode" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Post_getbycode">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Post_getbycode_Result">
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="Carcode" ColumnName="Carcode" />
+          <ScalarProperty Name="MadeInId" ColumnName="MadeInId" />
+          <ScalarProperty Name="CarStatusID" ColumnName="CarStatusID" />
+          <ScalarProperty Name="TypeOfCarID" ColumnName="TypeOfCarID" />
+          <ScalarProperty Name="KmWent" ColumnName="KmWent" />
+          <ScalarProperty Name="FurnitureColorID" ColumnName="FurnitureColorID" />
+          <ScalarProperty Name="ExteriorColorID" ColumnName="ExteriorColorID" />
+          <ScalarProperty Name="NumberOfDoorId" ColumnName="NumberOfDoorId" />
+          <ScalarProperty Name="NumberOfSeatId" ColumnName="NumberOfSeatId" />
+          <ScalarProperty Name="FuelID" ColumnName="FuelID" />
+          <ScalarProperty Name="CarGearId" ColumnName="CarGearId" />
+          <ScalarProperty Name="WheelDriveId" ColumnName="WheelDriveId" />
+          <ScalarProperty Name="CarPrice" ColumnName="CarPrice" />
+          <ScalarProperty Name="ProducedYear" ColumnName="ProducedYear" />
+          <ScalarProperty Name="PostDay" ColumnName="PostDay" />
+          <ScalarProperty Name="PostContent" ColumnName="PostContent" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="PostTitle" ColumnName="PostTitle" />
+          <ScalarProperty Name="UpdatePostDay" ColumnName="UpdatePostDay" />
+          <ScalarProperty Name="SaleStatusCarID" ColumnName="SaleStatusCarID" />
+          <ScalarProperty Name="LastContactDay" ColumnName="LastContactDay" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="AdministratorID" ColumnName="AdministratorID" />
+          <ScalarProperty Name="ApprovedDay" ColumnName="ApprovedDay" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="PostImageID" ColumnName="PostImageID" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="ImageAlt" ColumnName="ImageAlt" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="NumberOfDoorName" ColumnName="NumberOfDoorName" />
+          <ScalarProperty Name="NumberOfSeatName" ColumnName="NumberOfSeatName" />
+          <ScalarProperty Name="CarStatusName" ColumnName="CarStatusName" />
+          <ScalarProperty Name="CarGearName" ColumnName="CarGearName" />
+          <ScalarProperty Name="FuelName" ColumnName="FuelName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DesignID" ColumnName="DesignID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DesignName" ColumnName="DesignName" />
+          <ScalarProperty Name="ExteriorFurnitureColorName" ColumnName="ExteriorFurnitureColorName" />
+          <ScalarProperty Name="WheelDriveName" ColumnName="WheelDriveName" />
+          <ScalarProperty Name="MadeInName" ColumnName="MadeInName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Top1Comment_GetByPostId" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Top1Comment_GetByPostId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Top1Comment_GetByPostId_Result">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ContentComment" ColumnName="ContentComment" />
+          <ScalarProperty Name="TotalOfLike" ColumnName="TotalOfLike" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Banner_GetShowInWeb" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Banner_GetShowInWeb">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Banner_GetShowInWeb_Result">
+          <ScalarProperty Name="BannerID" ColumnName="BannerID" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="BannerName" ColumnName="BannerName" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="ImageFlag" ColumnName="ImageFlag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Image_GetFirstOfPost" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Image_GetFirstOfPost">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Image_GetFirstOfPost_Result">
+          <ScalarProperty Name="PostImageID" ColumnName="PostImageID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="ImageAlt" ColumnName="ImageAlt" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Image_Delete" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Image_Delete" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Image_GetAll" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Image_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Image_GetAll_Result">
+          <ScalarProperty Name="ImageAlt" ColumnName="ImageAlt" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="PostImageID" ColumnName="PostImageID" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Image_GetByPostImageID" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Image_GetByPostImageID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarOnlineModel.WEB_CARONLINE_SP_Image_GetByPostImageID_Result">
+          <ScalarProperty Name="ImageAlt" ColumnName="ImageAlt" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="PostImageID" ColumnName="PostImageID" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Image_Insert" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Image_Insert" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_Image_Update" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_Image_Update" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CountComment" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CountComment" />
+    <FunctionImportMapping FunctionImportName="WEB_CARONLINE_SP_CountImage" FunctionName="CarOnlineModel.Store.WEB_CARONLINE_SP_CountImage" />
   </EntityContainerMapping>
 </Mapping>

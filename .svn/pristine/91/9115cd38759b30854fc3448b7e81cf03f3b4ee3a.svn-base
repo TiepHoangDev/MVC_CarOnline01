@@ -1,0 +1,53 @@
+﻿@model IEnumerable<IMIC.BUSINESSOBJECTS.EntityObject.Comment_Object>
+<ul class="review-list fd-clearbox">
+    @if (Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            <li class="review-item fd-clearbox foody-box-shadow" itemprop="review" itemscope itemtype="">
+                <div class="review-user fd-clearbox">                   
+                    <div class="ru-row">
+                        <a class="ru-username" href="/thanh-vien/phuong.mi0182">
+                            <span itemprop="author" itemscope itemtype="">
+                                <span itemprop="name">@item.UserCreateCommnet.FullName</span>
+                            </span>
+                        </a>
+                        <div class="ru-stats">
+                            <a href="#">đ&#227; b&#236;nh luận</a>
+                            <span>bằng</span>
+                            <a class="ru-device" target="_blank" href="/ung-dung-mobile">
+                                Android<i class="fa fa-android"></i>
+                            </a>
+                            <span class="ru-time" title="31/07/2017 00:43" itemprop="datePublished" content="2017-07-31T00:43:54">@item.CreateDate.GetValueOrDefault().ToString("dd-MM-yyyy HH:mm:ss")</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-des fd-clearbox">
+                    <div class="review-points green" itemprop="reviewRating" itemscope itemtype="">
+                        <meta itemprop="worstRating" content="1">
+                        <meta itemprop="bestRating" content="10">
+                        <span itemprop="ratingValue">6.0</span>
+                    </div>
+                    <a href="#" class="rd-title"><span itemprop="name"> The Coffee House - Ut Tịch</span></a>
+                    <div class="rd-des toggle-height">
+                        <span itemprop="reviewBody">@item.ContentComment</span>
+                        <a class="view-more" href=""></a>
+                    </div>
+                </div>
+               
+            </li>
+        }
+    }
+    else
+    {
+        <span>Chưa có bình luận nào</span>
+    }
+    
+</ul>
+
+
+<div class="pn-loadmore fd-clearbox" ng-if="IsLoadMore()" style="display:none;" ng-style="{'display':'block'}">
+    <a class="fd-btn-more" ng-class="{'loading':IsLoading}" ng-click="LoadMore()">
+        <label>Xem thêm bình luận</label>
+    </a>
+</div>

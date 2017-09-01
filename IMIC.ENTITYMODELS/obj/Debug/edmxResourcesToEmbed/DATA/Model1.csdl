@@ -460,6 +460,155 @@
       <Parameter Name="SaleStatusCarID" Mode="In" Type="Guid" />
       <Parameter Name="SaleStatusCarName" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Ads_Delete">
+      <Parameter Name="AdsID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Ads_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Ads_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_Ads_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Ads_GetByID_Result)">
+      <Parameter Name="AdsID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Ads_InSert">
+      <Parameter Name="AdsID" Mode="In" Type="Guid" />
+      <Parameter Name="Icon" Mode="In" Type="String" />
+      <Parameter Name="Tittle" Mode="In" Type="String" />
+      <Parameter Name="Image" Mode="In" Type="String" />
+      <Parameter Name="Rank" Mode="In" Type="Int32" />
+      <Parameter Name="Content" Mode="In" Type="String" />
+      <Parameter Name="Position" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="Link" Mode="In" Type="String" />
+      <Parameter Name="ImageFlag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Ads_Update">
+      <Parameter Name="AdsID" Mode="In" Type="Guid" />
+      <Parameter Name="Icon" Mode="In" Type="String" />
+      <Parameter Name="Tittle" Mode="In" Type="String" />
+      <Parameter Name="Image" Mode="In" Type="String" />
+      <Parameter Name="Rank" Mode="In" Type="Int32" />
+      <Parameter Name="Content" Mode="In" Type="String" />
+      <Parameter Name="Position" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="Link" Mode="In" Type="String" />
+      <Parameter Name="ImageFlag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Banner_Delete">
+      <Parameter Name="BannerID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Banner_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Banner_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_Banner_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Banner_GetByID_Result)">
+      <Parameter Name="BannerID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Banner_InSert">
+      <Parameter Name="BannerID" Mode="In" Type="Guid" />
+      <Parameter Name="Image" Mode="In" Type="String" />
+      <Parameter Name="Position" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="BannerName" Mode="In" Type="String" />
+      <Parameter Name="Link" Mode="In" Type="String" />
+      <Parameter Name="ImageFlag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Banner_Update">
+      <Parameter Name="BannerID" Mode="In" Type="Guid" />
+      <Parameter Name="Image" Mode="In" Type="String" />
+      <Parameter Name="Position" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+      <Parameter Name="BannerName" Mode="In" Type="String" />
+      <Parameter Name="Link" Mode="In" Type="String" />
+      <Parameter Name="ImageFlag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Menu_Delete">
+      <Parameter Name="MenuID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Menu_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Menu_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_Menu_GetByID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Menu_GetByID_Result)">
+      <Parameter Name="MenuID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Menu_InSert">
+      <Parameter Name="MenuID" Mode="In" Type="Guid" />
+      <Parameter Name="Tittle" Mode="In" Type="String" />
+      <Parameter Name="Link" Mode="In" Type="String" />
+      <Parameter Name="Position" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Menu_Update">
+      <Parameter Name="MenuID" Mode="In" Type="Guid" />
+      <Parameter Name="Tittle" Mode="In" Type="String" />
+      <Parameter Name="Link" Mode="In" Type="String" />
+      <Parameter Name="Position" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="IsDeleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Account_GetByEmail" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Account_GetByEmail_Result)">
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Account_GetByFacebookId" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Account_GetByFacebookId_Result)">
+      <Parameter Name="ID_Facebook" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Account_GetByGmailId" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Account_GetByGmailId_Result)">
+      <Parameter Name="ID_Gmail" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Post_GetByDateCreate_Paging" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Post_GetByDateCreate_Paging_Result)">
+      <Parameter Name="Start" Mode="In" Type="Int32" />
+      <Parameter Name="Length" Mode="In" Type="Int32" />
+      <Parameter Name="Location" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Comment_GetByPostId" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Comment_GetByPostId_Result)">
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Comment_InsertOrUpdate">
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+      <Parameter Name="CommentId" Mode="In" Type="Guid" />
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+      <Parameter Name="UserId" Mode="In" Type="Guid" />
+      <Parameter Name="ContentComment" Mode="In" Type="String" />
+      <Parameter Name="TotalOfLike" Mode="In" Type="Int32" />
+      <Parameter Name="CreateDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Image_GetByPostId" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Image_GetByPostId_Result)">
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Post_getbycode" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Post_getbycode_Result)">
+      <Parameter Name="code" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Top1Comment_GetByPostId" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Top1Comment_GetByPostId_Result)">
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Banner_GetShowInWeb" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Banner_GetShowInWeb_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_Image_GetFirstOfPost" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Image_GetFirstOfPost_Result)">
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Image_Delete">
+      <Parameter Name="PostImageID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Image_GetAll" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Image_GetAll_Result)" />
+    <FunctionImport Name="WEB_CARONLINE_SP_Image_GetByPostImageID" ReturnType="Collection(CarOnlineModel.WEB_CARONLINE_SP_Image_GetByPostImageID_Result)">
+      <Parameter Name="PostImageID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Image_Insert">
+      <Parameter Name="ImageAlt" Mode="In" Type="String" />
+      <Parameter Name="ImageName" Mode="In" Type="String" />
+      <Parameter Name="PostID" Mode="In" Type="Guid" />
+      <Parameter Name="PostImageID" Mode="In" Type="Guid" />
+      <Parameter Name="Rank" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_Image_Update">
+      <Parameter Name="ImageAlt" Mode="In" Type="String" />
+      <Parameter Name="ImageName" Mode="In" Type="String" />
+      <Parameter Name="PostID" Mode="In" Type="Guid" />
+      <Parameter Name="PostImageID" Mode="In" Type="Guid" />
+      <Parameter Name="Rank" Mode="In" Type="Byte" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_CountComment" ReturnType="Collection(Int32)">
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <FunctionImport Name="WEB_CARONLINE_SP_CountImage" ReturnType="Collection(Int32)">
+      <Parameter Name="PostId" Mode="In" Type="Guid" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="WEB_CARONLINE_SP_Account_CheckLogin_Result">
     <Property Type="Guid" Name="AccountID" Nullable="false" />
@@ -561,6 +710,7 @@
     <Property Type="String" Name="RegionName" Nullable="true" MaxLength="50" />
     <Property Type="Guid" Name="RegionId" Nullable="true" />
     <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Int32" Name="CityCode" Nullable="false" />
   </ComplexType>
   <ComplexType Name="WEB_CARONLINE_SP_City_GetByID_Result">
     <Property Type="Guid" Name="CityId" Nullable="false" />
@@ -575,6 +725,7 @@
     <Property Type="Boolean" Name="Status" Nullable="true" />
     <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
     <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="LogoCar" Nullable="true" MaxLength="500" />
   </ComplexType>
   <ComplexType Name="WEB_CARONLINE_SP_CompanyCar_GetByID_Result">
     <Property Type="Guid" Name="CompanyID" Nullable="false" />
@@ -878,6 +1029,11 @@
     <Property Type="String" Name="TypeName_TypeOfCarJoin" Nullable="true" MaxLength="50" />
     <Property Type="Boolean" Name="IsDeleted_WheelDriveJoin" Nullable="true" />
     <Property Type="String" Name="WheelDriveName_WheelDriveJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CityCode" Nullable="false" />
+    <Property Type="Guid" Name="CityId" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="RegionId" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted_City" Nullable="true" />
   </ComplexType>
   <ComplexType Name="WEB_CARONLINE_SP_Post_GetByPostId_Result">
     <Property Type="Guid" Name="AccountID" Nullable="true" />
@@ -968,6 +1124,11 @@
     <Property Type="String" Name="TypeName_TypeOfCarJoin" Nullable="true" MaxLength="50" />
     <Property Type="Boolean" Name="IsDeleted_WheelDriveJoin" Nullable="true" />
     <Property Type="String" Name="WheelDriveName_WheelDriveJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CityCode" Nullable="false" />
+    <Property Type="Guid" Name="CityId" Nullable="false" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="RegionId" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted_City" Nullable="true" />
   </ComplexType>
   <ComplexType Name="WEB_CARONLINE_SP_SaleStatusCar_GetAll_Result">
     <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
@@ -978,5 +1139,259 @@
     <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
     <Property Type="Guid" Name="SaleStatusCarID" Nullable="false" />
     <Property Type="String" Name="SaleStatusCarName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Menu_GetAll_Result">
+    <Property Type="Guid" Name="MenuID" Nullable="false" />
+    <Property Type="String" Name="Tittle" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Link" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Position" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Menu_GetByID_Result">
+    <Property Type="Guid" Name="MenuID" Nullable="false" />
+    <Property Type="String" Name="Tittle" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Link" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Position" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Account_GetByEmail_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Byte" Name="RoleID" Nullable="true" />
+    <Property Type="String" Name="ID_Facebook" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Gmail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfLikeProfile" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfPost" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfFlow" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfComment" Nullable="true" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="BirthDay" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="JoinDay" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Account_GetByFacebookId_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Byte" Name="RoleID" Nullable="true" />
+    <Property Type="String" Name="ID_Facebook" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Gmail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfLikeProfile" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfPost" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfFlow" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfComment" Nullable="true" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="BirthDay" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="JoinDay" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Account_GetByGmailId_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="false" />
+    <Property Type="Byte" Name="RoleID" Nullable="true" />
+    <Property Type="String" Name="ID_Facebook" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ID_Gmail" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="NumberOfLikeProfile" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfPost" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfFlow" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfComment" Nullable="true" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="BirthDay" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="JoinDay" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Post_GetByDateCreate_Paging_Result">
+    <Property Type="Guid" Name="AccountID" Nullable="true" />
+    <Property Type="Int32" Name="CarPrice" Nullable="true" />
+    <Property Type="Guid" Name="CarStatusID" Nullable="true" />
+    <Property Type="String" Name="KmWent" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastContactDay" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="MadeInId" Nullable="true" />
+    <Property Type="String" Name="Note" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PostContent" Nullable="true" MaxLength="1500" />
+    <Property Type="DateTime" Name="PostDay" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="PostId" Nullable="false" />
+    <Property Type="String" Name="PostTitle" Nullable="true" MaxLength="100" />
+    <Property Type="Guid" Name="SaleStatusCarID" Nullable="true" />
+    <Property Type="Guid" Name="TypeOfCarID" Nullable="true" />
+    <Property Type="String" Name="Address_AccountPostJoin" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="FullName_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile_AccountPostJoin" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="RC" Nullable="true" />
+    <Property Type="Int64" Name="Carcode" Nullable="false" />
+    <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Ads_GetAll_Result">
+    <Property Type="Guid" Name="AdsID" Nullable="false" />
+    <Property Type="String" Name="Icon" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Tittle" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Image" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Rank" Nullable="true" />
+    <Property Type="String" Name="Content" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Int32" Name="Position" Nullable="true" />
+    <Property Type="String" Name="Link" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="ImageFlag" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Ads_GetByID_Result">
+    <Property Type="Guid" Name="AdsID" Nullable="false" />
+    <Property Type="String" Name="Icon" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Tittle" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Image" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Rank" Nullable="true" />
+    <Property Type="String" Name="Content" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Int32" Name="Position" Nullable="true" />
+    <Property Type="String" Name="Link" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="ImageFlag" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Banner_GetAll_Result">
+    <Property Type="Guid" Name="BannerID" Nullable="false" />
+    <Property Type="String" Name="Image" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Position" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="BannerName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Link" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="ImageFlag" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Banner_GetByID_Result">
+    <Property Type="Guid" Name="BannerID" Nullable="false" />
+    <Property Type="String" Name="Image" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Position" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="BannerName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Link" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="ImageFlag" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Comment_GetByPostId_Result">
+    <Property Type="Guid" Name="CommentId" Nullable="false" />
+    <Property Type="Guid" Name="PostId" Nullable="true" />
+    <Property Type="Guid" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="ContentComment" Nullable="true" />
+    <Property Type="Int32" Name="TotalOfLike" Nullable="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Image_GetByPostId_Result">
+    <Property Type="Guid" Name="PostImageID" Nullable="false" />
+    <Property Type="Guid" Name="PostID" Nullable="true" />
+    <Property Type="String" Name="ImageName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ImageAlt" Nullable="true" MaxLength="250" />
+    <Property Type="Byte" Name="Rank" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Post_getbycode_Result">
+    <Property Type="Guid" Name="PostId" Nullable="false" />
+    <Property Type="Int64" Name="Carcode" Nullable="false" />
+    <Property Type="Guid" Name="MadeInId" Nullable="true" />
+    <Property Type="Guid" Name="CarStatusID" Nullable="true" />
+    <Property Type="Guid" Name="TypeOfCarID" Nullable="true" />
+    <Property Type="String" Name="KmWent" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="FurnitureColorID" Nullable="true" />
+    <Property Type="Guid" Name="ExteriorColorID" Nullable="true" />
+    <Property Type="Guid" Name="NumberOfDoorId" Nullable="true" />
+    <Property Type="Guid" Name="NumberOfSeatId" Nullable="true" />
+    <Property Type="Guid" Name="FuelID" Nullable="true" />
+    <Property Type="Guid" Name="CarGearId" Nullable="true" />
+    <Property Type="Guid" Name="WheelDriveId" Nullable="true" />
+    <Property Type="Int32" Name="CarPrice" Nullable="true" />
+    <Property Type="Int32" Name="ProducedYear" Nullable="false" />
+    <Property Type="DateTime" Name="PostDay" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PostContent" Nullable="true" MaxLength="1500" />
+    <Property Type="Guid" Name="AccountID" Nullable="true" />
+    <Property Type="String" Name="PostTitle" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="UpdatePostDay" Nullable="true" Precision="23" />
+    <Property Type="Guid" Name="SaleStatusCarID" Nullable="true" />
+    <Property Type="DateTime" Name="LastContactDay" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Approved" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="Guid" Name="AdministratorID" Nullable="true" />
+    <Property Type="DateTime" Name="ApprovedDay" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Note" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="PostImageID" Nullable="false" />
+    <Property Type="String" Name="ImageName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ImageAlt" Nullable="true" MaxLength="250" />
+    <Property Type="Byte" Name="Rank" Nullable="true" />
+    <Property Type="String" Name="NumberOfDoorName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NumberOfSeatName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CarStatusName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CarGearName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FuelName" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="DesignID" Nullable="true" />
+    <Property Type="String" Name="TypeName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DesignName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ExteriorFurnitureColorName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WheelDriveName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MadeInName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Top1Comment_GetByPostId_Result">
+    <Property Type="Guid" Name="CommentId" Nullable="false" />
+    <Property Type="Guid" Name="PostId" Nullable="true" />
+    <Property Type="Guid" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="ContentComment" Nullable="true" />
+    <Property Type="Int32" Name="TotalOfLike" Nullable="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Avatar" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Banner_GetShowInWeb_Result">
+    <Property Type="Guid" Name="BannerID" Nullable="false" />
+    <Property Type="String" Name="Image" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Position" Nullable="true" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="true" />
+    <Property Type="String" Name="BannerName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Link" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="ImageFlag" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Image_GetFirstOfPost_Result">
+    <Property Type="Guid" Name="PostImageID" Nullable="false" />
+    <Property Type="Guid" Name="PostID" Nullable="true" />
+    <Property Type="String" Name="ImageName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ImageAlt" Nullable="true" MaxLength="250" />
+    <Property Type="Byte" Name="Rank" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Image_GetAll_Result">
+    <Property Type="String" Name="ImageAlt" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ImageName" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="PostID" Nullable="true" />
+    <Property Type="Guid" Name="PostImageID" Nullable="false" />
+    <Property Type="Byte" Name="Rank" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WEB_CARONLINE_SP_Image_GetByPostImageID_Result">
+    <Property Type="String" Name="ImageAlt" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ImageName" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="PostID" Nullable="true" />
+    <Property Type="Guid" Name="PostImageID" Nullable="false" />
+    <Property Type="Byte" Name="Rank" Nullable="true" />
   </ComplexType>
 </Schema>

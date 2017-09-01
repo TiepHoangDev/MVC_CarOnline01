@@ -12,6 +12,15 @@
     <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
   </Function>
   <Function Name="WEB_CARONLINE_SP_Account_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WEB_CARONLINE_SP_Account_GetByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Account_GetByFacebookId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_Facebook" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Account_GetByGmailId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_Gmail" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="WEB_CARONLINE_SP_Account_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="AccountID" Type="uniqueidentifier" Mode="In" />
   </Function>
@@ -57,6 +66,67 @@
     <Parameter Name="Address" Type="nvarchar" Mode="In" />
     <Parameter Name="Isdeleted" Type="bit" Mode="In" />
   </Function>
+  <Function Name="WEB_CARONLINE_SP_Ads_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AdsID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Ads_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WEB_CARONLINE_SP_Ads_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AdsID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Ads_InSert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AdsID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Icon" Type="varchar" Mode="In" />
+    <Parameter Name="Tittle" Type="nvarchar" Mode="In" />
+    <Parameter Name="Image" Type="varchar" Mode="In" />
+    <Parameter Name="Rank" Type="int" Mode="In" />
+    <Parameter Name="Content" Type="nvarchar" Mode="In" />
+    <Parameter Name="Position" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="Link" Type="nvarchar" Mode="In" />
+    <Parameter Name="ImageFlag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Ads_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AdsID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Icon" Type="varchar" Mode="In" />
+    <Parameter Name="Tittle" Type="nvarchar" Mode="In" />
+    <Parameter Name="Image" Type="varchar" Mode="In" />
+    <Parameter Name="Rank" Type="int" Mode="In" />
+    <Parameter Name="Content" Type="nvarchar" Mode="In" />
+    <Parameter Name="Position" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="Link" Type="nvarchar" Mode="In" />
+    <Parameter Name="ImageFlag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Banner_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BannerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Banner_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WEB_CARONLINE_SP_Banner_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BannerID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Banner_GetShowInWeb" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WEB_CARONLINE_SP_Banner_InSert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BannerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Image" Type="varchar" Mode="In" />
+    <Parameter Name="Position" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="BannerName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Link" Type="nvarchar" Mode="In" />
+    <Parameter Name="ImageFlag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Banner_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BannerID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Image" Type="varchar" Mode="In" />
+    <Parameter Name="Position" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+    <Parameter Name="BannerName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Link" Type="nvarchar" Mode="In" />
+    <Parameter Name="ImageFlag" Type="bit" Mode="In" />
+  </Function>
   <Function Name="WEB_CARONLINE_SP_CarStatus_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CarStatusID" Type="uniqueidentifier" Mode="In" />
   </Function>
@@ -91,6 +161,18 @@
     <Parameter Name="RegionId" Type="uniqueidentifier" Mode="In" />
     <Parameter Name="IsDeleted" Type="bit" Mode="In" />
   </Function>
+  <Function Name="WEB_CARONLINE_SP_Comment_GetByPostId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Comment_InsertOrUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+    <Parameter Name="CommentId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="ContentComment" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="TotalOfLike" Type="int" Mode="In" />
+    <Parameter Name="CreateDate" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="WEB_CARONLINE_SP_CompanyCar_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CompanyID" Type="uniqueidentifier" Mode="In" />
   </Function>
@@ -109,6 +191,12 @@
     <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
     <Parameter Name="Status" Type="bit" Mode="In" />
     <Parameter Name="Description" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_CountComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_CountImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
   </Function>
   <Function Name="WEB_CARONLINE_SP_DesignCar_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="DesignId" Type="uniqueidentifier" Mode="In" />
@@ -197,6 +285,33 @@
     <Parameter Name="CarGearId" Type="uniqueidentifier" Mode="In" />
     <Parameter Name="CarGearName" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="WEB_CARONLINE_SP_Image_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PostImageID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Image_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WEB_CARONLINE_SP_Image_GetByPostId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Image_GetByPostImageID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PostImageID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Image_GetFirstOfPost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Image_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ImageAlt" Type="nvarchar" Mode="In" />
+    <Parameter Name="ImageName" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="PostImageID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Rank" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Image_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ImageAlt" Type="nvarchar" Mode="In" />
+    <Parameter Name="ImageName" Type="nvarchar" Mode="In" />
+    <Parameter Name="PostID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="PostImageID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Rank" Type="tinyint" Mode="In" />
+  </Function>
   <Function Name="WEB_CARONLINE_SP_MadeInCar_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="MadeInID" Type="uniqueidentifier" Mode="In" />
   </Function>
@@ -212,6 +327,29 @@
   <Function Name="WEB_CARONLINE_SP_MadeInCar_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="MadeInID" Type="uniqueidentifier" Mode="In" />
     <Parameter Name="MadeInName" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Menu_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MenuID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Menu_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WEB_CARONLINE_SP_Menu_GetByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MenuID" Type="uniqueidentifier" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Menu_InSert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MenuID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Tittle" Type="nvarchar" Mode="In" />
+    <Parameter Name="Link" Type="varchar" Mode="In" />
+    <Parameter Name="Position" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="IsDeleted" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Menu_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MenuID" Type="uniqueidentifier" Mode="In" />
+    <Parameter Name="Tittle" Type="nvarchar" Mode="In" />
+    <Parameter Name="Link" Type="varchar" Mode="In" />
+    <Parameter Name="Position" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
     <Parameter Name="IsDeleted" Type="bit" Mode="In" />
   </Function>
   <Function Name="WEB_CARONLINE_SP_NumberOfDoor_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -252,6 +390,14 @@
     <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
   </Function>
   <Function Name="WEB_CARONLINE_SP_Post_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WEB_CARONLINE_SP_Post_getbycode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="code" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Post_GetByDateCreate_Paging" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Start" Type="int" Mode="In" />
+    <Parameter Name="Length" Type="int" Mode="In" />
+    <Parameter Name="Location" Type="int" Mode="In" />
+  </Function>
   <Function Name="WEB_CARONLINE_SP_Post_GetByPostId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
   </Function>
@@ -392,6 +538,9 @@
     <Parameter Name="IsDeleted" Type="bit" Mode="In" />
     <Parameter Name="SaleStatusCarID" Type="uniqueidentifier" Mode="In" />
     <Parameter Name="SaleStatusCarName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="WEB_CARONLINE_SP_Top1Comment_GetByPostId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PostId" Type="uniqueidentifier" Mode="In" />
   </Function>
   <Function Name="WEB_CARONLINE_SP_TypeOfCar_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="TypeOfCarID" Type="uniqueidentifier" Mode="In" />

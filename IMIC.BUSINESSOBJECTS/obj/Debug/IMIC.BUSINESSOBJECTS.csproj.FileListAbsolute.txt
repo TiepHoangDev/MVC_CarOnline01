@@ -1,5 +1,5 @@
 E:\HPT\imic\web\Car online\IMIC.BUSINESSOBJECTS\bin\Debug\IMIC.BUSINESSOBJECTS.dll
 E:\HPT\imic\web\Car online\IMIC.BUSINESSOBJECTS\bin\Debug\IMIC.BUSINESSOBJECTS.pdb
+E:\HPT\imic\web\Car online\IMIC.BUSINESSOBJECTS\obj\Debug\IMIC.BUSINESSOBJECTS.csprojResolveAssemblyReference.cache
 E:\HPT\imic\web\Car online\IMIC.BUSINESSOBJECTS\obj\Debug\IMIC.BUSINESSOBJECTS.dll
 E:\HPT\imic\web\Car online\IMIC.BUSINESSOBJECTS\obj\Debug\IMIC.BUSINESSOBJECTS.pdb
-E:\HPT\imic\web\Car online\IMIC.BUSINESSOBJECTS\obj\Debug\IMIC.BUSINESSOBJECTS.csprojResolveAssemblyReference.cache

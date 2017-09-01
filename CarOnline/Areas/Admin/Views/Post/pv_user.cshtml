@@ -1,0 +1,26 @@
+﻿@model IMIC.BUSINESSOBJECTS.EntityObject.AccountObject
+
+<div class="tit">Thông tin liên lạc</div>
+<div class="contact">
+    <div class="left">
+        <div class="rowitem">
+            @Html.Label("Họ tên")
+            @Html.Label(Model.FullName, new { @class = "inputlong" })
+        </div>
+        <div class="rowitem">
+            @Html.Label("Số điện thoại")
+            @Html.Label(Model.Mobile, new { @class = "inputlong" })
+        </div>
+        <p>Bạn có thể chỉnh sửa thông tin @Html.ActionLink("tại đây", "Update", "Account", new { id = Model.AccountID }, new { })</p>
+    </div>
+    <div class="right">
+        <div class="rowitem">
+            @Html.Label("Email")
+            @Html.Label(Model.Email, new { @class = "inputlong" })
+        </div>
+        <div class="rowitem">
+            @Html.Label("Địa chỉ")
+            @Html.Label(Model.Address, new { @class = "inputlong" })
+        </div>
+    </div>
+</div>

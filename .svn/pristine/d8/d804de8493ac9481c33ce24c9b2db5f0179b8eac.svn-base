@@ -1,0 +1,204 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@using IMIC.BUSINESSOBJECTS.EntityObject
+
+<div class="home2-container ng-scope">
+    <div class="home2-panel-left foody-toolbar">
+        <div class="fd-clearbox" style="top: 0px;">
+            <div class="category">
+                Hãng xe
+                <a href="javascript:void(0)"></a>
+            </div>
+            <ul>
+                @{
+                    Html.RenderAction("Index", "CompanyCar");
+
+                }
+            </ul>
+        </div>
+    </div>
+
+    <div class="home2-panel-view">
+        <div class="user-history-delivery"></div>
+        <div class="ng-scope">
+            <div class="home2-panel-right ng-scope">
+                <div class="right-filters foody-toolbar fd-clearbox">
+                    <div class="fd-clearbox">
+                        <ul>
+                            <li>
+                                <a class="current" href="javascript:void(0)">Mới nhất</a>
+                            </li>
+                            <li>
+                                <a class="current" href="javascript:void(0)">Gần đây</a>
+                            </li>
+                            <li></li>
+                            <li>
+                                <a class="current" href="javascript:void(0)">Đã lưu</a>
+                            </li>
+                            <li style="float: right;">
+                                @{
+                                    List<City_Object> lstLocation = (List<City_Object>)ViewBag.location;
+                                <select class="form-control input-inline" id="selectLocation" style="width:180px">
+                                    <option selected value="0">--Chọn Quận Huyện--</option>
+                                    @foreach (var Location in lstLocation)
+                                        {
+                                            if (Location.CityCode.Equals(ViewBag.SeachLoacation))
+                                            {
+                                        <option selected value="@Location.CityCode">@Location.CityName</option>
+                                            }
+                                            else
+                                            {
+                                        <option value="@Location.CityCode">@Location.CityName</option>
+                                            }
+
+                                        }
+                                </select>
+                                }
+
+                            </li>
+                            @*<li style="float: right;">
+                                    <select id="slDistrictPlace" class="ng-pristine ng-untouched ng-valid ng-empty">
+                                        <option value="">- Ẩm thực -</option>
+                                        <option value="1">- Miền Nam -</option>
+                                        <option value="2">- Miền Trung -</option>
+                                        <option value="3">- Miền Bắc -</option>
+                                        <option value="4">- Thái Lan -</option>
+                                        <option value="5">- Ấn độ -</option>
+                                    </select>
+                                </li>
+                                <li style="float: right;">
+                                    <select id="slDistrictPlace" class="ng-pristine ng-untouched ng-valid ng-empty">
+                                        <option value="">- Danh mục -</option>
+                                        <option value="1">- Nhà hàng -</option>
+                                        <option value="2">- Buffet -</option>
+                                        <option value="3">- Sang trọng -</option>
+                                        <option value="4">- Ăn vặt/vỉa hè -</option>
+                                        <option value="5">- Quán ăn -</option>
+                                    </select>
+                                </li>*@
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-container fd-clearbox ng-scope">
+                    @foreach (var item in Model)
+                    {
+                    <div class="content-item ng-scope postitem">
+                        <div class="avatar">
+                            @{
+                        Html.RenderAction("PartialMainImageOfPost", "CarDetail", new { postId = item.PostId });
+                            }
+                            <div class="tabledeli-btn-group ng-scope">
+                                <a href="#" class="deli-btn ng-scope deli">
+                                    <div class="logo"></div>
+                                    <div class="content ng-scope">
+                                        Đặt giao hàng
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tabledeli-overlay ng-scope">
+
+                            </div>
+                        </div>
+
+                        <div class="items-content">
+                            <div class="review-points green">
+                                <span class="ng-binding">
+                                    7.0
+                                </span>
+                            </div>
+                            <div class="title fd-text-ellip">
+                                <a href="@Url.Action("Index", "CarDetail", new {carCode = item.CarCode})" class="ng-binding">
+                                    @item.PostTitle
+                                </a>
+                            </div>
+                            <div class="desc fd-text-ellip ng-binding">
+                                @item.AccountPostJoin.Address
+                            </div>
+                        </div>
+                        <div class="items-review ng-scope">
+                            @{Html.RenderAction("CommentByPost", "Main", new { PostId = item.PostId });}
+                        </div>
+                        <div class="items-count">
+                            <a href="#">
+                                <i class="fa fa-comment"></i>
+                                <span class="ng-binding">58</span>
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-camera"></i>
+                                <span class="ng-binding">214</span>
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-bookmark"></i>
+                                <span class="ng-binding">137</span>
+                            </a>
+                            <a href="#" class="item-save tool-custom-list-add">
+                                <i class="fa fa-bookmark"></i>
+                                <span>Lưu</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    }
+                    @*@if(ViewBag.Utiliti != null)
+                        {
+                            Html.Partial("ShowPost", (ViewBag.Utiliti as IEnumerable<PostObject>));
+                        }*@
+
+                </div>
+
+                <div class="listPost">
+
+                </div>
+                <div class="clearfix" style="margin-top: 10px">
+                    <div class="pagination">
+                        <button id="btn-show-more" class="btn btn-default btn-block">Xem thêm</button>
+                    </div>
+                    <script>
+                        var Location = '';
+                    </script>
+                    @if (ViewBag.SeachLoacation != null)
+                    {
+                    <script>
+                            Location = '@ViewBag.SeachLoacation';
+                    </script>
+                    }
+                    <script>
+                        var pageindex = 1;
+                        $('#btn-show-more').on('click', function () {
+                            debugger;
+                            $.ajax({
+                                url: '@Url.Action("Index", "Main")',
+                                data: { pageIndex: pageindex, SeachLocation: Location },
+                                success: function (response) {
+                                    var parsed = $.parseHTML(response);
+                                    debugger;
+                                    var result = $(parsed).find(".postitem");
+                                    if (result.length > 0) {
+                                        $(".listPost").append(response);
+                                        pageindex = pageindex + 1;
+
+                                    }
+                                    else {
+                                        $('#btn-show-more').hide(0);
+                                    }
+
+                                }
+                            })
+                        });
+                    </script>
+                    <script>
+                        $('#selectLocation').on('change', function (e) {
+                            var optionSelected = $("option:selected", this);
+                            var valueSelected = this.value;
+                            debugger
+                            window.location.href = 'Trang-Chu?SeachLocation=' + valueSelected
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
